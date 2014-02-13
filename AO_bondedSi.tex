@@ -141,12 +141,12 @@ Consider the following two conceivable pitfalls in Si direct bonding.  First, pa
 The second pitfall to consider is that the stiff non-flat Si surfaces will not conform upon contact leaving the complement of the aberrations as an air gap. Similarly, surface roughness will also limit the bonding strength  \cite{JJAP.37.4197,2001JOptA...3...85G}.  The details of this aspect of the bonding process are outside the scope of this paper.  
 
 \section{Imbedding gaps of known sizes}
-We evaluated our metrology method by imbedding gaps of known sizes in the interface.  We bored divots in silicon with inductively coupled plasma etching.  The tool was a Unaxis.  We used two different gases with low and high etch rates.  CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  The area exposed to the process gases was about 1 inch diameter circles, or 15 mm $\times$ 20 mm rectangles.  We protected the unexposed areas with thick photoresist.  We achieved etch depths of 20$\pm$5 nm and 4000$\pm$100 nm, as measured with Wyko 2D noncontact white light microscopy for the small depth, and Dektak stylus profilometry for the large depth.  
+We evaluated our metrology method by imbedding gaps of known sizes in the interface.  We bored divots in silicon with inductively coupled plasma etching.  The tool was a Unaxis.  We used two different gases with low and high etch rates.  CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  The area exposed to the process gases was about 1 inch diameter circles, or 15 mm $\times$ 20 mm rectangles.  We protected the unexposed areas with thick photoresist.  We achieved etch depths of 20$\pm$5 nm and 4000$\pm$100 nm, as measured with Wyko 2D noncontact white light microscopy for the small depth, and Dektak stylus profilometry for the large depth.  For measurements taken with the Wyko, uncertainties were constructed by inspecting the histogram of topology.  The large-scale distortions were removed from the topology by masking and flattening to ensure that the uncertainties accurately reflect the distribution of measured heights.  The stylus profiliometry measured values were simply assigned an uncertainty of 5\%, which was consistent with our intuition and experience.  
 
-Table \ref{tab:bondexper} lists part numbers and descriptions for our bonded substrates.
+Table \ref{tabbondexper} lists part numbers and descriptions for our bonded substrates.
 
 \begin{table}[h!]
-%\caption{UTexas Si bonding experiments \label{tab:bondexper}}
+\caption{UTexas Si bonding experiments \label{tabbondexper}}
 \begin{center}
     \begin{tabular}{ c c c c c c c}
     \hline
@@ -181,6 +181,7 @@ The reflectivity is about 30\% in the wavelength range 1100 to 5000 nm.  The mod
 
 
 \subsection{Consideration of multiple incoherent reflections}
+\label{secTheory}
 Multiple incoherent reflections occur within the Si substrate.  Treatment for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  I adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K}.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si puck with no air gap, and second a pair of bonded Si pucks with a gap thickness $d$.  The DSP Si puck with no air gap has a transmission equal to:
 
 $$
@@ -192,7 +193,7 @@ which has an average value of about 53\%, as shown in the top curve of the Figur
 For the case of a pair of bonded Si pucks with a gap thickness $d$, we normalize the transmission with a gap to the transmission with no gap to isolate the effect of the gap.  We call this normalized transmission the etalon transmission $T_{e}$.  It is derived in Equation \ref{eqn:Tetalon} in the Appendix:
 
 
-$$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \nonumber $$
+$$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}$$
 
 
 It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  In the next section we compare measurements to by-eye fits of this equation.
@@ -246,7 +247,7 @@ Table \ref{tab:tablenum3} shows some properties of the Cary5000.
 \end{center}
 
 
-We also looked for the indication of large gaps detectable as ``IR bubbles'' \cite{1992JEMat..21..669M} with the coarse IR imaging technique.  The detector was an IR Vista $\alpha$NIR infrared focal plane array, with 312 $\times$ 252 pixels, with 30 $\mu$m square pixels.  We used a 50 mm F/2 lens, with a fiber optic white light illumination source.  We estimate that the lamp-detector combination was sensitive to wavelengths in the range 1.1-1.6 $\mu$m.  The field of view sub-sampled the 4 inch diameter wafers, so we dithered the sample.  No effort was made to flat field the detector, so copious detector non-uniformities and vignetting are present in our images.  It was easy to detect IR bubbles despite the artifacts since the bubbles translate with the wafer during dithering.  We detected IR bubbles in all 3 of the bonded Si pucks on which we recorded IR images.  The bubble areal density varied from about 4 per wafer (100 mm diameter) to over 20 per wafer.  Naturally, the sample of control solitary DSP (unbonded) wafers show no such IR bubbles, which are entirely attributable to the gaps between bonded substrtes as discussed in the literature (see Section \label{secHistory}).  Figure \ref{IRbubble} shows an example of one of the IR bubbles in which several bright and dark fringes are clearly discernible.
+We also looked for the indication of large gaps detectable as ``IR bubbles'' \cite{1992JEMat..21..669M} with the coarse IR imaging technique.  The detector was an IR Vista $\alpha$NIR infrared focal plane array, with 312 $\times$ 252 pixels, with 30 $\mu$m square pixels.  We used a 50 mm F/2 lens, with a fiber optic white light illumination source.  We estimate that the lamp-detector combination was sensitive to wavelengths in the range 1.1-1.6 $\mu$m.  The field of view sub-sampled the 4 inch diameter wafers, so we dithered the sample.  No effort was made to flat field the detector, so copious detector non-uniformities and vignetting are present in our images.  It was easy to detect IR bubbles despite the artifacts since the bubbles translate with the wafer during dithering.  We detected IR bubbles in all 3 of the bonded Si pucks on which we recorded IR images.  The bubble areal density varied from about 4 per wafer (100 mm diameter) to over 20 per wafer.  Naturally, the sample of control solitary DSP (unbonded) wafers show no such IR bubbles, which are entirely attributable to the gaps between bonded substrtes as discussed in the literature (see Section \label{secHistory}).  Figure \ref{IRbubble} shows an example of one of the IR bubbles in which several bright and dark fringes are clearly discernible.  No attempt at quantitative measurement was made on the IR images due to anecdotal evidence that the detector is non-linear.  The morphology was clear regardless of the detector response.  
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=.8\columnwidth]{figs/IR_bubble.pdf}}
@@ -255,8 +256,13 @@ We also looked for the indication of large gaps detectable as ``IR bubbles'' \ci
 
 
 \section{Results of infrared spectroscopy of bonded Si pucks}
+In this section we describe the spectroscopy of bonded Si pucks.  In some instances IR imaging was available and was leveraged to target IR bubbles.  In other cases the IR imaging was not available or simply ignored, and spectra were taken at random positions on the wafer surface.  
 
+\subsection{Constructing the predicted transmission}
+We constructed the predicted transmission in the following way.  If IR imaging was unavailable, our optimistic prior belief was simply that the bond should be perfect and indistinguishable from a solitary DSP Si wafer, (i.e. 100\% relative transmission).  For the cases where we had bored gaps of known dimension and fill factors we could predict the transmission with the Fabry-Perot machinery described in section ref{secTheory}, specifically equation \label{eqFP}.  For non-unit fill factor, we simply average 100\% transmission with the predicted gap transmission, weighted by the estimated fill factor.  Notably the meshes we designed were all 50\% fill factor.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we take the design fill factor as gospel.  The depth of the meshes has an associated uncertainty listed in \label{tabbondexper}.  We incorporated the uncertainty in the mesh depth in the following way.  We computed the transmission curve for the 1$\sigma$ lower and upper bounds, and plot a filled band marked as the prediction band.  The uncertainties in the mesh depths were low enough that the band spread includes all intermediate lines of predicted transmission between plus and minus 1$\sigma$.  In cases where the IR imaging was unavailable the mesh position was only coarsely known, so our prediction band had to incorporate our uncertainty about whether or not our measurement beam was on or off or overlapping the mesh border.  If the beam was off the mesh we assumed 100\% relative transmission, so we simply set the lower bound of the predicted transmission to the equivalent of a zero gap.  
 
+\subsection{Spectra of pucks with known gap sizes}
+Figures \ref{1} to \ref{2} show examples of the predicted and measured IR spectra.  Figure \ref{1} shows 
 
 
 \appendix
