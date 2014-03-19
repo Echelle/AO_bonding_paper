@@ -93,11 +93,23 @@ So there will be roughly $10^4$ times more 10 nm sized particles than 1 $\mu$m s
 It has been shown\cite{1992JEMat..21..669M} that the gases seep through the Si$-$Si interface, so pressure builds around those particles that serve as catalysts.  In this sense, the size of the particle causing an IR bubble cannot be uniquely identified from observations of the extent of IR bubble defects.  In section \ref{secResults} we address the question of the origin of the IR bubbles.  Specifically, are the particles more like \emph{tentpoles}, rigid structures that merely prevent the zippering up of the bond?  Or are the particles more like \emph{catalysts} so that their size is immaterial- the particles merely accelerate the production of gases that bow out the bond?  These are open questions.
 
 \subsection{Surface roughness or large-scale aberrations}
-The second pitfall to consider is that the stiff non-flat Si surfaces will not conform upon contact leaving the complement of the aberrations as an air gap. This issue is much less of a problem for wafers compared to our unconventional thick ($\sim$ 30 mm) Si applications.  Similarly, surface roughness will also limit the bonding strength  \cite{JJAP.37.4197,2001JOptA...3...85G}.  The details of this aspect of the bonding process are outside the scope of this paper.  In short, our thick substrates are optically polished to much less than $\lambda = 632$ nm peak to valley over the 3 to 4 inch diameter clear aperture.  We expect such well-polished substrates to have no deleterious impact on the bonding process.  
+The second pitfall to consider is that the stiff non-flat Si surfaces will not conform upon contact leaving the complement of the aberrations as an air gap. This issue is much less of a problem for wafers compared to our unconventional thick ($\sim$ 30 mm) Si applications.  Similarly, surface roughness will also limit the bonding strength  \cite{JJAP.37.4197,2001JOptA...3...85G}.  The details of this aspect of the bonding process are outside the scope of this paper.  In short, most of our thick substrates are optically polished to much less than $\lambda = 632$ nm peak to valley over the 3 to 4 inch diameter clear aperture.  We expect such well-polished substrates to have no deleterious impact on the bonding process.  Some experimental substrates had larger surface error, of order a few waves of surface error.  These substrates were reserved for process development, since we anticipated that bonding might progress either not at all, or with large interface gaps.  
 
 
 \section{Imbedding gaps of known sizes}
-We evaluated our metrology method by imbedding gaps of known sizes in the interface.  We bored divots in silicon with inductively coupled plasma etching.  The tool was a Unaxis.  We used two different gases with low and high etch rates.  CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  The area exposed to the process gases was about 1 inch diameter circles, or 15 mm $\times$ 20 mm rectangles.  We protected the unexposed areas with thick photoresist.  We achieved etch depths of 20$\pm$5 nm and 4000$\pm$100 nm, as measured with Veeco NT9100 Optical Profiler for the small depth, and Dektak stylus profilometry for the large depth.  For measurements taken with the Veeco, uncertainties were constructed by inspecting the histogram of topology.  The large-scale distortions were removed from the topology by masking and flattening to ensure that the uncertainties accurately reflect the distribution of measured heights.  The stylus profiliometry measured values were simply assigned an uncertainty of 5\%, which was consistent with our intuition and experience.  
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.95\columnwidth]{figs/VG03patternSchematic.pdf}}
+\caption{Schematic of part VG03 \label{figVG03pattern}.  The four inch diameter VG03 is comprised of two 3.3 mm thick silicon pucks.  We patterned a one inch diameter hole on one of the pucks.  The depth was 4.0 $\mu$m as indicated by Dektak profilometry.  We also patterned a low-fill factor petal pattern surrounding the hole.  The purpose for these patterns was to have gaps of known dimensions against which we could test the optical metrology technique we describe in this paper.  The technique can reveal the axial extent and fill factor of an embedded gap.}
+\end{figure}
+
+We evaluated our metrology method by imbedding gaps of known sizes in the interface.  Here we describe the process of how we made the gaps and how we characterized their axial extent.  The three important characteristics of the gaps are their axial extent, their lateral areal extent, and their areal fill factor.  We bored divots in silicon with inductively coupled plasma etching.  The tool was a Unaxis.  We used two different gases with low and high etch rates.  CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  The area exposed to the process gases was about 1 inch diameter circles, or 15 mm $\times$ 20 mm rectangles.  We protected the unexposed areas with thick photoresist.  We achieved etch depths of 15$\pm$5 nm and 4000$\pm$100 nm, as measured with Veeco NT9100 Optical Profiler for the small depth, and Dektak stylus profilometry for the large depth.  Figure \ref{figX} shows a schematic of VG03 and its pattern.  In a second round of experiments we achieved gap sizes of 14$-$95 nm on four substrates.  For measurements taken with the Veeco, uncertainties were constructed by inspecting the histogram of topology, as shown in Figure \ref{fig}.  The large-scale distortions were removed from the topology by masking and flattening to ensure that the uncertainties accurately reflect the distribution of measured heights.  The stylus profiliometry measured values were simply assigned an uncertainty of 5\%, which was consistent with our intuition and experience.  
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.95\columnwidth]{figs/VS20fineGapCrop.pdf}}
+\caption{Veeco optical profiler surface plot and histogram for part VS20 in the fine pattern section\label{figVS20pattern}.  The four inch diameter VS20 is comprised of two thick silicon pucks.  We patterned three meshes with coarse, medium, and fine boxes.  The depth was 95 nm as indicated by the well-separated peaks in the Veeco profilometry histogram.  The Veeco was operated in PSI mode.  The purpose for these patterns was to have gaps of known dimensions against which we could test the optical metrology technique we describe in this paper.  The technique can reveal the axial extent and fill factor of an embedded gap.}
+\end{figure}
+
 
 Table \ref{tabbondexper} lists part numbers and descriptions for our bonded substrates.
 
@@ -111,20 +123,21 @@ Table \ref{tabbondexper} lists part numbers and descriptions for our bonded subs
         \hline
     VG01 & Bonded  & 100  &$1$ $\times$ 2 & 23  & 2/13/2013 &  \\
     VG02 & Bonded & 100 & $3.3$ $\times$ 2 &  23  & 2/13/2013 &  \\
-    VG03 & Bonded & 100 & $3.3$ $\times$ 2 &  23 & 2/14/2013 & 4 $\mu$m hole \\    
-    VG04 & Bonded & 100 & $1$ $\times$ 2 &  23 & 2/14/2013 & 15 nm gap \\        
+    VG03 & Bonded & 100 & $3.3$ $\times$ 2 &  23 & 2/14/2013 & 4 $\mu$m gap 100\% fill factor hole \& petal pattern\\    
+    VG04 & Bonded & 100 & $1$ $\times$ 2 &  23 & 2/14/2013 & 15 nm gap, $\sim50\%$ fill factor\\        
     VG05 & DSP & 100 & 1&  23 & 2/15/2013 & cleaved  \\
     VG06 & DSP & 100 & 3.5 &  23 & 2/15/2013 & \\
     VG07 & - & - & - &  - & - & \\
     VG08 & - & - & - &  - & - & \\
-    VG09 & Bonded & 75 & 1.5? & 23 & 6/21/2013 & mesh C, 49 $\pm$6 nm \\
-    VG15 & Bonded & 100 & 1.5? &  23 & 6/21/2013 & mesh C, M, F, 14 $\pm$2 nm\\
-    VG17 & Bonded & 75 & 6.0? &  23 & 6/21/2013 & mesh C, 64 $\pm$6 nm\\
-    VS20 & Bonded & 100 & 1.5? &  23 & 6/21/2013 & mesh C, M, F, 95 $\pm$5 nm\\
+    VG09 & Bonded & 75 & 1.5? & 23 & 6/21/2013 & mesh C, 49 $\pm$6 nm, 50\% fill factor\\
+    VG15 & Bonded & 100 & 1.5? &  23 & 6/21/2013 & mesh C, M, F, 14 $\pm$2 nm, 50\% fill factor\\
+    VG17 & Bonded & 75 & 6.0? &  23 & 6/21/2013 & mesh C, 64 $\pm$6 nm, 50\% fill factor\\
+    VS20 & Bonded & 100 & 1.5? &  23 & 6/21/2013 & mesh C, M, F, 95 $\pm$5 nm, 50\% fill factor\\
     \hline
     \end{tabular}
 \end{center}
 \end{table}
+
 
 \section{Transmission measurement theory}
 \label{secTheory}
