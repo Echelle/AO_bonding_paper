@@ -186,14 +186,14 @@ $$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}
 It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  In the next section we compare measurements to by-eye fits of this equation.
 
 \section{Measurement strategy, conditions, and details}
-We took transmission spectra of bonded Si wafers and pucks, and double side polished Si reference wafers. The spectrophotometer is a Agilent Cary 5000 UV-Vis-NIR.  The typical measurement parameters and tool performance are listed below.  More details about the tool are available at the vendor's website.  Briefly, the tool has a double monochromator.  The double monochromator feature reduces scattered light.  The vendor reported linearity exceeds 40 dB.  
+We took transmission spectra of bonded Si wafers and pucks, and double side polished Si reference wafers. The spectrophotometer is a Agilent Cary 5000 UV-Vis-NIR.  The typical measurement settings and tool performance are listed in Table \ref{tab:Cary5000pars}.  More details about the tool are available at the vendor's website.  Briefly, the tool has a double monochromator.  The double monochromator feature reduces scattered light.  The vendor reported linearity exceeds 40 dB.  
 
-The Cary 5000 has four operation modes: single front, single back, double, and double reverse.  We experimented with single front and double modes.  Double mode takes a reference spectrum simultaneously to the target spectrum.  In both single and double beam mode a baseline scan is taken of air.  The baseline spectrum is the raw spectral response of the system, which is automatically divided out of subsequent spectra.  In single beam mode the baseline measurements must be repeated about every half hour.  We estimated the uncertainty and measurement repeatability of single and double modes in the following way.  We computed the RMS error and measurement repeatability in a single measurement by computing the standard deviation of the beam with no sample in a series of spectra taken immediately after a 100\% baseline scan.  The predicted mean level should naturally be 100\%.  We found that the mean value in single mode drifted by about 0.2\%.  The standard deviation of the featureless spectrum was typically 0.02\%, with some portions of the spectrum demonstrating increased variance, perhaps attributable to atmospheric absorption. In double beam mode the spectrograph performance was much better.  We put a double side polished Si wafer in the reference beam, and no sample in the target beam during the baseline scan.  In this way the transmission spectrum of a target Si wafer is automatically normalized.  The double beam mode effectively divides out the 0.2\% drift in the mean transmission level attributable to lamp drift, as seen in single beam measurements.  In double beam mode, the drift in mean transmission level is merely 0.02\%.  These values are accurate for measurements over a half hour timescale or less.  Over periods of hours the drift increases for both single and double beam mode, so a repeat baseline scan is sometimes necessary.  The need for repeat baselines is more acute for single mode.
+The Cary 5000 has four operation modes: single front, single back, double, and double reverse.  We experimented with single front and double modes.  Double mode takes a reference spectrum simultaneously to the target spectrum.  In both single and double beam mode, a baseline scan is taken with no sample in the measurement holder.  The baseline spectrum is the raw spectral response of the system.  We automatically divide sample spectra by the baseline spectrum.  In single beam mode, the baseline measurements must be repeated about every half hour.  We estimated the uncertainty and measurement repeatability of single and double modes in the following way.  We computed the RMS error and measurement repeatability in a single measurement by computing the standard deviation of a spectrum taken immediately after a baseline scan with no sample present.  The predicted mean level should naturally be 100\%.  We found that the mean value in single mode drifted by about 0.2\% over several measurements.  The standard deviation of the featureless spectrum was typically 0.02\% from point to point, with some portions of the spectrum demonstrating increased variance, perhaps attributable to atmospheric absorption; we list the wavelengths of instrumental artifacts and above-average variance in Table \ref{tab:Cary5000pars}. In double beam mode, the spectrograph performance was much better.  We put a double side polished (DSP) Si wafer in the reference beam, and no sample in the target beam during the baseline scan.  In this way the transmission spectrum of a target Si wafer is automatically normalized.  The double beam mode effectively divides out the 0.2\% drift in the mean transmission level attributable to lamp drift, as seen in single beam measurements.  In double beam mode, the drift in mean transmission level is merely 0.02\%.  These values are accurate for measurements over a half hour timescale or less.
 
-The choice of spectral sampling was straightforward.  We expect smoothly varying spectral features for small ($<$ 1 $\mu$m) size gaps in Si bonded wafers.  Sampling theory dictates a few spectral resolution elements over the spectral feature of interest.  The Fabry-P\`erot fringes will be well-sampled so long as the gap is less than $\sim$100 $\mu$m.  Such large gaps would be easily detectable by other means.  So we simply pick the largest slit width, and therefore the lowest spectral resolution that the Cary 5000 permits: 5 nm.  We then sample the spectral resolution with $\sim$2.5 samples per spectral resolution element, 2.0 nm samples. 
+The choice of spectral sampling was straightforward.  The spectral sampling was 2.0 nm.  The spectral resolution was 5.0 nm, the lowest spectral resolution the Cary5000 offers.  We expect smoothly varying spectral features for all conceivable interface gaps in Si bonded wafers.  Specifically, Fabry-P\`erot fringes attributable to interfacial gaps in bonded Si will be well-sampled with 5 nm spectral resolution, so long as the interface gap is less than $\sim$100 $\mu$m.  Such large gaps would be easily detectable by other means, like IR imaging.
 
 \begin{table}[h!]
-\caption{Summary of Cary 5000 Measurement parameters \label{tab:tablenum3}}
+\caption{Summary of Cary 5000 Measurement parameters \label{tab:Cary5000pars}}
 \begin{center}
 \begin{tabular}{ c c }
 \hline
@@ -204,21 +204,21 @@ The choice of spectral sampling was straightforward.  We expect smoothly varying
         Time per sample (s) & 0.1 \\
         Available measurement range (nm) & 175-3300 \\
         Typical measurement range (nm) & 1000-2500 \\
-	Single mode RMS  (percent) & 0.02 \\
-	Double mode RMS  (percent) & 0.002 \\
-	Single mode mean drift (percent) & 0.20 \\
-	Double mode mean drift (percent) & 0.02 \\
-	Mean 0\% baseline correction (percent) & 0.03 \\
- 	Beam size (mm x mm) & 2 x 8 \\
-	Wavelengths of instrumental artifacts (nm) & stuff \\
-        num1 & 1200 \\
-        num2 & 1350 \\
-        num3 & 1360-1450\\
-        num4 & 1850 \\
-        num5 & 1800-1950 \\
-        num6 & 2000 \\
-        Vendor-reported linearity range (dB) & 40 \\
-        Directly measured linearity range (dB) & 24 \\
+	Single mode RMS  (\%) & 0.02 \\
+	Double mode RMS  (\%) & 0.002 \\
+	Typical Single mode mean drift (\%) & 0.20 \\
+	Typical Double mode mean drift (\%) & 0.02 \\
+	No beam dark signal (\%) & 0.03 \\
+ 	Beam size (mm $\times$ mm) & $2 \times 8$ \\
+	Wavelengths of instrumental artifacts (nm) & - \\
+        		 & 1200 \\
+		 & 1350 \\
+		 & 1360-1450\\
+		 & 1850 \\
+		 & 1800-1950 \\
+		 & 2000 \\
+        Vendor-reported linearity range (dB) & $>40$ \\
+        Directly measured linearity range (dB) & $>24$ \\
     \hline
     \end{tabular}
 \end{center}
@@ -227,13 +227,13 @@ The choice of spectral sampling was straightforward.  We expect smoothly varying
 
 \subsection{IR bubble detection and limitations}
 
-We also looked for the indication of large gaps detectable as ``IR bubbles'' \cite{1992JEMat..21..669M} with the coarse IR imaging technique.  The detector was an IR Vista $\alpha$NIR infrared focal plane array, with 312 $\times$ 252 pixels, with 30 $\mu$m square pixels.  We used a 50 mm F/2 lens, with a fiber optic white light illumination source.  We estimate that the lamp-detector combination was sensitive to wavelengths in the range 1.1-1.6 $\mu$m.  The field of view sub-sampled the 4 inch diameter wafers, so we dithered the sample.  No effort was made to flat field the detector, so copious detector non-uniformities and vignetting are present in our images.  It was easy to detect IR bubbles despite the artifacts since the bubbles translate with the wafer during dithering.  We detected IR bubbles in all 3 of the bonded Si pucks on which we recorded IR images.  The bubble areal density varied from about 4 per wafer (100 mm diameter) to over 20 per wafer.  Naturally, the sample of control solitary DSP (unbonded) wafers show no such IR bubbles, which are entirely attributable to the gaps between bonded substrtes as discussed in the literature (see Section \label{secHistory}).  Figure \ref{IRbubble} shows an example of one of the IR bubbles in which several bright and dark fringes are clearly discernible.  No attempt at quantitative measurement was made on the IR images due to anecdotal evidence that the detector is non-linear.  The morphology was clear regardless of the detector response.  
+We also looked for the indication of large gaps detectable as ``IR bubbles'' \cite{1992JEMat..21..669M} with the coarse IR imaging technique.  The detector was an IR Vista $\alpha$NIR infrared focal plane array, with 312 $\times$ 252 pixels, with 30 $\mu$m square pixels.  We used a 50 mm F/2 lens, with a fiber optic white light illumination source.  We estimate that the lamp-detector combination was sensitive to wavelengths in the range 1.1-1.6 $\mu$m.  The field of view sub-sampled the 4 inch diameter wafers, so we dithered the sample.  No effort was made to flat field the detector, so copious detector non-uniformities and vignetting are present in our images.  It was easy to detect IR bubbles despite the artifacts since the bubbles translate with the wafer during dithering.  We detected IR bubbles in all 3 of the bonded Si pucks on which we recorded IR images.  The bubble areal density varied from about 4 per 100 mm diameter bonded wafer pair to over 20 per bonded wafer pair.  Naturally, the unbonded DSP wafers show no such IR bubbles, which are entirely attributable to the gaps between bonded substrates as discussed in the literature (see Section \ref{secHistory}).  Figure \ref{IRbubble} shows an example of one of the IR bubbles in which several bright and dark fringes are clearly discernible.  No attempt at quantitative measurement was made on the IR images due to evidence that the detector is non-linear.  The morphology was clear regardless of the detector response.  
 
 
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=.8\columnwidth]{figs/IR_bubble.pdf}}
-\caption{Photo of part VG09 with transmission image of a bubble highlighted\label{IRbubble}.  The right side photo shows the 75 mm diameter wafer with blue Sharpie rectangles indicating the position of different spectral measurements (as detailed in the next section).  The yellow circle in the photo highlights the outline of the location of an IR bubble we detected.  The bubble shows a couple of fringes over the effective wavelength range 1.1-1.6 $\mu$m.  This fringe pattern is consistent with a gap comparable to this measurement wavelength.  The pointlike measurement artifacts, Sharpie marker, and vignetting are perceptible in the raw IR image.  Our interpretation of the IR bubbles is robust against these artifacts.  The area surrounding the IR bubble appears to be mostly devoid of large (wavelength-scale) gaps, since the transmission is fairly uniform, and consistent with the brightest fringe of the IR bubble.  }
+\caption{Photo of part VG09 with transmission image of a bubble highlighted\label{IRbubble}.  The right side photo shows the 75 mm diameter wafer with blue Sharpie rectangles indicating the position of different spectral measurements (as detailed in the next section).  The yellow circle in the photo highlights the outline of the location of an IR bubble we detected.  The bubble shows $\sim2$ fringes over the effective wavelength range 1.1-1.6 $\mu$m.  This fringe pattern is consistent with a gap comparable to this measurement wavelength.  The pointlike measurement artifacts, Sharpie marker, and vignetting are perceptible in the raw IR image.  Our interpretation of the IR bubbles is robust against these artifacts.  The area surrounding the IR bubble appears to be mostly devoid of large (wavelength-scale) gaps, since the transmission is fairly uniform, and consistent with the brightest fringe of the IR bubble.  }
 \end{figure}
 
 
