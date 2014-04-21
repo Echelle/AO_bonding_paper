@@ -94,6 +94,59 @@ It has been shown\cite{1992JEMat..21..669M} that the gases seep through the Si$-
 \subsection{Surface roughness or large-scale non-conformance}
 Another possible source of gaps at the bond is inherent roughness in the initial surfaces that leads to a failure to conform.  The second pitfall to consider is that the stiff non-flat Si surfaces will not conform upon contact leaving the complement of the aberrations as an air gap. Unconventional thick ($\sim$ 30 mm) Si applications a not as conformal as wafers, so we expect thick substrates could have gaps even in the absence of particles.  Most of our thick substrates are optically polished to much less than $\lambda = 632$ nm peak to valley over the 3 to 4 inch diameter clear aperture.  
 
+\section{Si$-$air$-$Si Fabry P\`{e}rot measurement theory}
+\label{secTheory}
+
+% Figures (shared wavelength axis)
+%	2) Fresnel transmission as a function of wavelength (normal incidence)
+%	4) Example transmission through VG03 thick gap
+
+\subsection{The Si-Si interface gap is a low Finesse Fabry-P\`{e}rot etalon}
+
+Our measurement technique exploits the large Fresnel reflection \cite{2001opt4.book.....H} at the Si-Air interface.  The refractive index of silicon at room temperature ranges from 3.55$-$3.45 from $\lambda = $ 1150$-$2500 nm \cite{2006SPIE.6273E..77F}, one of the largest refractive indices of any conventional material.  The Fresnel reflection is accordingly about 30\% per surface.  For comparison, conventional optical materials with refractive indices in the range 1.5$-$1.7 have Fresnel reflection of merely 4$-$7\% per surface.  Figure \ref{figSiIndexFinesse} shows the refractive index as a function of wavelength for room temperature, which we computed using the coefficients from \cite{2006SPIE.6273E..77F}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.95\columnwidth]{figs/SiIndexAOmgsFinesseFig.pdf}}
+\caption{Plot of refractive index, $n$, and coefficient of finesse, $F$, as a function of wavelength, $\lambda$.\label{figSiIndexFinesse} We computed the temperature dependent refractive index from the tabulations of \cite{2006SPIE.6273E..77F}, and extrapolated past their upper temperature bound to estimate values near 373 K.  The coefficient of finesse is defined in Equation \ref{eq:FabPerot}.  The minuscule temperature dependence is largely negligible, and for the rest of the paper we assume room temperature refractive index.}
+\end{figure}
+
+The Si-Si interface gap is a low-Finesse Fabry-P\`{e}rot etalon\cite{2007fuph.book.....S}.  The transmission through a Fabry-P\`{e}rot depends on the wavelength of light, the reflectivity of the etalon sidewalls, and the size of the gap.  We assume transmission is at normal incidence, the refractive index of the gap is 1.0, and the material is at room temperature.  Si is negligibly absorbing longward of $\lambda$ = 1150 nm, which we verified with comparison of Si reference samples of different thicknesses.  We compute the reflectivity for an Si$-$air interface, which is a modest function of wavelength through the refractive index of Silicon, $n(\lambda, T)$ \cite{2006SPIE.6273E..77F}, as shown in Figure \ref{figSiIndexFinesse}.  In the equations ahead we drop the subscripts on the refractive index $n(\lambda, T) \rightarrow n$ for clarity.  The computation is simply Fresnel's law at normal incidence:
+
+\begin{eqnarray}
+R = \frac{(n-1)^2}{(n+1)^2} \\
+F \equiv \frac{4R}{(1-R)^2}
+\end{eqnarray}
+
+The reflectivity is about 30\% in the wavelength range 1100 to 5000 nm.  We've defined the coefficient of finesse\cite{2007fuph.book.....S}, $F$, a customary way to encapsulate the Fabry-P\`{e}rot etalon's dependence on the reflectivity.  The coefficient of finesse is shown in the right panel of Figure \ref{figSiIndexFinesse}.  In the next subsection we work out the wavelength dependent transmission for the air etalon.
+
+
+\subsection{Predicted transmission spectrum for bonded Si with finite interface gap}
+\label{secTheory}
+There is a key hurdle in computing the transmission spectrum for bonded Si with a finite interface gap- multiple incoherent reflections occur within the Si substrate at normal incidence.  Treatments for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  We adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K}.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si puck with no air gap, and second a pair of bonded Si pucks with a gap thickness $d$.  The DSP Si puck with no air gap has a transmission equal to:
+
+$$
+T_{DSP} = \frac{2n}{1+n^2} \label{eqnAbsDSPtrans}
+$$
+
+which has an average value of about 53\%.  Note that this transmission is above a na\"ive value of $T_{DSP}=(1-R^2)$, which does not take into account multiple incoherent reflections, and is therefore an underestimate.  Figure \ref{figAbsoluteTrans} shows a plot of Equation \ref{eqnAbsDSPtrans} in the wavelength range 1200$-2500$ nm.  If the Si wafer path thickness is less than the coherence length for the given spectral bandwidth, then the multiple reflections would interfere coherently, and the Si wafer would behave as a Fabry-P\`erot etalon.  This scenario is beyond the scope of this paper, since we are primarily interested in thick substrates with small gaps in between the interfaces.%We work out this behavior in the Appendix and show that in the limit $l>> \lambda^2 / \delta \lambda $ the spectral transmission tends to equation X.  
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.45\columnwidth]{figs/20140421_absolute.pdf}}
+\caption{Modeled absolute transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 35 nm (cyan triple-dot dashed curve)\label{figAbsoluteTrans}.  The absolute transmission through Si depends on the Si refractive index, which depends on wavelength. }
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.45\columnwidth]{figs/20140421_absoluteB.pdf}}
+\caption{Modeled etalon transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 35 nm (cyan triple-dot dashed curve)\label{figEtalonRelTrans}.  The curves are examples from a family defined in Equation \ref{eqFP}.   The limit of no gap is 100\% transmissive, compared to a DSP reference.  A 35 nm gap degrades the transmission over a DSP reference by 4\% at 1200 nm.}
+\end{figure}
+
+Now consider a pair of bonded Si pucks with a gap thickness $d$. We derive the absolute transmission of bonded Si substrates with a gap in Equation \ref{eqn:Tetalon} in the Appendix.  We normalize the absolute transmission by the transmission with no gap to isolate the effect of the gap.  We call this normalized transmission the etalon transmission $T_{e}$, since it isolates the effect of the etalon on the transmission.
+
+$$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}$$
+
+It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figEtalonRelTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 20 nm and 35 nm.  In the next section we compare measurements to by-eye fits of this equation.
+
 \section{Imbedding gaps of known sizes}
 
 \begin{figure}[htbp]
@@ -157,48 +210,6 @@ The three important characteristics of the gaps are their axial extent, their la
 \section{Substrate preparation}
 We cleaned the surfaces before bonding to minimize the interfacial particle density.  The surface roughness was typically about 2 nm, as measured with a Veeco NT9100 Optical Profiler.  We measured the large scale surface flatness of the pucks.  The Fisba2 interferometer has a 2 inch diameter beam at $\lambda=$632.8 nm.  We found a typical peak to valley surface flatness of 2 waves over the central 2 inch diameter.  We prepared the substrates with standard cleaning procedures of solvents in a megasonic.  We then applied MHz frequency oxygen plasma ashing.  We soaked the wafers in DI water then dried with an N$_2$ gun.  We pressed the Si substrates together from the center to the outside.
 
-\section{Si$-$air$-$Si Fabry P\`{e}rot measurement theory}
-\label{secTheory}
-
-% Figures (shared wavelength axis)
-%	2) Fresnel transmission as a function of wavelength (normal incidence)
-%	4) Example transmission through VG03 thick gap
-
-\subsection{The air cavity is a low Finesse Fabry-P\`{e}rot etalon}
-
-Our measurement technique exploits the large Fresnel reflection \cite{2001opt4.book.....H} at the Si-Air interface.  The refractive index of silicon at room temperature ranges from 3.55$-$3.45 from $\lambda = $ 1150$-$2500 nm \cite{2006SPIE.6273E..77F}, one of the largest refractive indices of any conventional material.  The Fresnel reflection is accordingly about 30\% per surface.  For comparison, conventional optical materials with refractive indices in the range 1.5$-$1.7 have Fresnel reflection of merely 4$-$7\% per surface.  Figure \ref{figSiIndexFinesse} shows the refractive index as a function of wavelength for room temperature, which we computed using the coefficients from \cite{2006SPIE.6273E..77F}.
-
-\begin{figure}[htbp]
-\centerline{\includegraphics[width=0.95\columnwidth]{figs/SiIndexAOmgsFinesseFig.pdf}}
-\caption{Plot of refractive index, $n$, and coefficient of finesse, $F$, as a function of wavelength, $\lambda$.\label{figSiIndexFinesse} We computed the temperature dependent refractive index from the tabulations of \cite{2006SPIE.6273E..77F}, and extrapolated past their upper temperature bound to estimate values near 373 K.  The coefficient of finesse is defined in Equation \ref{eq:FabPerot}.  The minuscule temperature dependence is largely negligible, and for the rest of the paper we assume room temperature refractive index.}
-\end{figure}
-
-The air cavity is a low-Finesse Fabry-P\`{e}rot etalon\cite{2007fuph.book.....S}.  Note that we imprecisely refer to the gap as an air gap, though in principle the gap has an unknown mixture of gases for example water vapor, or other vapors that were outgassed from reactions catalyzed by hydrocarbons.  The transmission through a Fabry-P\`{e}rot depends on the wavelength of light, the reflectivity of the etalon sidewalls, and the size of the gap.  We assume transmission is at normal incidence, the refractive index of the gap is 1.0, and the material is at room temperature.  Si is negligibly absorbing longward of $\lambda$ = 1150 nm, which we verified with comparison of Si reference samples of different thicknesses.  We compute the reflectivity for an Si$-$air interface, which is a modest function of wavelength through the refractive index of Silicon, $n(\lambda, T)$ \cite{2006SPIE.6273E..77F}, as shown in Figure \ref{figSiIndexFinesse}.  In the equations ahead we drop the subscripts on the refractive index $n(\lambda, T) \rightarrow n$ for clarity.  The computation is simply Fresnel's law at normal incidence:
-
-\begin{eqnarray}
-R = \frac{(n-1)^2}{(n+1)^2} \\
-F \equiv \frac{4R}{(1-R)^2}
-\end{eqnarray}
-
-The reflectivity is about 30\% in the wavelength range 1100 to 5000 nm.  We've defined the coefficient of finesse\cite{2007fuph.book.....S}, $F$, a customary way to encapsulate the Fabry-P\`{e}rot etalon's dependence on the reflectivity.  The coefficient of finesse is shown in the right panel of Figure \ref{figSiIndexFinesse}.  In the next subsection we work out the wavelength dependent transmission for the air etalon.
-
-
-\subsection{Predicted transmission spectrum for bonded Si with finite interface gap}
-\label{secTheory}
-There is a key hurdle in computing the transmission spectrum for bonded Si with a finite interface gap- multiple incoherent reflections occur within the Si substrate at normal incidence.  Treatments for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  We adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K}.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si puck with no air gap, and second a pair of bonded Si pucks with a gap thickness $d$.  The DSP Si puck with no air gap has a transmission equal to:
-
-$$
-T_{DSP} = \frac{2n}{1+n^2}
-$$
-
-which has an average value of about 53\%.  Note that this transmission is above a na\"ive value of $T_{DSP}=(1-R^2)$, which does not take into account multiple incoherent reflections, and is therefore an underestimate.  If the Si wafer path thickness is less than the coherence length for the given spectral bandwidth, then the multiple reflections would interfere coherently, and the Si wafer would behave as a Fabry-P\`erot etalon.  This scenario is beyond the scope of this paper, since we are primarily interested in thick substrates with small gaps in between the interfaces.
-%We work out this behavior in the Appendix and show that in the limit $l>> \lambda^2 / \delta \lambda $ the spectral transmission tends to equation X.  
-
-Now consider a pair of bonded Si pucks with a gap thickness $d$. We derive the absolute transmission bonded Si wafers with a gap in Equation \ref{eqn:Tetalon} in the Appendix.  We normalize the absolute transmission by the transmission with no gap to isolate the effect of the gap.  We call this normalized transmission the etalon transmission $T_{e}$, since it isolates the effect of the etalon on the transmission.
-
-$$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}$$
-
-It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  In the next section we compare measurements to by-eye fits of this equation.
 
 \section{Measurement strategy, conditions, and details}
 We took transmission spectra of bonded Si wafers and pucks, and double side polished Si reference wafers. The spectrophotometer is a Agilent Cary 5000 UV-Vis-NIR.  The typical measurement settings and tool performance are listed in Table \ref{tab:Cary5000pars}.  More details about the tool are available at the vendor's website.  Briefly, the tool has a double monochromator.  The double monochromator feature reduces scattered light.  The vendor reported linearity exceeds 40 dB.  
@@ -256,7 +267,7 @@ We looked for the indication of large gaps detectable as ``IR bubbles'' \cite{19
 In this section we describe the spectroscopy of bonded Si pucks.  In some instances IR imaging was available and was leveraged to target or avoid locations demonstrating IR bubbles.  In other cases the IR imaging was not available or ignored, and spectra were taken at random positions on the wafer surface.  
 
 \subsection{Constructing the predicted transmission}
-We constructed the predicted transmission in the following way.  If IR imaging was unavailable, our optimistic prior belief was simply that the bond should be perfect and indistinguishable from a solitary DSP Si wafer, (i.e. 100\% relative transmission).  For the cases where we had bored gaps of known dimension and fill factors we could predict the transmission with the Fabry-Perot machinery described in section \ref{secTheory}.  Specifically we apply Equation \ref{eqFP}.  For non-unit fill factor, we simply average 100\% transmission with the predicted gap transmission, weighted by the estimated fill factor listed in Table \ref{tabPatternFills}.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we assume the delivered fill factor is equal to the designed fill factor with no uncertainty.  The depth of the meshes has an associated uncertainty listed in \ref{tabbondexper}.  We incorporated the uncertainty in the mesh depth in the following way.  We computed the transmission curve for the 1$\sigma$ lower and upper bounds, and plot a filled band marked as the prediction band.  The uncertainties in the mesh depths were low enough that the band spread includes all intermediate lines of predicted transmission between plus and minus 1$\sigma$.  In cases where the IR imaging was unavailable the mesh position was only coarsely known, so our prediction band had to incorporate our uncertainty about whether or not our measurement beam was on or off or overlapping the mesh border.  If the beam was off the mesh we assumed 100\% relative transmission, so we simply set the lower bound of the predicted transmission to the equivalent of a zero gap.  
+We constructed the predicted transmission in the following way.  If IR imaging was unavailable, our optimistic prior belief was simply that the bond should be perfect and indistinguishable from a solitary DSP Si wafer, (i.e. 100\% relative transmission).  For the cases where we had bored gaps of known dimension and fill factors we could predict the transmission with the Fabry-Perot machinery described in section \ref{secTheory}.  Specifically we apply Equation \ref{eqFP}.  For non-unit fill factor, we simply average 100\% transmission with the predicted gap transmission, weighted by the estimated fill factor listed in Table \ref{tabPatternFills}.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we assume the delivered fill factor is equal to the designed fill factor with no uncertainty.  The depth of the meshes has an associated uncertainty listed in Table \ref{tabbondexper}.  We incorporated the uncertainty in the mesh depth in the following way.  We computed the transmission curve for the 1$\sigma$ lower and upper bounds, and plot a filled band marked as the prediction band.  The uncertainties in the mesh depths were low enough that the band spread includes all intermediate lines of predicted transmission between plus and minus 1$\sigma$.  In cases where the IR imaging was unavailable the mesh position was only coarsely known, so our prediction band had to incorporate our uncertainty about whether or not our measurement beam was on or off or overlapping the mesh border.  If the beam was off the mesh we assumed 100\% relative transmission, so we simply set the lower bound of the predicted transmission to the equivalent of a zero gap.  
 
 \subsection{Spectra of pucks with known gap sizes}
 Figures \ref{VS21specm1} to \ref{VS21specf1} show examples of the predicted and measured IR spectra.  Figure \ref{VS21specm1} shows an example spectrum in which the measurement is consistent with the prediction for a gap with the known conditions.  Meanwhile, Figure \ref{VS21specf1} shows a spectrum in which the measurement marginally exceeds the prediction (by about $\sim 2 \sigma$).  Other parts show less consistency with the prediction.  A complete description of the diversity of the measured spectra requires an appeal to optical phenomena beyond the scope of this paper.  Briefly we classify the diversity of measurements into the categories laid out in the table below.  
