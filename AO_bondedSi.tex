@@ -133,7 +133,7 @@ which has an average value of about 53\%.  Note that this transmission is above 
 %The following 3 figures were made with fabry_perot_Si_20140421.pro and other variants.
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.65\columnwidth]{figs/20140421_absolute.pdf}}
-\caption{Modeled absolute transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 35 nm (cyan triple-dot dashed curve)\label{figAbsoluteTrans}.  The absolute transmission through Si depends on the Si refractive index, which depends on wavelength. }
+\caption{Modeled absolute transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 35 nm (cyan triple-dot dashed curve)\label{figAbsoluteTrans}.  The absolute transmission through Si depends on wavelength since the refractive index depends minutely on wavelength.  This curve is only accurate for normal incidence transmission.  Furthermore, the curve assumes the multiple reflections within the Si substrates add incoherently as discussed in detail in Appendix \ref{sec:Append-IMRTMM}.}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -174,21 +174,18 @@ The three important characteristics of the gaps are their axial extent, their la
 \begin{table}[h!]
 \caption{UTexas Si bonding experiments \label{tabbondexper}}
 \begin{center}
-    \begin{tabular}{ c c c c c c c}
+    \begin{tabular}{ c c c c c c}
     \hline
-    Name & Bonded/DSP & Diameter & Thickness & Pattern Type & Pattern Depth & Notes \\ 
-    - & - & mm & mm & - & nm & - \\ 
+    Name & Diameter & Thickness & Pattern Type & Pattern Depth & Notes \\ 
+    -  & mm & mm & - & nm & - \\ 
         \hline
-    VG01 & Bonded  & 100  &$1$ $\times$ 2 & None  & - &  \\
-    VG02 & Bonded & 100 & $3.3$ $\times$ 2 &  None  & - &  \\
-    VG03 & Bonded & 100 & $3.3$ $\times$ 2 &  Hole \&Petal & 4000$\pm$200 & See Fig. \ref{figVG03pattern}\\    
-    VG04 & Bonded & 100 & $1$ $\times$ 2 &  Patchwork Islands & 15 & \\
-    VG05 & DSP & 100 & 1&  - & - & Reference Sample  \\
-    VG06 & DSP & 100 & 3.5 &  - & - & Reference Sample \\
-    VG09 & Bonded & 75 & 1.5? & mesh C & 49 $\pm$6 & \\
-    VG15 & Bonded & 100 & 1.5? &  mesh C, M, F  &14 $\pm$2 & \\
-    VG17 & Bonded & 75 & 6.0? &  mesh C & 64 $\pm$6 nm & \\
-    VS20 & Bonded & 100 & 1.5? &  mesh C, M, F & 95 $\pm$5 & See Fig. \ref{figVS20pattern}\\
+    VG01  & 100  &$1$ $\times$ 2 & None  & - &  \\
+    VG02   & 100 & $3.3$ $\times$ 2 &  None  & - &  \\
+    VG03   & 100 & $3.3$ $\times$ 2 &  Hole \&Petal & 4000$\pm$200 & See Fig. \ref{figVG03pattern}\\    
+    VG04   & 100 & $1$ $\times$ 2 &  Patchwork Islands & 15 & \\
+    VG09   & 75 & $1$ $\times$ 2 & mesh C & 49 $\pm$6 & \\
+    VG15   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F  &14 $\pm$2 & \\
+    VS20   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F & 95 $\pm$5 & See Fig. \ref{figVS20pattern}\\
     \hline
     \end{tabular}
 \end{center}
