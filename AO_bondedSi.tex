@@ -268,6 +268,72 @@ We looked for the indication of large gaps detectable as ``IR bubbles'' \cite{19
 \label{secResults}
 In this section we describe the spectroscopy of bonded Si pucks.  In some instances IR imaging was available and was leveraged to target or avoid locations demonstrating IR bubbles.  In other cases the IR imaging was not available or ignored, and spectra were taken at random positions on the wafer surface.  
 
+% Table of experiments
+\begin{table}[h!]
+\caption{Cary5000 Experiment Log \label{tabExperiments}}
+\begin{center}
+    \begin{tabular}{c c c c c c c}
+    \hline
+	Date &  Mode  & $\Delta \lambda$ & SBW & Sampling & \# of spectra & Sample IDs \\
+	\emph{mm/dd/yyyy} &  -  & nm & nm & nm & - \\
+     \hline		
+	02/04/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\
+     \hline		
+	02/06/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\	     
+     \hline		
+     	02/18/2013 & Single & 1000$-$2500 & 5.0 & 10.0 &  16 &   -  \\
+     	                   &            &                       &       &         &    4 &  Baseline\\	
+     	                   &            &                       &       &         &    1 &  VG01\\
+	                   &            &                       &       &         &    4 &  VG02\\	                   
+	                   &            &                       &       &         &    2 &  VG03\\	                   
+	                   &            &                       &       &         &    2 &  VG04\\
+	                   &            &                       &       &         &    2 &  VG05\\	                   
+	                   &            &                       &       &         &    2 &  VG06\\
+    \hline
+%	05/02/2013 & Single & 1000$-$2500 & 5.0 & 5.0  &  30 &   -  \\
+%     	                   &            &                       &       &         &    12 &  Baseline\\	
+%     	                   &            &                       &       &         &    18 &  Other\\
+%    \hline
+	05/03/2013 & Single & 1000$-$2500 & 5.0 & 5.0  &  28 &   -  \\
+     	                   &            &                       &       &         &    8 &  Baseline\\	
+     	                   &            &                       &       &         &    1 &  VG05\\
+     	                   &            &                       &       &         &    6 &  VG03\\
+     	                   &            &                       &       &         &    13 &  Other\\
+    \hline
+	06/07/2013 & Mix & 1000$-$2500 & 5.0 & 5.0  &  43 &   -  \\
+	                   &            &                       &       &         &    11 &  Baseline\\	                   
+	                   &            &                       &       &         &    9 &  VG05\\	                   
+	                   &            &                       &       &         &    7 &  VG07\\
+	                   &            &                       &       &         &    6 &  VG08\\
+	                   &            &                       &       &         &    4 &  HA1\\
+	                   &            &                       &       &         &    6 &  other\\
+    \hline
+	08/02/2013 & Single & 1000$-$2500 & 5.0 & 2.0  &  17 &   -  \\	
+	                   &            &                       &       &         &    3 &  Baseline\\
+	                   &            &                       &       &         &    4 &  VG05\\	                   
+	                   &            &                       &       &         &    2 &  VG15\\
+	                   &            &                       &       &         &    2 &  VS20\\
+	                   &            &                       &       &         &    6 &  VG09\\
+    \hline
+    	09/11/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  20 &   -  \\	                   
+	                   &            &                       &       &         &    1 &  Baseline\\
+	                   &            &                       &       &         &    14 &  VS21\\	                   
+	                   &            &                       &       &         &    5 &  Blank\\
+    \hline
+    	09/16/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  21 &   -  \\
+	                   &            &                       &       &         &    2 &  Baseline\\
+	                   &            &                       &       &         &    7 &  VG07\\	                   
+	                   &            &                       &       &         &    4 &  VG05\\	
+	                   &            &                       &       &         &    4 &  VG12\\
+	                   &            &                       &       &         &    2 &  VG15\\	                   
+	                   &            &                       &       &         &    2 &  VG08\\	                   
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+
+
 \subsection{Constructing the predicted transmission}
 We constructed the predicted transmission in the following way.  If IR imaging was unavailable, our optimistic prior belief was simply that the bond should be perfect and indistinguishable from a solitary DSP Si wafer, (i.e. 100\% relative transmission).  For the cases where we had bored gaps of known dimension and fill factors we could predict the transmission with the Fabry-Perot machinery described in section \ref{secTheory}.  Specifically we apply Equation \ref{eqFP}.  For non-unit fill factor, we simply average 100\% transmission with the predicted gap transmission, weighted by the estimated fill factor listed in Table \ref{tabPatternFills}.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we assume the delivered fill factor is equal to the designed fill factor with no uncertainty.  The depth of the meshes has an associated uncertainty listed in Table \ref{tabbondexper}.  We incorporated the uncertainty in the mesh depth in the following way.  We computed the transmission curve for the 1$\sigma$ lower and upper bounds, and plot a filled band marked as the prediction band.  The uncertainties in the mesh depths were low enough that the band spread includes all intermediate lines of predicted transmission between plus and minus 1$\sigma$.  In cases where the IR imaging was unavailable the mesh position was only coarsely known, so our prediction band had to incorporate our uncertainty about whether or not our measurement beam was on or off or overlapping the mesh border.  If the beam was off the mesh we assumed 100\% relative transmission, so we simply set the lower bound of the predicted transmission to the equivalent of a zero gap.  
 
