@@ -97,10 +97,6 @@ Another possible source of gaps at the bond is inherent roughness in the initial
 \section{Si$-$Si Fabry P\`{e}rot measurement theory}
 \label{secTheory}
 
-% Figures (shared wavelength axis)
-%	2) Fresnel transmission as a function of wavelength (normal incidence)
-%	4) Example transmission through VG03 thick gap
-
 \subsection{The Si$-$Si interface gap is a low Finesse Fabry-P\`{e}rot etalon}
 
 Our measurement technique exploits the large Fresnel reflection \cite{2001opt4.book.....H} at the Si$-$vacuum interface.  The refractive index of silicon at room temperature ranges from 3.55$-$3.45 from $\lambda = $ 1150$-$2500 nm \cite{2006SPIE.6273E..77F}, one of the largest refractive indices of any conventional material.  The Fresnel reflection is about 30\% per surface.  For comparison, conventional optical materials with refractive indices in the range 1.5$-$1.7 have Fresnel reflection of merely 4$-$7\% per surface.  Figure \ref{figSiIndexFinesse} shows the refractive index as a function of wavelength for room temperature, which we computed using the coefficients from \cite{2006SPIE.6273E..77F}.
@@ -205,9 +201,9 @@ The three important characteristics of the gaps are their axial extent, their la
     \hline
     Hole & 100 & - & 25 mm diameter hole \\     
     Petal & $\sim1$ & $\sim$2000 & long petal lines, Fig. \ref{figVG03pattern} \\         
-    Mesh F & 50 & 40 &  100 $\mu$ square holes, Fig. \ref{figVS20pattern}\\ 
-    Mesh M & 50 & 200 &  500 $\mu$ square holes\\ 
-    Mesh C & 50 & 620 &  1500 $\mu$ square holes\\     
+    Mesh F & 50 & 40 &  100 $\mu$m square holes, Fig. \ref{figVS20pattern}\\ 
+    Mesh M & 50 & 200 &  500 $\mu$m square holes\\ 
+    Mesh C & 50 & 620 &  1500 $\mu$m square holes\\     
         \hline
     \end{tabular}
 \end{center}
@@ -411,11 +407,13 @@ We have shown a method for indirectly measuring the size of gaps in bonded Si wa
 \section{Appendix: X-ray Computed Tomography}
 We acquired x-ray computed tomography of sample VG03.  The measurement details are listed in Table\ref{tab:tablenum4}.
 
-
-%\caption{Summary of X-ray CT measurements for VG03 \label{tab:tablenum4}}
+\begin{table}[h!]
+\caption{Summary of X-ray CT measurements for VG03 \label{tab:tablenum4}}
 \begin{center}
     \begin{tabular}{ll}
+    \hline
     \emph{Parameter (Units)} & \emph{Value} \\ 
+    \hline
     Instrument& Xradia MicroCT \\
      Objective & 0.7X \\
     Accelerating voltage (kV) & 100 \\
@@ -429,8 +427,10 @@ We acquired x-ray computed tomography of sample VG03.  The measurement details a
         Voxel axial pixel resolution ($\mu$m) & 0.5 \\
         Scan date & 2013 August 8 \\
         Sample thickness (mm) & 6.6 \\
+    \hline
      \end{tabular}
 \end{center}
+\end{table}
 
 The axial resolution of the X-ray CT system is about 500 nm, which is much larger than the small ($\sim$ 15$-$90 nm) patterned gaps on many of our bonded samples.  Part VG03 has a cylindrical patterned gap with a $\sim$20 mm diameter and 4000 nm height.  We expected to see the cylindrical gap in about 8 resolution elements, given that the pattern was centered in the 25 mm diameter field of view.  We saw a circular feature that extended over 297 pixels, which corresponds to 11.3 mm, assuming the voxel lateral dimension from the table above, which is reported in the X-ray CT lab measurement details.  The feature...
 
