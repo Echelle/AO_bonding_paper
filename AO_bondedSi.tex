@@ -179,11 +179,14 @@ The three important characteristics of the gaps are their axial extent, their la
     Name & Diameter & Thickness & Pattern Type & Pattern Depth & Notes \\ 
     -  & mm & mm & - & nm & - \\ 
         \hline
-    VG01  & 100  &$1$ $\times$ 2 & None  & - &  \\
+    HA1     & 75   & $10$ $\times$ 2& None & - & \\
+    VG01   & 100 &$1$ $\times$ 2 & None  & - &  \\
     VG02   & 100 & $3.3$ $\times$ 2 &  None  & - &  \\
     VG03   & 100 & $3.3$ $\times$ 2 &  Hole \&Petal & 4000$\pm$200 & See Fig. \ref{figVG03pattern}\\    
-    VG04   & 100 & $1$ $\times$ 2 &  Patchwork Islands & 15 & \\
-    VG09   & 75 & $1$ $\times$ 2 & mesh C & 49 $\pm$6 & \\
+    VG04   & 100 & $1$ $\times$ 2 &  Patchwork Islands & 15$\pm7$ & \\
+    VG07   & 100 & $1$ $\times$ 2 &  mesh C, M, F & 12$\pm7$ & \\ %see email from Victor on 5/16/13
+    VG08   & 100 & $1$ $\times$ 2 &  mesh C, M, F & 12$\pm7$ & \\ 
+    VG09   & 75   & $1$ $\times$ 2 & mesh C & 49 $\pm$6 & \\
     VG15   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F  &14 $\pm$2 & \\
     VS20   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F & 95 $\pm$5 & See Fig. \ref{figVS20pattern}\\
     \hline
@@ -198,7 +201,8 @@ The three important characteristics of the gaps are their axial extent, their la
     \begin{tabular}{ c c c c }
     \hline
     Pattern name & fill factor & minimum feature size & bulk description \\ 
-    - & \% & $\mu$m & '- \\ 
+    - & \% & $\mu$m & - \\ 
+    \hline
     Hole & 100 & - & 25 mm diameter hole \\     
     Petal & $\sim1$ & $\sim$2000 & long petal lines, Fig. \ref{figVG03pattern} \\         
     Mesh F & 50 & 40 &  100 $\mu$ square holes, Fig. \ref{figVS20pattern}\\ 
@@ -227,7 +231,7 @@ The choice of spectral sampling was straightforward.  The spectral sampling was 
 \hline
         Parameter (Units) & Value \\ 
 \hline
-        Spectral sampling interval (nm) & 2.0 \\
+        Spectral sampling interval (nm) & 2.0$-$10.0 \\
         Spectral resolution (nm) & 5 \\
         Time per sample (s) & 0.1 \\
         Available measurement range (nm) & 175-3300 \\
@@ -276,10 +280,10 @@ In this section we describe the spectroscopy of bonded Si pucks.  In some instan
     \hline
 	Date &  Mode  & $\Delta \lambda$ & SBW & Sampling & \# of spectra & Sample IDs \\
 	\emph{mm/dd/yyyy} &  -  & nm & nm & nm & - \\
-     \hline		
-	02/04/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\
-     \hline		
-	02/06/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\	     
+%     \hline		
+%	02/04/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\
+%     \hline		
+%	02/06/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\	     
      \hline		
      	02/18/2013 & Single & 1000$-$2500 & 5.0 & 10.0 &  16 &   -  \\
      	                   &            &                       &       &         &    4 &  Baseline\\	
@@ -296,9 +300,9 @@ In this section we describe the spectroscopy of bonded Si pucks.  In some instan
 %    \hline
 	05/03/2013 & Single & 1000$-$2500 & 5.0 & 5.0  &  28 &   -  \\
      	                   &            &                       &       &         &    8 &  Baseline\\	
-     	                   &            &                       &       &         &    1 &  VG05\\
+     	                   &            &                       &       &         &    1 &  VG05\\ %Consider replacing VG05 with "DSP reference sample"  or something
      	                   &            &                       &       &         &    6 &  VG03\\
-     	                   &            &                       &       &         &    13 &  Other\\
+     	                   &            &                       &       &         &    13 &  Other\\ %These had to do with beam size experiments
     \hline
 	06/07/2013 & Mix & 1000$-$2500 & 5.0 & 5.0  &  43 &   -  \\
 	                   &            &                       &       &         &    11 &  Baseline\\	                   
@@ -306,7 +310,7 @@ In this section we describe the spectroscopy of bonded Si pucks.  In some instan
 	                   &            &                       &       &         &    7 &  VG07\\
 	                   &            &                       &       &         &    6 &  VG08\\
 	                   &            &                       &       &         &    4 &  HA1\\
-	                   &            &                       &       &         &    6 &  other\\
+	                   &            &                       &       &         &    6 &  other\\ % These are mostly just baselines without automatic division
     \hline
 	08/02/2013 & Single & 1000$-$2500 & 5.0 & 2.0  &  17 &   -  \\	
 	                   &            &                       &       &         &    3 &  Baseline\\
@@ -318,7 +322,7 @@ In this section we describe the spectroscopy of bonded Si pucks.  In some instan
     	09/11/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  20 &   -  \\	                   
 	                   &            &                       &       &         &    1 &  Baseline\\
 	                   &            &                       &       &         &    14 &  VS21\\	                   
-	                   &            &                       &       &         &    5 &  Blank\\
+	                   &            &                       &       &         &    5 &  Blank\\ %This is really the same as a baseline
     \hline
     	09/16/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  21 &   -  \\
 	                   &            &                       &       &         &    2 &  Baseline\\
@@ -326,7 +330,7 @@ In this section we describe the spectroscopy of bonded Si pucks.  In some instan
 	                   &            &                       &       &         &    4 &  VG05\\	
 	                   &            &                       &       &         &    4 &  VG12\\
 	                   &            &                       &       &         &    2 &  VG15\\	                   
-	                   &            &                       &       &         &    2 &  VG08\\	                   
+	                   &            &                       &       &         &    2 &  VG08\\
     \hline
     \end{tabular}
 \end{center}
