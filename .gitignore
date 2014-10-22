@@ -1,0 +1,13 @@
+*.rtx
+*.bst
+AO_bondedSi.pdf
+old/
+final/
+*.aux
+*.sty
+*.cls
+reftest4-1.tex
+revtex4-1/
+Makefile
+deprecated/
+
