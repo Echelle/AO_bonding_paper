@@ -77,18 +77,8 @@ The foundation paper on Si bonding came in 1986\cite{1986JAP....60.2987S}.  Afte
 
 \section{Conceivable pitfalls in Si-Si direct bonding}
 
-\subsection{Particles}
+It is conceivable that there are particles in between the Si interfaces.  Particle contaminants are discussed in \cite{Mitani1990}.
 
-There are two major conceivable pitfalls in Si-Si direct bonding.  The obvious pitfall is particle contamination.  Figure \ref{figParticle} shows a schematic of a particle wedged between two flat Si optical surfaces.  A single 0.6 $\mu$m particle can create a dark IR bubble from interference.  In a class 100 cleanroom, the particle volume density could be as high as $\rho=100$ particles/ft$^3$, for particle sizes larger than 0.5 $\mu$m.  What we care about is not the volume number density of particles, but the delivered surface flux $F=\rho(D) v(D)$, where $v(D)$ is the average freefall speed of particles, which is a function of particle size.  Figure 5 of Cooper 1986\cite{doi:10.1080/02786828608959094} shows the surface flux (particles cm$^{-2}$ s$^{-1}$) vs. particle size ($\mu$m).  There will be roughly $10^4$ times more 10 nm sized particles than 1 $\mu$m sized particles.  In other words:
-\begin{eqnarray}
-\log(F) = -2\log(D) + const. \label{eqnParticleFlux}
-\end{eqnarray}
-
-For every obviously detectable IR bubble, there are thousands more particles that could unacceptably degrade the transmission performance.  One key idea that saves the day, is the intuition that the areal fill factor scales at least as fast as $D^2$.  Imagine that the particles serve as miniature tentpoles.  The volume beneath the tentpole looks like a cone.  Since the number density scales as roughly $D^{-2}$, (per the Equation \ref{eqnParticleFlux} above) the total area covered by particles might be constant in $log(D)$.  Simply put, the big particles cover just as much area as the small particles, even though there are many more small particles.  It is further conceivable that the areal fill factor attributable to a tent pole particle scales even faster than $D^2$ since surface energy probably scales inversely with distance of the pieces (\`a la VanDerWaals).  The small particles are even less of a problem than the large particles, since the small ($\sim10-60$ nm) particles will have lower average etalon reflectivity than larger (500-1000 nm) particles.  This last point will become clearer in later sections.
-
-It has been shown\cite{1992JEMat..21..669M} that gases produced at the Si$-$Si interface seep along the interface surfaces.  Pressure builds around catalysts.  In this sense, the size of the particle causing a gap cannot be uniquely identified from observations of the extent of gaps.  In Section \ref{secResults} we address the question of the origin of gaps.  Specifically, are the particles more like \emph{tentpoles}, rigid structures that merely prevent the zippering up of the bond?  Or are the particles more like \emph{catalysts} so that their size is immaterial- the particles merely accelerate the production of gases that bow out the bond?  These are open questions.
-
-\subsection{Surface roughness or large-scale non-conformance}
 Another possible source of gaps at the bond is inherent roughness in the initial surfaces that leads to a failure to conform.  Stiff non-flat Si surfaces will not conform upon contact leaving the complement of the aberrations as an air gap. Unconventional thick ($\sim$ 30 mm) Si pucks are less conformal than wafers are, so we expect thick substrates could have gaps even in the absence of particles.  Most of our thick substrates are optically polished to less than 60 nm peak to valley over the 3 to 4 inch diameter clear aperture.  We assume that if enough pressure is placed on the substrates during bonding, then the surfaces will come in contact and zipper up.  Subsequent annealing will strength the bond.
 
 \section{Si$-$Si Fabry P\`{e}rot measurement theory}
