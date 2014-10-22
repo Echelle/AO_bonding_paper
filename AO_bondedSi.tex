@@ -85,7 +85,9 @@ The foundation paper on Si bonding came in 1986\cite{1986JAP....60.2987S}.  Afte
 \end{figure}
 
 There are two major conceivable pitfalls in Si-Si direct bonding.  The obvious pitfall is particle contamination.  Figure \ref{figParticle} shows a schematic of a particle wedged between two flat Si optical surfaces.  A single 0.6 $\mu$m particle can create a dark IR bubble from interference.  In a class 100 cleanroom, the particle volume density could be as high as $\rho=100$ particles/ft$^3$, for particle sizes larger than 0.5 $\mu$m.  What we care about is not the volume number density of particles, but the delivered surface flux $F=\rho(D) v(D)$, where $v(D)$ is the average freefall speed of particles, which is a function of particle size.  Figure 5 of Cooper 1986\cite{doi:10.1080/02786828608959094} shows the surface flux (particles cm$^{-2}$ s$^{-1}$) vs. particle size ($\mu$m).  There will be roughly $10^4$ times more 10 nm sized particles than 1 $\mu$m sized particles.  In other words:
-$$\log(F) = -2\log(D) + const. \label{eqnParticleFlux}$$
+\begin{eqnarray}
+\log(F) = -2\log(D) + const. \label{eqnParticleFlux}
+\end{eqnarray}
 
 For every obviously detectable IR bubble, there are thousands more particles that could unacceptably degrade the transmission performance.  One key idea that saves the day, is the intuition that the areal fill factor scales at least as fast as $D^2$.  Imagine that the particles serve as miniature tentpoles.  The volume beneath the tentpole looks like a cone.  Since the number density scales as roughly $D^{-2}$, (per the Equation \ref{eqnParticleFlux} above) the total area covered by particles might be constant in $log(D)$.  Simply put, the big particles cover just as much area as the small particles, even though there are many more small particles.  It is further conceivable that the areal fill factor attributable to a tent pole particle scales even faster than $D^2$ since surface energy probably scales inversely with distance of the pieces (\`a la VanDerWaals).  The small particles are even less of a problem than the large particles, since the small ($\sim10-60$ nm) particles will have lower average etalon reflectivity than larger (500-1000 nm) particles.  This last point will become clearer in later sections.
 
@@ -124,9 +126,9 @@ The reflectivity is about 30\% in the wavelength range 1100 to 5000 nm.  We've d
 \label{secTheory}
 There is a key hurdle in computing the transmission spectrum for bonded Si with a finite interface gap- multiple incoherent reflections occur within the Si substrate at normal incidence.  Treatments for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  We adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K}.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si puck with no gap, and second a pair of bonded Si pucks with a gap thickness $d$.  The DSP Si puck with no air gap has a transmission equal to:
 
-$$
-T_{DSP} = \frac{2n}{1+n^2} \label{eqnAbsDSPtrans} \\
-$$
+\begin{eqnarray}
+T_{DSP} = \frac{2n}{1+n^2} \label{eqnAbsDSPtrans}
+\end{eqnarray}
 
 which has an average value of about 53\%.  Note that this transmission is above a na\"ive value of $T_{DSP}=(1-R^2)$, which does not take into account multiple incoherent reflections, and is therefore an underestimate.  Figure \ref{figAbsoluteTrans} shows a plot of Equation \ref{eqnAbsDSPtrans} in the wavelength range 1200$-2500$ nm.  If the Si wafer path thickness is less than the coherence length for the given spectral bandwidth, then the multiple reflections would interfere coherently, and the Si wafer would behave as a Fabry-P\`erot etalon.  This scenario is beyond the scope of this paper, since we are primarily interested in thick substrates with small gaps in between the interfaces.%We work out this behavior in the Appendix and show that in the limit $l>> \lambda^2 / \delta \lambda $ the spectral transmission tends to equation X.  
 
@@ -143,7 +145,9 @@ which has an average value of about 53\%.  Note that this transmission is above 
 
 Now consider a pair of bonded Si pucks with a gap thickness $d$. We derive the absolute transmission of bonded Si substrates with a gap in Equation \ref{eqn:Tetalon} in the Appendix.  We normalize the absolute transmission by the transmission with no gap to isolate the effect of the gap.  We call this normalized transmission the etalon transmission $T_{e}$, since it isolates the effect of the etalon on the transmission.
 
-$$T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP} \\$$
+\begin{eqnarray}
+T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}
+\end{eqnarray}
 
 It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figEtalonRelTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 20 nm and 35 nm.  In Section \ref{secResults} we compare wavelength dependent transmission measurements to by-eye fits of Equation \ref{eqFP}.  
 
@@ -530,16 +534,24 @@ For clarity I will drop the subscripts from $n_{Si}$, since we have already set 
 \label{eqn:SiAirMatrix}
 \end{eqnarray}
 
-Finally, we cascade the matrices together to compute the net transmission through the stack of abstractions.  The result is a $2\times2$ transfer matrix: $$\boldsymbol{M_{net}}=\boldsymbol{M_n}\boldsymbol{M_e}\boldsymbol{M_n}$$  From the matrix transformation equations \cite{2007fuph.book.....S} we know $M_{22}=1/T$.  Taking the inverse of the bottom right element of $\boldsymbol{M_{net}}$, we get the transmission $T_{net}$ through the net optical device: 
+Finally, we cascade the matrices together to compute the net transmission through the stack of abstractions.  The result is a $2\times2$ transfer matrix: 
+
+\begin{eqnarray}
+\boldsymbol{M_{net}}=\boldsymbol{M_n}\boldsymbol{M_e}\boldsymbol{M_n}
+\end{eqnarray}
+
+From the matrix transformation equations \cite{2007fuph.book.....S} we know $M_{22}=1/T$.  Taking the inverse of the bottom right element of $\boldsymbol{M_{net}}$, we get the transmission $T_{net}$ through the net optical device: 
 
 \begin{eqnarray}
 T_{net}=\frac{2 n}{1+ 2n F\sin ^2(\delta/2)+n^2} \label{eqn:FPmatTrans}
 \end{eqnarray}
 
 Compare equations \ref{eqn:FPmatTrans} and \ref{eq:FabPerot}.  The revised transmission has picked up a few factors of 2 and $n$.  While we are at it, let's compute the matrix for the scenario with no intermediate etalon: there are simply two Fresnel interfaces with which light interacts incoherently.  This scenario is the model for a single DSP reference puck. The revised matrix multiplication is simply $\boldsymbol{M_{DSP}}=\boldsymbol{M_n}\boldsymbol{M_n}$.  Taking the inverse of the $M_{22}$ element, we find: 
+
 \begin{eqnarray}
 T_{DSP}=\frac{2 n}{n^2+1}\label{eqn:EqofSummedSlab}
 \end{eqnarray}
+
 which is identical to the result obtained by directly summing the intensities from multiple reflections:
 \begin{eqnarray}
 T_{DSP}=T^2 \sum_{i=0}^{N}R^{2i} \label{eqn:multsum}
@@ -558,10 +570,10 @@ Throughout this article we have assumed that $L >> \lambda^2 / \delta \lambda$, 
 \subsection{DSP Si wafer at high spectral resolution}
 The Fabry-P\`erot etalon transmission is given in Equation \# X (currently, 5).  What we want to evaluate is:
   
-$$
+\begin{eqnarray}
  <T_e> = \lim_{\sin^2(\delta/2) \to 0.5} \frac{1}{1+F\sin^2(\delta/2)} \\
  <T_e> = \frac{1}{1+F/2}
-$$
+\end{eqnarray}
 
 
 
