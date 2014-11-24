@@ -15,7 +15,7 @@ all: AO_bondedSi.pdf
 	rm -rf *.log
 	rm -rf *.blg
 	rm -rf *.dvi
-	latexdiff-so old/AO_bondedSi_20141022.tex final/AO_bondedSi.tex > AO_bondedSi.tex
+	latexdiff old/AO_bondedSi_20141022.tex final/AO_bondedSi.tex > AO_bondedSi.tex
 	pdflatex AO_bondedSi
 	pdflatex AO_bondedSi
 	bibtex AO_bondedSi
