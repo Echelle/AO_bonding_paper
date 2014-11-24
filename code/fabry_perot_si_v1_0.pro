@@ -41,7 +41,6 @@ nwls=n_elements(wl)
 ;2) Set the temperature range
 temp1=295.0 ;K
 temp2=77.0 ;K
-temp3=373.0 ;K
 
 ;3) Determine the refractive index
 n1=fltarr(nwls)
@@ -50,7 +49,6 @@ n3=fltarr(nwls)
 for i=0, nwls-1 do begin
   n1[i]=sellmeier_si(wl[i], temp1)
   n2[i]=sellmeier_si(wl[i], temp2)
-  n3[i]=sellmeier_si(wl[i], temp3)
 endfor
 ;plot, wl, n1, yrange=[3.4, 3.6], psym=10
 ;oplot, wl, n2, color='FF0000'xL, psym=10
@@ -95,7 +93,7 @@ Te3= 1.0 / (1.0+F3*sin(d3/2.0)^2.0)
 ;h) Plot it
 
 device, decomposed=0
-outname='SiIndexAOmgsFinesseFig.eps'
+outname='/Volumes/cambridge/Astronomy/latex/AO_fabry_2014/figs/SiIndexAOmgsFinesseFig.eps'
 psObject = Obj_New("FSC_PSConfig",/Color, /Helvetica, /Bold, Filename=outname, xsize=7.0, ysize=3.5, /encapsulate)
 thisDevice = !D.Name
 Set_Plot, "PS"
@@ -118,14 +116,12 @@ Polyfill, [1,1,0,0,1], [1,0,0,1,1], /NORMAL, COLOR=cgColor('Papaya');'Pale Golde
 
 loadct, 13
 plot, wl, n1, xtitle=xtit, ytitle='n', thick=3.0, charthick=2.0,$
- yrange=[3.4, 3.6], linestyle=0, title='Si Refractive index', /noerase, $
- xrange=[1100.0, 2500.0], xstyle=1, xticks=4
- oplot, wl, n2, color=40, thick=3, linestyle=1
- oplot, wl, n3, color=255, thick=3, linestyle=2
+ yrange=[3.4, 3.6], linestyle=0, title='Si Refractive Index', /noerase, $
+ xrange=[1200.0, 2500.0], xstyle=1, charsize=0.8
+ oplot, wl, n2, color=255, thick=3, linestyle=1
 legend, [ strcompress('T= '+string(fix(temp1))+' K'), $
-          string(fix(temp2))+' K', $
-          string(fix(temp3))+' K'], colors=[0, 40, 255], $
-          linestyle=[0, 1, 2], /TOP_LEGEND, thick=3, /right_legend
+          string(fix(temp2))+' K'], colors=[0, 255], $
+          linestyle=[0, 1], /TOP_LEGEND, thick=3, /right_legend
  
 !p.multi=[1, 2, 1, 0, 1]
 !p.thick = 3
@@ -136,9 +132,8 @@ tit='Coeffcient of Finesse'
 
 plot, wl, F1, xtitle=xtit, ytitle='F', thick=3.0, charthick=2.0,$
  yrange=[2.4, 2.7], linestyle=0, title=tit, /noerase, $
- xrange=[1100.0, 2500.0], xstyle=1, xticks=4
-oplot, wl, F2, color=40, linestyle=1, thick=3
-oplot, wl, F3, color=255, linestyle=2, thick=3
+ xrange=[1200.0, 2500.0], xstyle=1, charsize=0.8
+oplot, wl, F2, color=255, linestyle=1, thick=3
 
 ;plot, wl, Te1, xtitle=xtit, ytitle=ytit, thick=3.0, charthick=2.0,$
 ; yrange=[0.00, 1.00], psym=10, title=tit, /noerase, $
@@ -154,7 +149,7 @@ Obj_Destroy, psObject
 
 !P.multi=0
 device, decomposed=0
-outname='fresnel_Si_index.eps'
+outname='/Volumes/cambridge/Astronomy/latex/AO_fabry_2014/figs/fresnel_Si_index.eps'
 psObject = Obj_New("FSC_PSConfig",/Color, /Helvetica, /Bold, Filename=outname, xsize=4.0, ysize=3.5, /encapsulate)
 thisDevice = !D.Name
 Set_Plot, "PS"
@@ -178,9 +173,8 @@ Polyfill, [1,1,0,0,1], [1,0,0,1,1], /NORMAL, COLOR=cgColor('Papaya');'Pale Golde
 tit='Fresnel transmission prediction'
 plot, wl, fresnel_t1, xtitle=xtit, ytitle=ytit, thick=3.0, charthick=2.0,$
  yrange=[0.45, 0.55], psym=10, title=tit, /noerase, $
- xrange=[1100.0, 2500.0], xstyle=1, xticks=4
+ xrange=[1200.0, 2500.0], xstyle=1, xticks=4
 oplot, wl, fresnel_t2, color=40, psym=10, thick=3
-oplot, wl, fresnel_t3, color=255, psym=10, thick=3
 oplot, wl, d.dat[2, *]/100.0, linestyle=1
 oplot, wl, d.dat[16, *]/100.0, linestyle=2
 
