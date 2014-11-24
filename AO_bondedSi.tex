@@ -131,9 +131,12 @@ which has an average value of about 53\%.  Note that this transmission is above 
 \caption{Modeled absolute transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 35 nm (cyan triple-dot dashed curve)\label{figAbsoluteTrans}.  The absolute transmission through Si depends on wavelength since the refractive index depends minutely on wavelength.  This curve is only accurate for normal incidence transmission.  Furthermore, the curve assumes the multiple reflections within the Si substrates add incoherently as discussed in detail in Appendix \ref{sec:Append-IMRTMM}.}
 \end{figure}
 
+
+
+
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.65\columnwidth]{figs/Rel_etalon_trans_0-60nm.pdf}}
-\caption{Modeled etalon transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 60 nm (cyan triple-dot dashed curve)\label{figEtalonRelTrans}.  The curves are examples from a family defined in Equation \ref{eqFP}.   The limit of no gap is 100\% transmissive, compared to a DSP reference.  A 60 nm gap degrades the transmission over a DSP reference by 12\% at 1200 nm.}
+\centerline{\includegraphics[width=0.65\columnwidth]{figs/Rel_etalon_trans_stack.pdf}
+\caption{Modeled etalon transmission through a silicon substrate with no gap (top black solid curve), and small gaps of axial extent 20 nm (red dashed curve) and 60 nm (cyan triple-dot dashed curve)\label{figEtalonRelTrans}.  The curves are examples from a family defined in Equation \ref{eqFP}.   The limit of no gap is 100\% transmissive, compared to a DSP reference.  A 60 nm gap degrades the transmission over a DSP reference by 12\% at 1200 nm. Modeled etalon transmission through a silicon substrate with gaps of axial extent 35 nm (red dotted curve), 350 nm (green dash-dot curve), and 3500 nm (blue long-dashed curve).  The curves are examples from a family defined in Equation \ref{eqFP}.  The 3500 nm gap curve has obvious Fabry-P\`erot fringes, whereas the 35 and 350 nm gap curves vary smoothly with wavelength.}
 \end{figure}
 
 Now consider a pair of bonded Si samples with a gap thickness $d$. We derive the absolute transmission of bonded Si substrates with a gap in Equation \ref{eqn:Tetalon} in the Appendix.  We normalize the absolute transmission by the transmission with no gap to isolate the effect of the gap.  We call this normalized transmission the etalon transmission $T_{e}$, since it isolates the effect of the etalon on the transmission.
@@ -142,12 +145,7 @@ Now consider a pair of bonded Si samples with a gap thickness $d$. We derive the
 T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}
 \end{eqnarray}
 
-It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figEtalonRelTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 20 nm and 35 nm.  In Section \ref{secResults} we compare wavelength dependent transmission measurements to by-eye fits of Equation \ref{eqFP}.  
-
-\begin{figure}[htbp]
-\centerline{\includegraphics[width=0.65\columnwidth]{figs/20140421_absoluteC.pdf}}
-\caption{Modeled etalon transmission through a silicon substrate with gaps of axial extent 35 nm (red dotted curve), 350 nm (green dash-dot curve), and 3500 nm (blue long-dashed curve)\label{figEtalonRelTrans}.  The curves are examples from a family defined in Equation \ref{eqFP}.  The 3500 nm gap curve has obvious Fabry-P\`erot fringes, whereas the 35 and 350 nm gap curves vary smoothly with wavelength.} 
-\end{figure}
+It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figEtalonRelTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 0, 20, 35, 60, 350, and 3500 nm.  In Section \ref{secResults} we compare wavelength dependent transmission measurements to by-eye fits of Equation \ref{eqFP}.  
 
 \section{Imbedding gaps of known sizes}
 
