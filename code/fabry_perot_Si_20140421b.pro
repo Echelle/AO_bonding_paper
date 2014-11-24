@@ -79,7 +79,7 @@ nwls=n_elements(wl)
  plottit=' '
  ydat=reform(d.dat[6, *])/100.0
  corrterm=reform(d.dat[13, *])/100.0
- outname='20140421_absoluteB.eps'
+ outname='/Volumes/cambridge/Astronomy/latex/AO_fabry_2014/figs/Rel_etalon_trans_0-60nm.eps'
  ;ydat=ydat/corrterm
   ;predictions
  g3L=5.0
@@ -95,8 +95,7 @@ T_imr0 = incoh_mult_reflect_v2_0(wl, 0.0)
 t0=T_imr0.t_net
 
 
-;quantify predictions:
-  ;low end: 49-6 = 43 nm gap, 20% fill factor
+
 pred1 =incoh_mult_reflect_v2_0(wl, g3L)
 p1_dat = (ffL*pred1.t_net +(1.0-ffL)*t0) / t0
   ;high end: large gap, high fill factor
@@ -104,7 +103,7 @@ pred2 =incoh_mult_reflect_v2_0(wl, g3H)
 p2_dat = (ffH*pred2.t_net +(1.0-FFH)*t0) / t0
 
 pred3 = incoh_mult_reflect_v2_0(wl, 20.0)
-pred4 = incoh_mult_reflect_v2_0(wl, 35.0)
+pred4 = incoh_mult_reflect_v2_0(wl, 60.0)
 
 print, 1
 ;---------------------
@@ -150,8 +149,8 @@ oplot, wl, pred3.t_net/pred3.t_dsp, color=255, linestyle=2, thick=3.0
 oplot, wl, pred4.t_net/pred3.t_dsp, color=100, linestyle=4, thick=3.0
 
 
-AL_Legend, ['No gap', '20 nm gap', '35 nm gap'], $
-linestyle=[0, 2, 4], thick=[3,3,3], Color=[0, 255, 100], Position=[1300,0.93] 
+AL_Legend, ['No gap', '20 nm gap', '60 nm gap'], $
+linestyle=[0, 2, 4], thick=[3,3,3], Color=[0, 255, 100], Position=[1800,0.93] 
 
 Device, /Close_File
 Set_Plot, thisDevice
