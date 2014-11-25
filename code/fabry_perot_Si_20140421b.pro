@@ -94,14 +94,6 @@ nwls=n_elements(wl)
 T_imr0 = incoh_mult_reflect_v2_0(wl, 0.0)
 t0=T_imr0.t_net
 
-
-
-pred1 =incoh_mult_reflect_v2_0(wl, g3L)
-p1_dat = (ffL*pred1.t_net +(1.0-ffL)*t0) / t0
-  ;high end: large gap, high fill factor
-pred2 =incoh_mult_reflect_v2_0(wl, g3H)
-p2_dat = (ffH*pred2.t_net +(1.0-FFH)*t0) / t0
-
 pred3 = incoh_mult_reflect_v2_0(wl, 20.0)
 pred4 = incoh_mult_reflect_v2_0(wl, 60.0)
 
