@@ -19,7 +19,8 @@ pi=3.14159265D0
 
 ;0) Import the data, manipulate the arrays [this should be a sub-function]
 fn1='20130218_cary5000_Si_all.csv'
-dir1='/Volumes/cambridge/Astronomy/silicon/ACT/bonding/cary5000/20130218'
+;dir1='/Volumes/cambridge/Astronomy/silicon/ACT/bonding/cary5000/20130218'
+dir1='/Users/gully/Astronomy/Latex/AO_bonding_paper/data/'
 cd, dir1
 ;at=ascii_template(fn1) ;you must use "GROUP ALL in the third ascii-template window!!"
 ;save, at, /verbose, filename=file_basename(fn1, '.csv')+'.sav'
@@ -52,10 +53,12 @@ Tp_Tw2Abs=abs(Tp_Tw2-1.0)
 ;2) Plots
 ;---------------------
 device, decomposed=1
-outdir='/Users/gully/IDLWorkspace/FabryPerot/figs/'
-outname='fpAbsorbfig.eps'
+;outdir='/Users/gully/IDLWorkspace/FabryPerot/figs/'
+;outdir='/Users/gully/Astronomy/Latex/AO_bonding_paper/figs/'
+outname='fpAbsorbfig_alt.eps'
 psObject = Obj_New("FSC_PSConfig",/Color, /Helvetica, /Bold, $
-            Filename=outdir+outname, xsize=7.5, ysize=4.0, /encapsulate)
+            Filename=outname, xsize=4.0, ysize=4.0, /encapsulate)
+            
 thisDevice = !D.Name
 Set_Plot, "PS"
 !p.font=0
@@ -72,37 +75,23 @@ device, /helvetica
 ;ytit='T!De!N'
 ytit='Transmission ratio'
 
-!p.multi=[0, 2, 1, 0, 1]
 
 Polyfill, [1,1,0,0,1], [1,0,0,1,1], /NORMAL, COLOR=cgColor('Papaya');'Pale Goldenrod')
 
 loadct, 13
 plot, wl, Tp_Tw2, xtitle=xtit, ytitle=ytit, thick=3.0, charthick=2.0,$
- yrange=[0.96, 1.04], psym=10, charsize=0.8, $
+ yrange=[0.979, 1.06], psym=10, charsize=0.8, $
  xrange=[1000.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase
  
 oplot, wl, Tp_Tw2, color=255, psym=10, thick=3.0
 ones=wl*0.0+1.0
 oplot, wl, ones, linestyle=2, thick=3.0
 ;oplot, wl, reform(d.dat[13, *]/100.0), color=100.0, linestyle=1, thick=3.0
-oplot, [1200, 1200], [1.0E-8, 1.0E6], color=0, linestyle=2, thick=3.0
-
-leg_text=['Measured', $
-          'No drift']
-legend,leg_text,linestyle=[10, 2], color=[255,0], $
-  position=[1300.0, 0.8], charthick=2.0
-
-!p.multi=[1, 2, 1, 0, 1]
-
-loadct, 13
-plot, wl, Tp_Tw2Abs, xtitle=xtit, ytitle='Absolute deviation', thick=3.0, charthick=2.0,$
- yrange=[1.0E-5, 100.0], psym=10, /ylog, charsize=0.8, $
- xrange=[1000.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase
- 
-oplot, wl, Tp_Tw2Abs, color=255, psym=10, thick=3.0
-oplot, [1200, 1200], [1.0E-8, 1.0E6], color=0, linestyle=2, thick=3.0
-oplot, [800, 3000], [0.002, 0.002], color=100, linestyle=1, thick=3.0
-
+oplot, [1250, 1250], [1.0E-8, 1.0E6], color=0, linestyle=2, thick=3.0
+oploterror, [1600], [1.05], [0.002], [0.002], psym=3
+xyouts, 1650, 1.049, 'Typical drift error'
+oploterror, [1600], [1.04], [0.0003], [0.0003], psym=3
+xyouts, 1650, 1.039, 'Typical random error'
 
 
 Device, /Close_File
