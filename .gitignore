@@ -1,3 +1,5 @@
+*.pptx
+data/
 *.rtx
 *.bst
 AO_bondedSi.pdf
