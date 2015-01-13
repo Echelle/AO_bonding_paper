@@ -1,7 +1,6 @@
 *.pyc
 .ipynb_checkpoints
 *.pptx
-data/
 *.rtx
 *.bst
 AO_bondedSi.pdf
