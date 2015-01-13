@@ -69,6 +69,26 @@ def T_gap_Si(lam_nm, dgap_nm):
     return T_net
 
 
+def T_gap_Si_fast(lam_nm, dgap_nm, n1):
+    ''' return the Transmission spectrum for a given axial extent of Air gap in Si
+    	This fast version requires input of the refractive index, n(lam)
+        Transmission is absolute
+    ''' 
+
+    #Silicon reflectance (Fresnel losses at 1 interface)
+    R0 = ((n1-1.0)/(n1+1.0))**2.0
+
+    #Coefficient of Finesse
+    F = 4.0*R0/(1.0-R0)**2.0
+
+    delta = 2.0*3.141592654*dgap_nm/lam_nm
+
+    T_net=2.0*n1/(1.0+2.0*n1*F*np.sin(delta)**2.0+n1**2.0)
+
+    return T_net
+
+
+
 def T_gap_Si_withFF(wl_nm, d_gap, ff):
     '''computes weighted average model for a given gap size and fill factor
         
@@ -78,3 +98,14 @@ def T_gap_Si_withFF(wl_nm, d_gap, ff):
         ff: fill factor of gap area as a fraction (0<ff<1)
     '''
     return ff*T_gap_Si(wl_nm, d_gap) + (1.0-ff)*T_gap_Si(wl_nm, 0.0)
+    
+    
+def T_gap_Si_withFF_fast(wl_nm, d_gap, ff, n1):
+    '''computes weighted average model for a given gap size and fill factor
+        
+        *inputs*
+        wl: wavelength in nm
+        d_gap: axial extent of the gap in nm
+        ff: fill factor of gap area as a fraction (0<ff<1)
+    '''
+    return ff*T_gap_Si_fast(wl_nm, d_gap, n1) + (1.0-ff)*T_gap_Si_fast(wl_nm, 0.0, n1)
