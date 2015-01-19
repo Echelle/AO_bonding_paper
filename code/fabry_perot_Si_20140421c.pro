@@ -20,27 +20,14 @@ pi=3.14159265D0
 ;4.2) Set the gap widths
 ;5) Plot the data and overlay the models 
 
-
-;0) Import the data, manipulate the arrays [this should be a sub-function]
-fn1='20130916_cary5000_astro.csv'
-dir1='/Volumes/cambridge/Astronomy/silicon/ACT/bonding/cary5000/20130916/'
-cd, dir1
-;at=ascii_template(fn1) ;you must use "GROUP ALL in the third ascii-template window!!"
-;all the values must be STRINGS
-;save, at, /verbose, filename=file_basename(fn1, '.csv')+'.sav'
-restore, file_basename(fn1, '.csv')+'.sav', /verbose
-d=cary_5000_csv(fn1, at)
-
 ;1) Wavelength
-wl=float(d.wl)
+wl= 1200.0 + 2.0*findgen(650);float(d.wl)
 nwls=n_elements(wl)
 
 
 ;-----Values------
- plottit=' '
- ydat=reform(d.dat[6, *])/100.0
- corrterm=reform(d.dat[13, *])/100.0
- outname='/Volumes/cambridge/Astronomy/latex/AO_fabry_2014/figs/Rel_etalon_trans_stack.eps' 
+ plottit=' ' 
+ outname='Astronomy/Latex/AO_bonding_paper/figs/Rel_etalon_trans_stack.eps'
 ;------------------
 
 
@@ -60,9 +47,9 @@ pred5 = incoh_mult_reflect_v2_0(wl, 3500.0)
 ;---------------------
 ;3) Plots
 ;---------------------
-device, decomposed=1
+device, decomposed=0
 psObject = Obj_New("FSC_PSConfig",/Color, /Helvetica, /Bold, $
-            Filename=outname, xsize=5.0, ysize=7.0, /encapsulate)
+            Filename=outname, xsize=4.0, ysize=8.0, /encapsulate)
 thisDevice = !D.Name
 Set_Plot, "PS"
 !p.font=0
@@ -78,51 +65,58 @@ c1=ceil(findgen(nc)/nc*255)
 
 xtit=greek('lambda', /append_font)+' (nm)'
 device, /helvetica
-;ytit='T!De!N'
-ytit='Etalon Transmission'
 
 Polyfill, [1,1,0,0,1], [1,0,0,1,1], /NORMAL, COLOR=cgColor('Papaya');'Pale Goldenrod')
  !p.multi=[0,1,2,0,0]    
 
 loadct, 13
-multiplot,[1,2]
+multiplot,[1,3]
+
+plot, wl, wl*0.0, ytitle='Absolute Transmission', thick=3.0, charthick=2.0,$
+ yrange=[0.5, 0.56], psym=10, $
+ xrange=[1200.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase
+
+oplot, wl, pred1.t_dsp, color=0, linestyle=0, thick=3.0
+oplot, wl, pred1.t_net, color=50, linestyle=1, thick=3.0
+oplot, wl, pred2.t_net, color=100, linestyle=2, thick=3.0
+oplot, wl, pred3.t_net, color=150, linestyle=3, thick=3.0
+
+
+AL_Legend, ['No gap', '20 nm gap', '35 nm gap', '60 nm gap'], $
+linestyle=[0, 1, 2, 3], thick=[3,3,3,3], Color=[0, 50, 100, 150], Position=[1250,0.557]   
+
+
+multiplot
+
+plot, wl, wl*0.0, ytitle='Gap Transmission', thick=3.0, charthick=2.0,$
+ yrange=[0.9, 1.01], psym=10, $
+ xrange=[1200.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase
+
+oplot, wl, pred1.t_dsp/pred1.t_dsp, color=0, linestyle=0, thick=3.0
+oplot, wl, pred1.t_net/pred1.t_dsp, color=50, linestyle=1, thick=3.0
+oplot, wl, pred2.t_net/pred2.t_dsp, color=100, linestyle=2, thick=3.0
+oplot, wl, pred3.t_net/pred3.t_dsp, color=150, linestyle=3, thick=3.0   
+
+multiplot
     
-plot, wl, ydat, ytitle=ytit, thick=3.0, charthick=2.0,$
- yrange=[0.0, 1.1], psym=10, $
- xrange=[1200.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase, $
- title=plottit
+plot, wl, wl*0.0, xtitle=xtit, ytitle='Gap Transmission', thick=3.0, charthick=2.0,$
+ yrange=[0.0, 1.04], psym=10, xticks=5, $
+ xrange=[1200.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase
 
 oplot, wl, pred3.t_dsp/pred3.t_dsp, color=0, linestyle=0, thick=3.0
 oplot, wl, pred3.t_net/pred3.t_dsp, color=150, linestyle=3, thick=3.0
 oplot, wl, pred4.t_net/pred3.t_dsp, color=225, linestyle=4, thick=3.0
 oplot, wl, pred5.t_net/pred3.t_dsp, color=255, linestyle=5, thick=3.0
 
+AL_Legend, ['No gap','60 nm gap', '350 nm gap', '3500 nm gap'], $
+linestyle=[0, 3, 4, 5], thick=[3,3,3,3], Color=[0,150, 225, 255], Position=[1250,0.39] 
 
-AL_Legend, ['60 nm gap', '350 nm gap', '3500 nm gap'], $
-linestyle=[3, 4, 5], thick=[3,3,3], Color=[150, 225, 255], Position=[1800,0.3] 
-
-
-multiplot
-
-plot, wl, ydat, xtitle=xtit, ytitle=ytit, thick=3.0, charthick=2.0,$
- yrange=[0.9, 1.02], psym=10, $
- xrange=[1200.0, 2500.0], xstyle=1, ystyle=1, /nodata, /noerase, $
- title=plottit
-
-oplot, wl, pred1.t_dsp/pred1.t_dsp, color=0, linestyle=0, thick=3.0
-oplot, wl, pred1.t_net/pred1.t_dsp, color=50, linestyle=1, thick=3.0
-oplot, wl, pred2.t_net/pred2.t_dsp, color=100, linestyle=2, thick=3.0
-oplot, wl, pred3.t_net/pred3.t_dsp, color=150, linestyle=3, thick=3.0
-
-
-AL_Legend, ['No gap', '20 nm gap', '35 nm gap', '60 nm gap'], $
-linestyle=[0, 1, 2, 3], thick=[3,3,3,3], Color=[0, 50, 100, 150], Position=[1800,0.936]   
 
 multiplot,/reset      
 
 Device, /Close_File
 Set_Plot, thisDevice
-Obj_Destroy, psObject¡
+Obj_Destroy, psObject
 
 print, 1
 
