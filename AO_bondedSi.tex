@@ -21,8 +21,9 @@
 \usepackage{amsmath,amssymb,graphicx}
 \usepackage{multirow}
 \usepackage{setspace}
-\usepackage{longtable}
+\usepackage{caption}
 \usepackage{subcaption}
+%\usepackage{longtable}
 
 %\usepackage{draftwatermark}
 %\SetWatermarkText{DRAFT}
@@ -108,7 +109,7 @@ F \equiv \frac{4R}{(1-R)^2} \label{Eq:coeffF}
 The reflectivity $R$ (Equation \ref{Eq:FresnelR}) is about 30\% in the wavelength range 1100 to 5000 nm.  We define the coefficient of finesse\verb|\cite{2007fuph.book.....S}|, $F$ (Equation \ref{Eq:coeffF}), in the customary way to encapsulate the Fabry-P\`{e}rot etalon's dependence on reflectivity.  The right panel of Figure \ref{figSiIndexFinesse} shows the coefficient of finesse as a function of wavelength for $T = 295\;$K and $T = 77\;$K.  Si absorbs negligibly longward of $\lambda$ = 1250 nm, which we verified by comparing the transmission of Si reference samples of different thicknesses (Figure \ref{figSiAbsorbfig}).  We computed the ratio of transmissions of double side polished Si wafers of different thicknesses.  Specifically, we evaluated the transmission ratio at each wavelength bin from 1000 to 2500 nm, from the transmission of a thin ($\sim0.5$ mm) Si wafer divided by that of a 3 mm thick Si puck.  Absorption is detected shortward of 1250 nm.  Figure \ref{figSiAbsorbfig} verifies a key assumption that we make when comparing the transmission of scrap Si of different provenance and thickness.  Specifically, double side polished 3 mm thick Si pucks and 0.5 mm thick Si wafers have indistinguishable transmission at the $<0.2$\% level longward of 1250 nm.  The Si refractive index is indistinguishable from sample to sample for the wavelength ranges we care about- the non-absorbing wavelengths greater than about 1250 nm.  \verb|\cite{2006SPIE.6273E..77F}| cites the wide variety of values for refractive index from the literature as evidence that batch-specific Si should be used as reference for cases in which absolute accuracy greater than $\pm5\times10^{-3}$ is desired.  An absolute deviation of $\pm5\times10^{-3}$ in refractive index corresponds to a Fresnel transmission difference of about 0.2\%, which is comparable to our measurement uncertainty.  In the next subsection we work out the wavelength dependent transmission for the air etalon.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.95\columnwidth]{figs/fpAbsorbfig_alt}}
+\centerline{\includegraphics[width=0.40\columnwidth]{figs/fpAbsorbfig_alt}}
 \caption{Ratio of transmission of a 0.5 mm thick Si wafer to that of a 3.0 mm thick Si puck.  \label{figSiAbsorbfig} We detect Si absorption shortward of $\lambda$ = 1250 nm.  The individual measurements have correlated uncertainties attributable to lamp drift at the level of 0.2\%.  The random uncertainties are typically about 0.02\% per sample, though some wavelength regions (e.g. 1700-1900 nm) demonstrate much greater per sample uncertainties.  Absorption longward of 1250 nm (vertical dashed line) is negligible.}
 \end{figure}
 
@@ -124,7 +125,7 @@ which has an average value of about 53\%.  Note that this transmission is above 
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.65\columnwidth]{figs/etalon_trans.pdf}}
+\centerline{\includegraphics[width=0.40\columnwidth]{figs/etalon_trans.pdf}}
 \caption{\label{figAbsoluteTrans}The family of curves for transmission as a function of wavelength for various gap sizes in bonded Si optics.  \emph{Top panel}: Absolute transmission through a Si substrate with no gap (top denim-blue solid curve), and small gaps of axial extent 20 nm (green dashed curve), 35 nm (red dash-dotted curve), and 60 nm (purple dotted curve).  The absolute transmission through Si depends on wavelength since the refractive index depends minutely on wavelength.  This curve is only accurate for normal incidence transmission.  Furthermore, the curve assumes the multiple reflections within the Si substrates add incoherently as discussed in detail in Appendix \ref{sec:Append-IMRTMM}.  \emph{Middle panel}: The ``Gap Transmission'', defined as the Absolute transmission through a sample normalized by the absolute transmission through a gapless sample. The gap sizes and colors are the same as in the top panel.  \emph{Bottom panel}: ``Gap Transmission'' for larger gaps, spanning 0-3500 nm.  The 3500 nm sized gap (cyan solid line), demonstrates characteristic Fabry-P\`erot etalon fringes.}
 \end{figure}
 
@@ -306,62 +307,56 @@ We constructed the predicted transmission  for different artificially induced ga
 \subsection{Spectra of direct bonded Si with known gap sizes}
 Figures \ref{VS21specm1} to \ref{VS21specf1} show examples of the predicted and measured IR spectra.  Figure \ref{VS21specm1} shows an example spectrum in which the measurement is consistent with the prediction for a gap with the known conditions.  Meanwhile, Figure \ref{VS21specf1} shows a spectrum in which the measurement marginally exceeds the prediction (by about $\sim 2 \sigma$).  Other parts show less consistency with the prediction.
 
-
-
+\begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.5\textwidth}
+              \includegraphics[width=\textwidth]{figs/VG03_corner.pdf}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 position 1}
+		\label{figVG03_corner}
+        \end{subfigure}
+	
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{figs/VG03_f100.pdf}
+                \caption{Measured spectrum and fit of VG03 position 1}
+                \label{figVG03_f100}
+        \end{subfigure}
+\caption{ \emph{Top panel:} Corner plot of MCMC samples in our non-linear model fit of the transmission spectrum of Si optic part \# VG03.  The physical parameters of the model are the axial extent of the gap $d$, and the areal fill factor $f$ of the gap over the measurement region.  The MCMC model fit also includes nuisance parameters $a$ and $s$ (not shown) for the Gaussian Process covariance model.  \emph{Bottom panel:}Transmission through bonded Si sample VG03, normalized by the transmission of a DSP Si wafer. VG03 has a gap of axial extent $\sim4\;\mu$m implanted in its interface.  The measured spectrum (black stepped line) in this region shows characteristic Fabry-P\`erot fringes of constructive and destructive interference.  The only tunable parameters of the model are the gap axial extent, $d$ and fill factor $f$.  No scaling has been applied.  The red dashed line shows the best model fit with $d$ = 3960 $\pm$ 2 nm, consistent with 100\% fill factor.  The blue band shows the collective locations of 60 random draws from the Gaussian process model, described in the text.  Wavelengths shortward of 1250 nm (gray band) were not included in the fit, since Si is absorptive there.\label{figVG03full} }
+\end{figure}
 
 
 \begin{figure}[htbp]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG03_corner.pdf}
-              \caption{Corner plot of our fitted gap size $d$ and fill factor $f$ for VG03}
-		\label{figVG03_f100}
+              \includegraphics[width=\textwidth]{figs/VG03p2_corner.pdf}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 position 2}
+		\label{figVG03p2_corner}
         \end{subfigure}
-	
 	
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG03_f100.pdf}
-                \caption{Measured spectrum and model fit of VG03}
-                \label{figVG03_corner}
+                \includegraphics[width=\textwidth]{figs/VG03_f045.pdf}
+                \caption{Measured spectrum and fit of VG03 position 2}
+                \label{figVG03_f045}
         \end{subfigure}
-        \caption{Pictures of animals}\label{fig:animals}
-\caption{ 
-
-\emph{Top panel:} Corner plot of MCMC samples in our non-linear model fit of the transmission spectrum of Si optic part \# VG03.  The physical parameters of the model are the axial extent of the gap $d$, and the areal fill factor $f$ of the gap over the measurement region.  The MCMC model fit also includes nuisance parameters $a$ and $s$ (not shown) for the Gaussian Process covariance model.
-
-\emph{Bottom panel:}Transmission through bonded Si sample VG03, normalized by the transmission of a DSP Si wafer. VG03 has a gap of axial extent $\sim4\;\mu$m implanted in its interface.  The measured spectrum (black stepped line) in this region shows characteristic Fabry-P\`erot fringes of constructive and destructive interference.  The only tunable parameters of the model are the gap axial extent, $d$ and fill factor $f$.  No scaling has been applied.  The red dashed line shows the best model fit with $d$ = 3960 $\pm$ 2 nm, consistent with 100\% fill factor.  The blue band shows the collective locations of 60 random draws from the Gaussian process model, described in the text.  Wavelengths shortward of 1250 nm (gray band) were not included in the fit, since Si is absorptive there.
-}
+\caption{ Same as Figure \ref{figVG03full}, but the measurement was in a region where less than $<5\%$ of the area exhibited the $\sim4\; \mu$m gap.  The measured spectrum in this region shows subdued Fabry-P\`erot fringes of constructive and destructive interference. The model derived axial extent is 4094 $\pm$ 5 nm covering a fill factor of 4.58 $\pm$ 0.06$\%$. \label{figVG03part}}
 \end{figure}
 
 
-
-
-\begin{figure}
+\begin{figure}[htbp]
         \centering
-        \begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{gull}
-                \caption{A gull}
-                \label{fig:gull}
-        \end{subfigure}%
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{tiger}
-                \caption{A tiger}
-                \label{fig:tiger}
+        \begin{subfigure}[b]{0.5\textwidth}
+              \includegraphics[width=\textwidth]{figs/VG12_corner.pdf}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG12}
+		\label{figVG12_corner}
         \end{subfigure}
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{mouse}
-                \caption{A mouse}
-                \label{fig:mouse}
+	
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{figs/VG12_f50.pdf}
+                \caption{Measured spectrum and fit of VG12 position 2}
+                \label{figVG12_f50}
         \end{subfigure}
-        \caption{Pictures of animals}\label{fig:animals}
+\caption{ Same as Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG12, which has an imbedded gap of axial extent $d=49\pm6\;$nm with fill factor $f=0.5$.  The measured spectrum in this region shows a clear deficit of transmission from the gapless counterparts.  The measured spectrum also shows a deficit of transmission compared to the predicted transmission of a 49 $\pm6\;$nm gap with 50\% fill factor (green apple shaded color band).  The discord between prediction and measurement could be due to several factors including an underestimate of the intrinsic gap size, an underestimate of the intrinsic fill factor, or an additional gap in excess of the prediction.  We favor the latter interpretation, since undesired gaps are common in these direct-bonded Si samples that have not undergone high-temperature thermal annealing.
+\label{figVG12}}
 \end{figure}
-
-
-
 
 A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  The cases in which predicted spectroscopy differs from measurement are due to either a bona-fide detection of a gap above and beyond the implanted gap, or some measurement artifacts.  In the next section we address mitigation of artifacts.
 
