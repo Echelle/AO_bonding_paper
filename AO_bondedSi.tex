@@ -112,7 +112,7 @@ The reflectivity $R$ (Equation \ref{Eq:FresnelR}) is about 30\% in the wavelengt
 
 \subsection{Predicted transmission spectrum for bonded Si with finite interface gap}
 \label{secTheory}
-A pair of bonded silicon wafers or pucks with a small gap actually forms there coupled cavities with the air gap as the the central cavity.  The outer cavities, those within the Si, however, were not produced with coherence in mind.  Their sides are not necessarily flat and parallel to the required level and the specifics of their deviation from perfect etalons are usually not known to the level necessary to treat them as oherent structures in the analysis.  The multiple internal reflections within the Si therefore present a hurdle to an analysis of the air gaps where the gap size si small enough that the cavity it forms can always be treated as a coherent structure.  Treatments for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  We adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K} to deal with the cavities within the Si.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si sample with no gap, and second a pair of bonded Si samples with a gap thickness $d$.  The DSP Si sample with no air gap has a transmission equal to:
+A pair of bonded silicon wafers or pucks with a small gap actually forms their coupled cavities with the air gap as the the central cavity.  The outer cavities, those within the Si, however, were not produced with coherence in mind.  Their sides are not necessarily flat and parallel to the required level and the specifics of their deviation from perfect etalons are usually not known to the level necessary to treat them as oherent structures in the analysis.  The multiple internal reflections within the Si therefore present a hurdle to an analysis of the air gaps where the gap size si small enough that the cavity it forms can always be treated as a coherent structure.  Treatments for multiple coherent reflections have been described in detail in the optics literature \cite{2007fuph.book.....S}.  The wave transfer matrix technique treats each dielectric interface as a matrix with elements relating the pre- and post- interface complex amplitudes in the left and right directions.  We adapted the wave transfer technique for incoherent interactions \cite{2002ApOpt..41.3978K} to deal with the cavities within the Si.  Specifically I constructed an incoherent wave transfer matrix whose elements relate the intensities (and not complex amplitudes) before and after an interface.  The details are worked out in Appendix \ref{sec:Append-IMRTMM}.  We computed the transmission for two scenarios- first a double side polished (DSP) Si sample with no gap, and second a pair of bonded Si samples with a gap thickness $d$.  The DSP Si sample with no air gap has a transmission equal to:
 
 \begin{eqnarray}
 T_{DSP} = \frac{2n}{1+n^2} \label{eqnAbsDSPtrans}
@@ -132,7 +132,7 @@ Now consider a pair of bonded Si samples with a gap thickness $d$. We derive the
 T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}
 \end{eqnarray}
 
-It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figEtalonRelTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 0, 20, 35, 60, 350, and 3500 nm.  In Section \ref{secResults} we compare wavelength dependent transmission measurements to by-eye fits of Equation \ref{eqFP}.  Depending upon the intended operating wavelength, gaps as small as 35-60 nm can cause losses comparable to or greater than the losses produced by antireflection coatings.
+It is clear that in the limit $\lim_{d \rightarrow 0}$, the etalon approaches 100\% transmission.  Figure \ref{figAbsoluteTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 0, 20, 35, 60, 350, and 3500 nm.  In Section \ref{secResults} we compare wavelength dependent transmission measurements to by-eye fits of Equation \ref{eqFP}.  Depending upon the intended operating wavelength, gaps as small as 35-60 nm can cause losses comparable to or greater than the losses produced by antireflection coatings.
 
 \section{Laboratory demonstration: Imbedding gaps of known sizes}
 
@@ -149,49 +149,9 @@ The three important characteristics of the gaps are their axial extent, their la
 Veeco optical profiler surface plot and histogram for part VS20 in the fine pattern section.  The 100 mm diameter VS20 is comprised of two thick silicon wafers.  We patterned three meshes with coarse, medium, and fine boxes, each with 50\% fill factors.  The depth was 95 $\pm$ 5 nm as indicated by the well-separated peaks in the Veeco profilometry histogram.  The fill factor for this and all mesh patterns was 50\%.  The purpose for these patterns was to have gaps of known axial extent against which we could test the optical metrology technique we describe in this article.}
 \end{figure}
 
-\begin{table}[h!]
-\caption{UTexas Si bonding experiments \label{tabbondexper}}
-\begin{center}
-    \begin{tabular}{ c c c c c c}
-    \hline
-    Name & Diameter & Thickness & Pattern Type & Pattern Depth & Notes \\ 
-    -  & mm & mm & - & nm & - \\ 
-        \hline
-    HA1     & 75   & $10$ $\times$ 2& None & - & \\
-    VG01   & 100 &$1$ $\times$ 2 & None  & - &  \\
-    VG02   & 100 & $3.3$ $\times$ 2 &  None  & - &  \\
-    VG03   & 100 & $3.3$ $\times$ 2 &  Hole \&Petal & 4000$\pm$200 & \\    
-    VG04   & 100 & $1$ $\times$ 2 &  Patchwork Islands & 15$\pm7$ & \\
-    VG07   & 100 & $1$ $\times$ 2 &  mesh C, M, F & 12$\pm7$ & \\ %see email from Victor on 5/16/13
-    VG08   & 100 & $1$ $\times$ 2 &  mesh C, M, F & 12$\pm7$ & \\ 
-    VG09   & 75   & $1$ $\times$ 2 & mesh C & 49 $\pm$6 & \\
-    VG15   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F  &14 $\pm$2 & \\
-    VS20   & 100 & $0.8$ $\times$ 2 &  mesh C, M, F & 95 $\pm$5 & \\
-    \hline
-    \end{tabular}
-\end{center}
-\end{table}
+\input{tbls/tbl_experiments.tex}
 
-
-\begin{table}[h!]
-\caption{Patterned gap properties \label{tabPatternFills}}
-\begin{center}
-    \begin{tabular}{ c c c c }
-    \hline
-    Pattern name & fill factor & minimum feature size & bulk description \\ 
-    - & \% & $\mu$m & - \\ 
-    \hline
-    Hole & 100 & - & 25 mm diameter hole \\     
-    Petal & $\sim1$ & $\sim$2000 & long petal lines \\         
-    Mesh F & 50 & 40 &  100 $\mu$m square holes, Fig. 
-    VS20pattern}\\ 
-    Mesh M & 50 & 200 &  500 $\mu$m square holes\\ 
-    Mesh C & 50 & 620 &  1500 $\mu$m square holes\\     
-        \hline
-    \end{tabular}
-\end{center}
-\end{table}
-
+\input{tbls/tbl_meshPatterns.tex}
 
 We cleaned the surfaces before bonding to minimize the interfacial particle density.  The surface roughness was typically about 2 nm, as measured with a Veeco NT9100 Optical Profiler.  We measured the large scale surface flatness of the pucks.  The Fisba2 interferometer used for these measurements has a 50 mm diameter beam at $\lambda=$632.8 nm.  We found a typical peak to valley surface flatness of 2 waves over the central 50 mm diameter.  We prepared the substrates with standard cleaning procedures of solvents in a megasonic.  We then applied MHz frequency oxygen plasma ashing.  We soaked the wafers in DI water then dried with N$_2$.  We pressed the Si substrates together from the center to the outside.
 
@@ -199,28 +159,11 @@ We cleaned the surfaces before bonding to minimize the interfacial particle dens
 \section{Measurement strategy, conditions, and details}
 We took transmission spectra of bonded Si wafers and pucks, and double side polished Si reference wafers using an Agilent Cary 5000 UV-Vis-NIR spectrophotometer.  Table \ref{tab:Cary500pars} lists the typical measurement settings and tool performance.  The tool has a double monochromator, which reduces scattered light.  The vendor reported linearity exceeds 40 dB.
 
-The Cary 5000 has four operation modes: single front, single back, double, and double reverse.  We experimented with single front and double modes.  Double mode takes a reference spectrum simultaneously with the target spectrum.  In both single and double mode, a baseline scan is taken with no sample in the measurement holder.  The baseline spectrum is the raw spectral response of the system.  We automatically divide sample spectra by the baseline spectrum.  In single beam mode, the baseline measurements must be repeated about every half hour for post-process division.  In double beam mode the front beam is automatically divided by the rear beam, which corrects out lamp luminosity drift, for example.  We estimated the uncertainty and measurement repeatability of single and double modes in the following way: we computed the RMS error and measurement repeatability in a single measurement by computing the standard deviation of a spectrum taken immediately after a baseline scan with no sample present.  We found that the mean value in single mode drifted by about 0.2\% over several measurements.  The standard deviation of the featureless spectrum was typically 0.02\% from point to point, with some portions of the spectrum demonstrating increased variance, perhaps attributable to atmospheric absorption.  In double beam mode, the spectrograph drift was much lower.  The simultaneous reference in double beam mode divides out the 0.2\% drift in the mean transmission level attributable to lamp drift that we saw in single beam measurements.  In double beam mode, the drift in mean transmission level is 0.02\%.  These values are accurate for measurements over a half hour timescale or less.  With accuracies and drift rates at this level, the curves in Figure \ref{figEtalonRelTrans} indicate that the axial extent of gaps as small as a few nm should be measurable.  
+The Cary 5000 has four operation modes: single front, single back, double, and double reverse.  We experimented with single front and double modes.  Double mode takes a reference spectrum simultaneously with the target spectrum.  In both single and double mode, a baseline scan is taken with no sample in the measurement holder.  The baseline spectrum is the raw spectral response of the system.  We automatically divide sample spectra by the baseline spectrum.  In single beam mode, the baseline measurements must be repeated about every half hour for post-process division.  In double beam mode the front beam is automatically divided by the rear beam, which corrects out lamp luminosity drift, for example.  We estimated the uncertainty and measurement repeatability of single and double modes in the following way: we computed the RMS error and measurement repeatability in a single measurement by computing the standard deviation of a spectrum taken immediately after a baseline scan with no sample present.  We found that the mean value in single mode drifted by about 0.2\% over several measurements.  The standard deviation of the featureless spectrum was typically 0.02\% from point to point, with some portions of the spectrum demonstrating increased variance, perhaps attributable to atmospheric absorption.  In double beam mode, the spectrograph drift was much lower.  The simultaneous reference in double beam mode divides out the 0.2\% drift in the mean transmission level attributable to lamp drift that we saw in single beam measurements.  In double beam mode, the drift in mean transmission level is 0.02\%.  These values are accurate for measurements over a half hour timescale or less.  With accuracies and drift rates at this level, the curves in Figure \ref{figAbsoluteTrans} indicate that the axial extent of gaps as small as a few nm should be measurable.  
 
 The spectral sampling was 2.0 nm.  We used a spectral resolution of 5.0 nm, the lowest spectral resolution the Cary5000 offers.  We expect smoothly varying spectral features for all conceivable interface gaps in Si bonded wafers.  Specifically, Fabry-P\`erot fringes attributable to interfacial gaps in bonded Si will be well-sampled with 5 nm spectral resolution, so long as the interface gap is less than $\sim$100 $\mu$m.  The axial extends of such large gaps would be easily measurable by other means, like IR imaging.
 
-\begin{table}[h!]
-\caption{Summary of Cary 5000 Measurement parameters \label{tab:Cary5000pars}}
-\begin{center}
-\begin{tabular}{ c c }
-\hline
-        Parameter (Units) & Value \\ 
-\hline
-        Spectral sampling interval (nm) & 2.0$-$10.0 \\
-        Spectral resolution (nm) & 5 \\
-        Time per sample (s) & 0.1 \\
-        Typical measurement range (nm) & 1000-2500 \\
-	Typical Single mode mean drift (\%) & 0.20 \\
- 	Beam size (mm $\times$ mm) & $2 \times 8$ \\
-        Directly measured linearity range (dB) & $>24$ \\
-    \hline
-    \end{tabular}
-\end{center}
-\end{table}
+\input{tbls/tbl_cary5000Pars.tex}
 
 
 \subsection{IR bubble detection and limitations}
@@ -232,70 +175,7 @@ Before testing the bonded pieces from Table 1 using spectrophotometry, we looked
 \label{secResults}
 In this section we describe the spectroscopy of directly bonded Si.  In some instances IR imaging was available and was leveraged to target or avoid locations demonstrating IR bubbles.  In other cases the IR imaging was not available or ignored, and spectra were taken at random positions on the wafer surface.  
 
-% Table of experiments
-\begin{table}[h!]
-\caption{Cary5000 Experiment Log \label{tabExperiments}}
-\begin{center}
-    \begin{tabular}{c c c c c c c}
-    \hline
-	Date &  Mode  & $\Delta \lambda$ & SBW & Sampling & \# of spectra & Sample IDs \\
-	\emph{mm/dd/yyyy} &  -  & nm & nm & nm & - \\
-%     \hline		
-%	02/04/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\
-%     \hline		
-%	02/06/2013 & ? & ? 				& 5.0 & 10.0 &  16 &   -  \\	     
-     \hline		
-     	02/18/2013 & Single & 1000$-$2500 & 5.0 & 10.0 &  16 &   -  \\
-     	                   &            &                       &       &         &    4 &  Baseline\\	
-     	                   &            &                       &       &         &    1 &  VG01\\
-	                   &            &                       &       &         &    4 &  VG02\\	                   
-	                   &            &                       &       &         &    2 &  VG03\\	                   
-	                   &            &                       &       &         &    2 &  VG04\\
-	                   &            &                       &       &         &    2 &  VG05\\	                   
-	                   &            &                       &       &         &    2 &  VG06\\
-    \hline
-%	05/02/2013 & Single & 1000$-$2500 & 5.0 & 5.0  &  30 &   -  \\
-%     	                   &            &                       &       &         &    12 &  Baseline\\	
-%     	                   &            &                       &       &         &    18 &  Other\\
-%    \hline
-	05/03/2013 & Single & 1000$-$2500 & 5.0 & 5.0  &  28 &   -  \\
-     	                   &            &                       &       &         &    8 &  Baseline\\	
-     	                   &            &                       &       &         &    1 &  VG05\\ %Consider replacing VG05 with "DSP reference sample"  or something
-     	                   &            &                       &       &         &    6 &  VG03\\
-     	                   &            &                       &       &         &    13 &  Other\\ %These had to do with beam size experiments
-    \hline
-	06/07/2013 & Mix & 1000$-$2500 & 5.0 & 5.0  &  43 &   -  \\
-	                   &            &                       &       &         &    11 &  Baseline\\	                   
-	                   &            &                       &       &         &    9 &  VG05\\	                   
-	                   &            &                       &       &         &    7 &  VG07\\
-	                   &            &                       &       &         &    6 &  VG08\\
-	                   &            &                       &       &         &    4 &  HA1\\
-	                   &            &                       &       &         &    6 &  other\\ % These are mostly just baselines without automatic division
-    \hline
-	08/02/2013 & Single & 1000$-$2500 & 5.0 & 2.0  &  17 &   -  \\	
-	                   &            &                       &       &         &    3 &  Baseline\\
-	                   &            &                       &       &         &    4 &  VG05\\	                   
-	                   &            &                       &       &         &    2 &  VG15\\
-	                   &            &                       &       &         &    2 &  VS20\\
-	                   &            &                       &       &         &    6 &  VG09\\
-    \hline
-    	09/11/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  20 &   -  \\	                   
-	                   &            &                       &       &         &    1 &  Baseline\\
-	                   &            &                       &       &         &    14 &  VS21\\	                   
-	                   &            &                       &       &         &    5 &  Blank\\ %This is really the same as a baseline
-    \hline
-    	09/16/2013 & Double & 1000$-$2500 & 5.0 & 2.0  &  21 &   -  \\
-	                   &            &                       &       &         &    2 &  Baseline\\
-	                   &            &                       &       &         &    7 &  VG07\\	                   
-	                   &            &                       &       &         &    4 &  VG05\\	
-	                   &            &                       &       &         &    4 &  VG12\\
-	                   &            &                       &       &         &    2 &  VG15\\	                   
-	                   &            &                       &       &         &    2 &  VG08\\
-    \hline
-    \end{tabular}
-\end{center}
-\end{table}
-
+\input{tbls/tbl_experimentLog.tex}
 
 
 \subsection{Constructing the predicted transmission}
