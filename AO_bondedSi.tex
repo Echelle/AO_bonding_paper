@@ -209,7 +209,7 @@ where $\delta_{ij}$ is the Kronecker delta, and $\sigma_i$ are the independent m
 We set our priors \verb|\cite{someStatisticsBook}| on $\ln{a}$, $\ln{s}$, $d$, and $f$ as uniform over a wide range of values consistent with visual inspection of each spectrum.  The final un-normalized posterior probability function, expressed as a natural logarithm is:
 
 \begin{equation}
-	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -0.5\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r}} -0.5 \ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
+	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -0.5\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -0.5\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
 \end{equation}	
 
 where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{https://github.com/dfm/emcee}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the observed normalized Transmission spectra.  Figures \ref{figVG03full, figVG03part, figVG12_corner} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.   
