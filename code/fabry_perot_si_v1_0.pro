@@ -128,7 +128,7 @@ legend, [ strcompress('T= '+string(fix(temp1))+' K'), $
 !x.thick = 3
 !y.thick = 3
 !z.thick = 3
-tit='Coeffcient of Finesse'
+tit='Coefficient of Finesse'
 
 plot, wl, F1, xtitle=xtit, ytitle='F', thick=3.0, charthick=2.0,$
  yrange=[2.4, 2.7], linestyle=0, title=tit, /noerase, $
