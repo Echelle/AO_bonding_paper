@@ -206,13 +206,32 @@ where $\delta_{ij}$ is the Kronecker delta, and $\sigma_i$ are the independent m
 We set our prior probability distribution functions \verb|\cite{someStatisticsBook}|, $\ln{p(d,f,a,s)}$ as uniform over a wide range of values for $\ln{a}$, $\ln{s}$, $d$, and $f$ consistent with visual inspection of each spectrum.  The final un-normalized posterior probability function, expressed as a natural logarithm is:
 
 \begin{equation}
-	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -0.5\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -0.5\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
+	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -\frac{1}{2}\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -\frac{1}{2}\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
 \end{equation}	
 
 where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{https://github.com/dfm/emcee}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the observed normalized Transmission spectra.  Figures \ref{figVG03full}, \ref{figVG03part}, and \ref{figVG12_corner} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.
 
 \subsection{Spectra of direct bonded Si with known gap sizes}
 \label{secKnownGaps}
+
+Figure \ref{figVG03full} shows a parameter determination for the measurement of a bond over a deep ($4000 \pm 200\;$nm) 100\% fill factor gap.  The analysis yields a best fit consistent with 100\% fill factor, and a depth of $3960 \pm 2\;$nm, well within the uncertainty of the physicsal measurement.  Figure \ref{figVG03part} shows a fit for a region of the same bonded pair where a nominally $4000\;$ nm deep, 2 mm wide trench crosses the field field scanned by the Cary 5000.  Analysis of this transmission curve gave a best fit depth of $4094 \pm 4\;$nm and a pattern fill factor of $4.6\% \pm 0.1\;\%$, both consistent with the part geometry.  These two results show that the formalism performs as expected on resonant gaps several wavelengths deep.  
+
+In our test samples, the nominal gap we have induced in the sample represents a lower limit to the actual gap since poor adhesion of the non-continuous patterns may result in gaps larger than intended.  In this case, we modify our mixture model \ref{eqnMix} to fix $f=0.5$ but allow two different depths:
+
+\begin{equation}
+	T_{mix} =  0.5 \times T_{e}(d_1) + 0.5 \times T_{e}(d_2) \label{eqnMix2Gaps}
+\end{equation}
+
+where the subscripts on $d$ distinguish the two depths.
+
+Figure \ref{figVG12} shows the results for a bonded pair with a 50\% fill factor mesh where the grooves in the mesh had a measured depth of $49\pm6\;$nm.  The green band shows the predicted range for the transmission curve.  The measurements lie below this band.  Figure \ref{figVG12_corner} demonstrates that $d_1$ and $d_2$ are degenerate, but consistent with a $49 \pm 6\;$nm step function in the gap size distribution.  
+
+The presence of a number of bubbles both on and off the meshed areas of this and other samples (Figure \ref{figVS2021_IR_image}) lend credence to the idea that an additional gap of this magnitude was present at the position where we made the measurements but was not detected in the preparatory imaging.
+
+
+
+\input{tbl_DerivedGapSizes}
+
 Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and measured IR spectra.  Figure \ref{figVG03_f100} shows an example spectrum in which the measurement is consistent with the prediction for a gap with the known conditions.  Meanwhile, Figure \ref{figVG12_f50} shows a spectrum in which the measurement marginally exceeds the prediction (by about $\sim 3 \sigma$).  Other parts show less consistency with the prediction due to the difficulty of direct-bonding Si in the absence of thermal annealing.  
 
 \begin{figure}[htbp]
