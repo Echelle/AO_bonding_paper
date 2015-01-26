@@ -157,6 +157,7 @@ We cleaned the surfaces before bonding to minimize the interfacial particle dens
 
 
 \section{Measurement technique and correlated measurement errors}
+\label{sec_aboutErrors}
 We took transmission spectra of bonded Si wafers and pucks, and double side polished Si reference wafers using an Agilent Cary 5000 UV-Vis-NIR spectrophotometer.  Table \ref{tabCary5000pars} lists the typical measurement settings and tool performance.  The tool has a double monochromator, which reduces scattered light.  The vendor reported linearity exceeds 40 dB.
 
 The Cary 5000 has four operation modes: single front, single back, double, and double reverse.  We experimented with single front and double modes.  Double mode takes a reference spectrum simultaneously with the target spectrum.  In both single and double mode, a baseline scan is taken with no sample in the measurement holder.  We automatically divide sample spectra by the baseline spectrum.  In single beam mode, the baseline measurements must be repeated about every half hour for post-process division.  In double beam mode the front beam is automatically divided by the rear beam, which corrects out lamp luminosity drift, for example.  
@@ -193,15 +194,15 @@ The gaps in our test pairs should be a combination of the deliberately induced g
 
 where $f$ is the areal fill factor of the region exhibiting a finite gap size, and $1-f$ is therefore the areal fill factor of the perfectly bonded area.  $T_e$ is defined in equation \ref{eqn:Tetalon}.  The only free parameters in Equation \ref{eqnMix} are $d$ and $f$.  Both of these parameters are fixed in our direct bonded Si wafers with synthetic gaps, and are listed in Table \ref{tabPatternFills}.  These synthetic imbedded gaps therefore offer an excellent test of our ability to recover the gap axial extent $d$ and areal fill factor $f$ (Section \ref{secKnownGaps}).
 
-Equipped with an observed spectrum and our mixture model, we constructed the Likelihood function \verb|\cite{SomeStatisticsBook}|, $\mathcal{L} = p(T_{obs} | d, f)$.  The measurement errors are not assumed to be independent and identically distributed, and in fact are strongly correlated as discussed in Section \verb|\ref{sectionAboutErrors}|.  To handle the correlated measurement errors we use Gaussian Processes \verb|\cite{RasmussenAndWilliams, DFM}|.  The Gaussian Process takes into account the unknown but finite covariance structure by introducing a covariance matrix, $\boldsymbol{C}$ whose elements represent the correlations of each sample $i$ with every other sample $j$.  We parameterize the covariance matrix elements in the following way:
+Equipped with an observed spectrum and our mixture model, we constructed the Likelihood function \cite{2013sdmm.book.....I}.  The measurement errors are not assumed to be independent and identically distributed, and in fact are strongly correlated as discussed in Section \ref{sec_aboutErrors}.  To handle the correlated measurement errors we use Gaussian Processes \cite{rasmussen2006gaussian, DFMgp}.  The Gaussian Process takes into account the unknown but finite covariance structure by introducing a covariance matrix, $\boldsymbol{C}$ whose elements represent the correlations of each sample $i$ with every other sample $j$.  We parameterize the covariance matrix elements in the following way:
 
 \begin{equation}
 	C_{ij} = \sigma^2_{i}\delta_{ij}+a^2\exp{(-\frac{(\lambda_i-\lambda_j)^2}{2l^2})} \label{eqnGPkernel}
 \end{equation}
 
-where $\delta_{ij}$ is the Kronecker delta, and $\sigma_i$ are the independent measurement uncertainties on the $i^{\mathrm{th}}$ data point. For simplicity, we adopt values from Table \ref{tabCary5000pars} for single and double beam modes respectively.  This assumption of homoscedasticity is fairly safe, since the correlated errors dominate in comparison to individual measurement errors.  The parameter $l$ controls the correlation length, and $a$ controls the amplitude of the noise.  We do not know $a$ nor $l$ and they are, in general, different for each measurement.  The value of $a$ should be close to the mean drift reported in Table \ref{tabCary5000pars}.  The value of $l$ could be small (tens of nm) to capture local variation attributable to atmospheric air absorption, or large (thousands of nm) to capture global features attributable to lamp drift.  We allow both $a$ and $s$ to be free parameters in our fitting procedure.
+where $\delta_{ij}$ is the Kronecker delta, and $\sigma_i$ are the independent measurement uncertainties on the $i^{\mathrm{th}}$ data point. We experimented with different values for $\sigma_i$.  When repeated DSP reference sample measurements were available, we estimated the $\sigma_i$ from the dispersion around mean-subtracted, detrended transmission spectra.  In other cases we simply adopted mean values from Table \ref{tabCary5000pars} for single and double beam modes respectively.  The latter assumption of homoscedasticity is fairly safe, since the correlated errors dominate in comparison to individual measurement errors.  The parameter $l$ controls the correlation length, and $a$ controls the amplitude of the noise.  We do not know $a$ nor $l$ and they are, in general, different for each measurement.  The value of $a$ should be close to the mean drift reported in Table \ref{tabCary5000pars}.  The value of $l$ could be small (tens of nm) to capture local variation attributable to atmospheric air absorption, or large (hundreds or thousands of nm) to capture global features attributable to lamp drift.  We allow both $a$ and $s$ to be free parameters in our fitting procedure.
 
-We set our prior probability distribution functions \verb|\cite{someStatisticsBook}|, $\ln{p(d,f,a,s)}$ as uniform over a wide range of values for $\ln{a}$, $\ln{s}$, $d$, and $f$ consistent with visual inspection of each spectrum.  The final un-normalized posterior probability function, expressed as a natural logarithm is:
+We set our prior probability distribution functions \cite{2013sdmm.book.....I}, $\ln{p(d,f,a,s)}$ as uniform over a wide range of values for $\ln{a}$, $\ln{s}$, $d$, and $f$ consistent with visual inspection of each spectrum.  The final un-normalized posterior probability function, expressed as a natural logarithm is:
 
 \begin{equation}
 	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -\frac{1}{2}\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -\frac{1}{2}\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
@@ -217,15 +218,12 @@ Figure \ref{figVG03full} shows a parameter determination for the measurement of 
 In our test samples, the nominal gap we have induced in the sample represents a lower limit to the actual gap since poor adhesion of the non-continuous patterns may result in gaps larger than intended.  In this case, we modify our mixture model (Equation \ref{eqnMix}) to fix $f=0.5$ but allow two different gap depths:
 
 \begin{equation}
-	T_{mix} =  0.5 \times T_{e}(d_1) + 0.5 \times T_{e}(d_2) \label{eqnMix2Gaps}
+	T_{mix} =  0.5 \times T_{e}(d_M + \epsilon) + 0.5 \times T_{e}(\epsilon) \label{eqnMix2Gaps}
 \end{equation}
 
-where the subscripts on $d$ distinguish the two depths.
+where the $d_M$ is the lab-measured mesh depth and $\epsilon$ is an undesired gap in excess of the mesh gap.  For $\epsilon =0$, Equation \ref{eqnMix2Gaps} reduces to Equation \ref{eqnMix} with $f=0.5$.  We capture the uncertainty in the lab-measured mesh depth by setting the prior on $d_M$ to a Normal distribution with standard deviation set by the values listed in Table \ref{tbl_experiments}.  
 
-Figure \ref{figVG12} shows the results for a bonded pair with a 50\% fill factor mesh where the grooves in the mesh had a measured depth of $49\pm6\;$nm.  The green band shows the predicted range for the transmission curve.  The measurements lie below this band.  Figure \ref{figVG12_corner} demonstrates that $d_1$ and $d_2$ are degenerate, but consistent with a $49 \pm 6\;$nm step function in the gap size distribution.  
-
-The presence of a number of bubbles both on and off the meshed areas of this and other samples (Figure \ref{figVS2021_IR_image}) lend credence to the idea that an additional gap of this magnitude was present at the position where we made the measurements but was not detected in the preparatory imaging.
-
+Figure \ref{figVG12} shows the results for a bonded pair with a 50\% fill factor mesh where the grooves in the mesh had a measured depth of $49\pm6\;$nm.  The apple green band shows the predicted range for the transmission curve.  The measurements lie below this band.  Figure \ref{figVG12_corner} demonstrates that $d_M$ and $\epsilon$ are degenerate, but consistent with a small $\sim 12\;$nm gap in excess of the mesh.  The presence of a number of bubbles both on and off the meshed areas of this and other samples (Figure \ref{figVS2021_IR_image}) lend credence to the idea that an additional gap of this magnitude was present at the position where we made the measurements but was not detected in the preparatory imaging.
 
 
 \input{tbls/tbl_DerivedGapSizes}
@@ -286,6 +284,8 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
 A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.
 
 \subsection{TODO: Comparison of Transmission-spectroscopy derived gap sizes with lab-measured gap size}
+
+
 \subsection{TODO: Spectra of direct bonded Si with no intentionally implanted gaps}
 \section{TODO: Discussion}
 
