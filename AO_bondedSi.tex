@@ -238,13 +238,13 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
               \includegraphics[width=\textwidth]{figs/VG03_corner.pdf}
-              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 position 1}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 hole region}
 		\label{figVG03_corner}
         \end{subfigure}
 	
         \begin{subfigure}[b]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{figs/VG03_f100.pdf}
-                \caption{Measured spectrum and fit of VG03 position 1}
+                \caption{Measured spectrum and fit of VG03 hole region}
                 \label{figVG03_f100}
         \end{subfigure}
 \caption{ \emph{Top panel:} Corner plot of MCMC samples in our non-linear model fit of the transmission spectrum of Si optic part \# VG03.  The physical parameters of the model are the axial extent of the gap $d$, and the areal fill factor $f$ of the gap over the measurement region.  The MCMC model fit also includes nuisance parameters $a$ and $s$ (not shown) for the Gaussian Process covariance model.  \emph{Bottom panel:}Transmission through bonded Si sample VG03, normalized by the transmission of a DSP Si wafer. VG03 has a gap of axial extent $\sim4\;\mu$m implanted in its interface.  The measured spectrum (black stepped line) in this region shows characteristic Fabry-P\`erot fringes of constructive and destructive interference.  The only tunable parameters of the model are the gap axial extent, $d$ and fill factor $f$.  No scaling has been applied.  The red dashed line shows the best model fit with $d$ = 3960 $\pm$ 2 nm, consistent with 100\% fill factor.  The blue band shows the collective locations of 60 random draws from the Gaussian process model, described in the text.  Wavelengths shortward of 1250 nm (gray band) were not included in the fit, since Si is absorptive there.\label{figVG03full} }
@@ -255,13 +255,13 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
               \includegraphics[width=\textwidth]{figs/VG03p2_corner.pdf}
-              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 position 2}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG03 petal region}
 		\label{figVG03p2_corner}
         \end{subfigure}
 	
         \begin{subfigure}[b]{0.5\textwidth}
                 \includegraphics[width=\textwidth]{figs/VG03_f045.pdf}
-                \caption{Measured spectrum and fit of VG03 position 2}
+                \caption{Measured spectrum and fit of VG03 petal region}
                 \label{figVG03_f045}
         \end{subfigure}
 \caption{ Same as Figure \ref{figVG03full}, but the measurement was in a region where less than $<5\%$ of the area exhibited the $\sim4\; \mu$m gap.  The measured spectrum in this region shows subdued Fabry-P\`erot fringes of constructive and destructive interference. The model derived axial extent is 4094 $\pm$ 5 nm covering a fill factor of 4.58 $\pm$ 0.06$\%$. \label{figVG03part}}
@@ -271,21 +271,21 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
 \begin{figure}[htbp]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG12_corner.pdf}
-              \caption{Fitted gap size $d$ and fill factor $f$ for VG09-12}
+              \includegraphics[width=\textwidth]{figs/VG12_twoGaps_corner.pdf}
+              \caption{Fitted gap sizes $d_1$ and $d_2$ for VG09-12}
 		\label{figVG12_corner}
         \end{subfigure}
 	
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG12_f50.pdf}
-                \caption{Measured spectrum and fit of VG09-12 position 2}
+                \includegraphics[width=\textwidth]{figs/VG12_twoGaps_f50.pdf}
+                \caption{Measured spectrum and fit of VG09-12}
                 \label{figVG12_f50}
         \end{subfigure}
 \caption{ Same as Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12, which has an imbedded gap of axial extent $d=49\pm6\;$nm with fill factor $f=0.5$.  The measured spectrum in this region shows a clear deficit of transmission from the gapless counterparts.  The measured spectrum also shows a deficit of transmission compared to the predicted transmission of a 49 $\pm6\;$nm gap with 50\% fill factor (green apple shaded color band).  The discord between prediction and measurement could be due to several factors including an underestimate of the intrinsic gap size, an underestimate of the intrinsic fill factor, or an additional gap in excess of the prediction.  We favor the latter interpretation, since undesired gaps are common in these direct-bonded Si samples that have not undergone high-temperature thermal annealing.
 \label{figVG12}}
 \end{figure}
 
-A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \verb|\ref{tbl_DerivedGapSizes}| summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.  
+A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.
 
 \subsection{TODO: Comparison of Transmission-spectroscopy derived gap sizes with lab-measured gap size}
 \subsection{TODO: Spectra of direct bonded Si with no intentionally implanted gaps}
