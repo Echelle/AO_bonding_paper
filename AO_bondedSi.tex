@@ -132,7 +132,7 @@ Consider a pair of bonded Si samples with a gap thickness $d$. We derive the abs
 T_{e} = \frac{n^2+1}{2 n F \sin ^2(2\pi \frac{d}{\lambda})+n^2+1} \label{eqFP}
 \end{eqnarray}
 
-In the limit $\lim_{d \to 0} T_e \rightarrow T_{DSP}} $ and the etalon approaches 100\% transmission.  Figure \ref{figAbsoluteTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 0, 20, 35, 60, 350, and 3500 nm.  The bottom two panels show the ``gap'' transmission, the value of the throughput with the losses from the outer Si cavities divided out.  For the very largest gap, large fringes appear as the cavity resonance of the air gap modulates the transmission.  Below a $\lambda/2$ gap size the effect of the gap manifests itself as a wavelength-dependent diminution of the transmission.  For the smallest $35-60$ nm gaps, there is a $2-6\%$ decrease in gap transmission from $2400\;$nm down to $1250\;$nm.  It is the magnitude and wavelength dependence of this transmission spectrum that provides information about the axial extent of the gap.
+In the limit $\lim_{d \to 0} T_e \rightarrow T_{DSP} $ and the etalon approaches 100\% transmission.  Figure \ref{figAbsoluteTrans} shows a plot of Equation \ref{eqFP} for gap sizes, $d$, of 0, 20, 35, 60, 350, and 3500 nm.  The bottom two panels show the ``gap'' transmission, the value of the throughput with the losses from the outer Si cavities divided out.  For the very largest gap, large fringes appear as the cavity resonance of the air gap modulates the transmission.  Below a $\lambda/2$ gap size the effect of the gap manifests itself as a wavelength-dependent diminution of the transmission.  For the smallest $35-60$ nm gaps, there is a $2-6\%$ decrease in gap transmission from $2400\;$nm down to $1250\;$nm.  It is the magnitude and wavelength dependence of this transmission spectrum that provides information about the axial extent of the gap.
 
 \section{Laboratory demonstration: Embedding gaps of known sizes}
 
@@ -216,7 +216,7 @@ where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model
 
 Figure \ref{figVG03full} shows a parameter determination for the measurement of a bond over a deep ($4000 \pm 200\;$nm) 100\% fill factor gap.  The analysis yields a best fit consistent with 100\% fill factor, and a depth of $3960 \pm 2\;$nm, well within the uncertainty of the physicsal measurement.  Figure \ref{figVG03part} shows a fit for a region of the same bonded pair where a nominally $4000\;$ nm deep, 2 mm wide trench crosses the field field scanned by the Cary 5000.  Analysis of this transmission curve gave a best fit depth of $4094 \pm 4\;$nm and a pattern fill factor of $4.6\% \pm 0.1\;\%$, both consistent with the part geometry.  These two results show that the formalism performs as expected on resonant gaps several wavelengths deep.  
 
-In our test samples, the nominal gap we have induced in the sample represents a lower limit to the actual gap since poor adhesion of the non-continuous patterns may result in gaps larger than intended.  In this case, we modify our mixture model \ref{eqnMix} to fix $f=0.5$ but allow two different depths:
+In our test samples, the nominal gap we have induced in the sample represents a lower limit to the actual gap since poor adhesion of the non-continuous patterns may result in gaps larger than intended.  In this case, we modify our mixture model (Equation \ref{eqnMix}) to fix $f=0.5$ but allow two different gap depths:
 
 \begin{equation}
 	T_{mix} =  0.5 \times T_{e}(d_1) + 0.5 \times T_{e}(d_2) \label{eqnMix2Gaps}
@@ -230,7 +230,7 @@ The presence of a number of bubbles both on and off the meshed areas of this and
 
 
 
-\input{tbl_DerivedGapSizes}
+\input{tbls/tbl_DerivedGapSizes}
 
 Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and measured IR spectra.  Figure \ref{figVG03_f100} shows an example spectrum in which the measurement is consistent with the prediction for a gap with the known conditions.  Meanwhile, Figure \ref{figVG12_f50} shows a spectrum in which the measurement marginally exceeds the prediction (by about $\sim 3 \sigma$).  Other parts show less consistency with the prediction due to the difficulty of direct-bonding Si in the absence of thermal annealing.  
 
@@ -277,7 +277,7 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
         \end{subfigure}
 	
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG12_twoGaps_f50.pdf}
+                \includegraphics[width=\textwidth]{figs/VG12_twoGaps.pdf}
                 \caption{Measured spectrum and fit of VG09-12}
                 \label{figVG12_f50}
         \end{subfigure}
@@ -296,7 +296,9 @@ We mitigated measurement artifacts in the following ways.  We have mostly been a
 
 
 \section{Conclusions}
-We have shown a method for indirectly measuring the size of gaps in bonded Si wafers.  The technique broadly applies to any compound Si optics measured at normal incidence.  We showed lab IR spectra with consistent predictions, and addressed ways to mitigate measurement artifacts. 
+We have described a measurement technique and laid out an analysis formalism for the detection and measurement of sub-wavelength gaps at Si-Si interfaces.  Experimental measurements show that we can precisely recover the extent of wavelength-scale gaps of known size, account for the presence of small gaps, and capture results consistent with no gap when measuring a monolithic part.
+
+The technique and formalism we describe here can detect and measure the axial extent of gaps in Si-Si optical bonds down to a level of $20-30\;$nm.  It makes use of widely available off-the-shelf metrology equipment and simple to implement analysis.  Armed with this technique, optical fabricators have a new diagnostic tool to assess the quality of Si-Si bonds.
 
 \appendix
 
