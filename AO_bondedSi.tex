@@ -138,9 +138,9 @@ In the limit $\lim_{d \to 0} T_e \rightarrow T_{DSP} $ and the etalon approaches
 
 We evaluated our metrology method by embedding gaps of known sizes in the interface and measuring the effects of these gaps on IR transmission.  The substrate thicknesses ranged from 0.5 to 3.3 mm.  We denote substrates with thicknesses larger than 1 mm as ``pucks'' and substrates with thickness less than 1.0 mm thick as ``wafers''.  We distinguish the two classes of substrate thickness based on the anticipation that thin substrates will conform more easily to their bonding partner substrates.  There is also evidence that bond front propagation is slower in thick pucks \cite{2007ApOpt..46.6793H} than in wafers.  Our ultimate goal is to bond optics with thicknesses as large as 30 mm.
 
-The three important characteristics of gaps are their axial extent, their lateral areal extent, and their areal fill factor.  To fabricate our test samples, we used photoresist lithography to pattern Si substrates, and we bored holes with inductively coupled plasma etching.  We used two different gases with low and high etch rates, CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  Tables \ref{tabbondexper} and \ref{tblPatternFills} give information about the hole patterns and depths, as measured with Veeco NT9100 Optical Profiler for the small depth, and Dektak stylus profilometry for the large depth.
+The three important characteristics of gaps are their axial extent, their lateral areal extent, and their areal fill factor.  To fabricate our test samples, we used photoresist lithography to pattern Si substrates, and we bored holes with inductively coupled plasma etching.  We used two different gases with low and high etch rates, CHF$_3$ on Si exhibited about 0.3 nm/second etch rate, SF$_6$ exhibited about 1 micron/minute.  Tables \ref{tbl_experiments} and \ref{tblPatternFills} give information about the hole patterns and depths, as measured with Veeco NT9100 Optical Profiler for the small depth, and Dektak stylus profilometry for the large depth.
 
-The fill factor is defined as the pattern area covered by gaps relative to the total pattern area.  In a second round of experiments, we achieved gap sizes of 14$-$95 nm on four substrates with three meshes with coarse, medium, and fine boxes, each with 50\% fill factors.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we assign no uncertainty to the difference between the delivered fill factor and the designed fill factor.  For measurements taken with the Veeco NT9100 Optical Profiler, uncertainties were constructed by inspecting the histogram of topology, as shown in Figure \ref{figVS20pattern}.  The large-scale distortions were removed from the topology by masking and flattening to ensure that the uncertainties accurately reflect the distribution of measured heights.  The stylus profilometry measured values were simply assigned an uncertainty of 5\%, which was consistent with our intuition and experience.  Table \ref{tabbondexper} lists part numbers and descriptions for our bonded substrates.  
+The fill factor is defined as the pattern area covered by gaps relative to the total pattern area.  In a second round of experiments, we achieved gap sizes of 14$-$95 nm on four substrates with three meshes with coarse, medium, and fine boxes, each with 50\% fill factors.  No attempt was made to verify the delivered fill factor, but since high precision lithographic processes were employed, we assign no uncertainty to the difference between the delivered fill factor and the designed fill factor.  For measurements taken with the Veeco NT9100 Optical Profiler, uncertainties were constructed by inspecting the histogram of topology, as shown in Figure \ref{figVS20pattern}.  The large-scale distortions were removed from the topology by masking and flattening to ensure that the uncertainties accurately reflect the distribution of measured heights.  The stylus profilometry measured values were simply assigned an uncertainty of 5\%, which was consistent with our intuition and experience.  Table \ref{tbl_experiments} lists part numbers and descriptions for our bonded substrates.  
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=1.0\columnwidth]{figs/VS20fineGapCrop.pdf}}
@@ -208,7 +208,7 @@ We set our prior probability distribution functions \cite{2013sdmm.book.....I}, 
 	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma)} \propto \ln{p(d,f,a,s)} -\frac{1}{2}\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -\frac{1}{2}\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
 \end{equation}	
 
-where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{https://github.com/dfm/emcee}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the observed normalized Transmission spectra.  Figures \ref{figVG03full}, \ref{figVG03part}, and \ref{figVG12_corner} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.
+where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{\url{https://github.com/dfm/emcee}}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the observed normalized Transmission spectra.  Figures \ref{figVG03full}, \ref{figVG03part}, and \ref{figVG12_corner} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.
 
 \subsection{Spectra of direct bonded Si with known gap sizes}
 \label{secKnownGaps}
@@ -268,7 +268,7 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
               \includegraphics[width=\textwidth]{figs/VG12_twoGaps_corner.pdf}
-              \caption{Fitted gap sizes $d_1$ and $d_2$ for VG09-12}
+              \caption{Fitted gap sizes $d_M$ and $\epsilon$ for VG09-12}
 		\label{figVG12_corner}
         \end{subfigure}
 	
@@ -277,7 +277,7 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
                 \caption{Measured spectrum and fit of VG09-12}
                 \label{figVG12_f50}
         \end{subfigure}
-\caption{ Same as Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12, which has an imbedded gap of axial extent $d=49\pm6\;$nm with fill factor $f=0.5$.  The measured spectrum in this region shows a clear deficit of transmission from the gapless counterparts.  The measured spectrum also shows a deficit of transmission compared to the predicted transmission of a 49 $\pm6\;$nm gap with 50\% fill factor (green apple shaded color band).  The discord between prediction and measurement could be due to several factors including an underestimate of the intrinsic gap size, an underestimate of the intrinsic fill factor, or an additional gap in excess of the prediction.  We favor the latter interpretation, since undesired gaps are common in these direct-bonded Si samples that have not undergone high-temperature thermal annealing.
+\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12, which has an imbedded gap of axial extent $d=49\pm6\;$nm with fill factor $f=0.5$.  The measured spectrum in this region shows a clear deficit of transmission from the gapless counterparts.  The measured spectrum also shows a deficit of transmission compared to the predicted transmission of a 49 $\pm6\;$nm gap with 50\% fill factor (green apple shaded color band).  The discord between prediction and measurement could be due to several factors including an underestimate of the intrinsic gap size, an underestimate of the intrinsic fill factor, or an additional gap in excess of the prediction.  We favor the latter interpretation, since undesired gaps are common in these direct-bonded Si samples that have not undergone high-temperature thermal annealing.
 \label{figVG12}}
 \end{figure}
 
@@ -303,7 +303,7 @@ The technique and formalism we describe here can detect and measure the axial ex
 \section{Incoherent Multiple Reflections Transfer Matrix Method}
 \label{sec:Append-IMRTMM}
 
-The wave transfer matrix method is described in detail in chapter 7 by Saleh and Teich in ``Fundamentals of Photonics'' \cite{2007fuph.book.....S}.  Briefly, their technique is to assemble a 2$\times$2 scattering matrix $\boldsymbol{S}$ which has the elements:
+The wave transfer matrix method is described in detail in Chapter 7 by Saleh and Teich in ``Fundamentals of Photonics'' \cite{2007fuph.book.....S}.  Briefly, their technique is to assemble a 2$\times$2 scattering matrix $\boldsymbol{S}$ which has the elements:
 \begin{eqnarray}
 \boldsymbol{S} = \left(
 \begin{array}{cc}
