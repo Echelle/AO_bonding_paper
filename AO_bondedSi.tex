@@ -284,20 +284,61 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
 
 A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.
 
-\subsection{TODO: Comparison of Transmission-spectroscopy derived gap sizes with lab-measured gap size}
+\subsection{Measurement of a sample with no implanted gaps}
+We measured direct bonded Si$-$Si sample (part VG02, Table \ref{tbl_experiments}) with no intentionally embedded gaps.  We measured transmission spectra in four randomly chosen regions of the $100\;$mm bonded wafers, with no preparatory imaging available.  Two of the regions showed evidence of large ($>\lambda$) gaps.  The other two regions showed almost 100\% transmission, when normalized by measurements of $T_{DSP}$.  We apply our formalism to one of these regions to get an estimate for the smallest gap that we can constrain.  Figure \verb|\ref{fig_xxx}| shows a zoom in of the measured normalized transmission spectrum, which shows strongly correlated noise, especially in the wavelength range $2000-2500\;$nm.  
+
+The variance of individual measurement uncertainties was large enough to consider for this measurement.  So rather than assume homoscedastic uncertainty as we did for the other measurements, we estimated the heteroscedastic uncertainties in the following way.  We computed the mean-subtracted transmission for four DSP measurements bookending the those of VG02.  The DSP measurements were detrended, and the measurement-to-measurement variance computed.  The result was a variance spectrum which peaks at $1850\;$nm at 0.25\%, but with a median value equal to 0.03\%.  Figure \verb|\ref{fig_xxx}| includes the $1\;\sigma$ errorbars computed in this way.
+
+\begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.5\textwidth}
+              \includegraphics[width=\textwidth]{figs/VG02p3_corner.pdf}
+              \caption{Fitted gap size $d$ and fill factor $f$ for VG02}
+		\label{fig_VG02p3_corner}
+        \end{subfigure}
+	
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{figs/VG02_noGap.pdf}
+                \caption{Measured spectrum and fit of VG02}
+                \label{figVG02_noGap}
+        \end{subfigure}
+\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG02, which has no intentionally imbedded gap.  The measured spectrum in this region shows no appreciable deficit of transmission from the gapless counterparts.
+\label{figVG12}}
+\end{figure}
+
+Figure \ref{fig_VG02p3_corner} shows the degeneracy between the axial extent of a gap and its fractional fill factor over the measurement beam.  Simply put, a larger gap can be hidden if it doesn't cover much area.  The red dashed line shows the normalized transmission spectrum of an 18 nm gap over 30\% of the measurement area.  Gaps larger than 60 nm would have to cover less than 10\% of the measurement area in order to be consistent with the measurement.  On this zoomed-in vertical scale, the individual draws from the Gaussian process model show morphologies consistent with the correlated measurement error (Figure \ref{figVG02_noGap}).  
 
 
-\subsection{TODO: Spectra of direct bonded Si with no intentionally implanted gaps}
-\section{TODO: Discussion}
+\section{Discussion}
 
-\subsection{TODO: Mitigation of measurement artifacts}
-We mitigated measurement artifacts in the following ways.  We have mostly been able to rule out wavelength-dependent diffraction from the mesh pattern as a measurement artifact, since the beam size is large and the angular spread of diffraction from the mesh pattern would be much smaller than the spread of the beam.  Still, to remove this concern, we moved to using the coarse mesh rather than the medium or fine meshes, when possible.  We saw no difference in the bond quality surrounding the medium or fine meshes, which is consistent with results from the literature \cite{1992JEMat..21..669M}.  Specifically, the gas pressure of bonded wafers grows as the fill factor of gaps decreased.  In other words, what matters is the fill factor of gaps, not their relative sizes.  Since the fine, medium, and coarse meshes had the same fill factors, we anticipate no difference in the pressure of the gaps, and therefore no difference in the bonding properties.
+\subsection{Questioning assumptions of the model}
 
+\emph{More complex underlying gap size distributions-} One key assumption of our model is that the distribution of gap sizes over our measurement area is bimodal.  Specifically, Equation \ref{eqnMix} assumes that there is either a gap of size $d$, or else it is 100\% bonded.  If there is a gradient across the bond, the emergent transmission spectrum will be an admixture of many gaps with various areal coverage fractions.  The full solution becomes an areal integral of Equation \ref{eqFP} normalized by the total measurement area.  Solving for the relative distributions of gaps is highly degenerate, in the same way as we saw in the 2-parameter corner plots of gap depth and fill factor.  We experimented with by-eye fitting parametric distributions of gap sizes, characterized by a maximum and minimum gap size, and a monotonic slope of the distribution.  We found that measurements of very large ($>10\lambda$) gaps with a large gradient offered surprisingly strong constraints on the maximum gap size, because of the conspicuous high frequency Fabry-P\`erot fringes.  For sub-wavelength gaps, the gap size distibution is too degenerate to derive much useful insight on the slope of the distribution.  Specifically, for $d_{max}<\lambda/4$, our simple mixture model will converge on the spectrum of the average gap size, even if the \emph{True} distribution is more complex.  Reducing the measurement area could break some of these degeneracies, if more precision is desired.
+
+\emph{Origin and properties of correlated noise- } Another key assumption of the model is that correlated errors dominate the measurement uncertainty.  This is the same thing as saying that there is an instrumental bias, or that our measurements are \emph{precise} but \emph{inaccurate}.  The extent to which the measurement is inaccurate is tabulated in \ref{tbl_cary5000Pars}, as already mentioned.  We have assumed that the Gaussian Process model can capture the effect of the observed correlated errors.  But to what extent does the Gaussian Process emulate the \emph{True} covariance matrix, which is unknown?  One way to gauge the goodness of fit of the covariance matrix is to generate synthetic data from a best-fit model.  Many of these synthetic draws are shown in the spectra in Figures \rev|\ref{a thru f}| as transparent blue lines.  When overplotted these lines look like a halo of uncertainty enveloping the model and measurement.  The bulk agreement is encouraging.  We also scrutinized individual synthethic spectra with the measured data, and found that the noise model tended to under-predict the length scale of the correlation.  For example, we typically derive $0.15<a<0.4\%$ and $20<s<200$.  The measured data appear to prefer larger values of $s$.  The discrepancy probably comes from the fact that, in reality, the \emph{True} covariance matrix probably has local structures that cannot be replicated by a simple 2-parameter (\emph{i.e.} $a$ and $s$) estimate of the covariance matrix.  A model employing local covariance structures \verb|\cite{Czekala et al. in press}| could better capture some of the residual structure, but would introduce additional computational complexity with little gain.  Overall the Gaussian Process technique provides much better agreement than the na\"{i}ve assumption of zero correlated errors.  
+
+\emph{Validating the MCMC with synthetic data, and addressing heteroscedasticity-}  To evaluate our MCMC fitting method and assumption of homoscedasticity, we generated synthetic data with a known parameters, $d$, $f$, $a$, and $s$ and $\sigma_i$.  We then fit the parameters $d$, $f$, $a$, and $s$ assuming homoscedastic errors, ($\sigma_i = \sigma = 0.02\%$).  The derived physical parameters were consistent with the \emph{\Truth} to within the $1\;\sigma$ confidence interval, but we significantly underestimated $s$ (8 nm instead of 200 nm) and marginally underestimated $a$ (0.0013 instead of 0.0016).  This result is reassuring for our estimation of physical parameters, and shows that the Gaussian Process technique captures realistic uncertainty in the physical parameters, despite an imperfect characterization of the noise correlation length.  
+
+\emph{Polarization and lamp jumps- } As mentioned, the Cary 5000 double beam mode offers considerably lower amplitude of correlated errors than single beam mode \ref{tbl_cary5000Pars}.  However, the double beam mode was found to have enhanced artifacts at wavelengths at which the Cary 5000 monochromator changes its diffraction grating and light sources.  The sharp jumps in transmission were up to a few percent.  The origin of these jumps could be polarization-dependent transmission losses.  Whatever the origin, they cause large systematic errors.  These are still captured by the Gaussian Process structure.  
+
+\emph{Normal incidence- } We have assumed that the transmission measurement is performed at normal incidence.  If the measurement beam forms a non-zero angle with the entrance face, bond interface, or exit face, several things happen to make this technique invalid.  Notably, the polarization effects, Fresnel reflection losses, and the incoherent multiple reflections change the emergent transmission spectrum in non-trivial ways.
+
+\emph{DSP vs AR coated front faces- } Another key assumption of the model is that all the Si$-$air interfaces are well-approximated by Fresnel reflection losses.  If the entrance and exit faces of the bonded samples are AR coated, the incoherent multiple reflection model will have to be modified.  AR coated front and exit faces will result in a larger interface loss for a given gap size than the interface loss computed here.
+
+
+\emph{Refactive index- } We have assumed that the refractive index is identical to that given by \cite{2006SPIE.6273E..77F}.  Double beam mode measurements can reach a precision of comparable to the part-to-part variation of refractive index.  We have normalized spectra by their singleton counterparts from the same heritage (i.e. same wafer box).
+
+\emph{Diffraction from mesh patterns}
+It's conceivable that the mesh patterns Figure \ref{figVS20pattern}.  We ruled out wavelength-dependent diffraction from the mesh pattern as a measurement artifact, since the beam size is large and the angular spread of diffraction from the mesh pattern would be much smaller than the spread of the beam.  To eliminate this concern, we measured in the coarse mesh rather than the medium or fine meshes, when possible.  We saw no difference in the bond quality surrounding the medium or fine meshes, which is consistent with results from the literature \cite{1992JEMat..21..669M}.  Specifically, the gas pressure of bonded wafers grows as the fill factor of gaps decreased.  In other words, what matters is the fill factor of gaps, not their relative sizes.  Since the fine, medium, and coarse meshes had the same fill factors, we anticipate no difference in the pressure of the gaps, and therefore no difference in the bonding properties.
+
+\subsection{What is the smallest gap size this technique can measure?}
+In this section we quantify the limits of how far the technique can be pushed.  There are three key ideas when trying to answer the question ``What is the smallest gap size this technique can measure?''.  The answer for single beam mode is evidently $\sim20 nm$ (Figure \ref{fig_VG02p3_corner}).  In principle this number could be pushed down by averaging many spectra, all normalized by different reference spectra.  Alternatively, double beam mode could be used.  The grating jumps noted above would also limit double beam mode analysis.  If these could be rectified, a very low uncertainty would be obtained, and it is conceivable that gaps as small as a few nanometers could be inferred.
 
 \section{Conclusions}
 We have described a measurement technique and laid out an analysis formalism for the detection and measurement of sub-wavelength gaps at Si$-$Si interfaces.  Experimental measurements show that we can precisely recover the extent of wavelength-scale gaps of known size, account for the presence of small gaps, and capture results consistent with no gap when measuring a monolithic part.
 
 The technique and formalism we describe here can detect and measure the axial extent of gaps in Si$-$Si optical bonds down to a level of $20-30\;$nm.  It makes use of widely available off-the-shelf metrology equipment and simple to implement analysis.  Armed with this technique, optical fabricators have a new diagnostic tool to assess the quality of Si$-$Si bonds.
+
 
 \appendix
 

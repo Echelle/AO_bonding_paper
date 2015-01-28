@@ -27,6 +27,7 @@ all: AO_bondedSi.pdf
 	rm -rf *.log
 	rm -rf *.blg
 	rm -rf *.dvi
+	rm -rf *.out
 	mv AO_bondedSi.pdf diff.pdf
 	cp final/AO_bondedSi.tex .
 	mv diff.pdf final/diff.pdf
