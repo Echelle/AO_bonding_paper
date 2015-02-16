@@ -268,23 +268,25 @@ Figures \ref{figVG03full} to \ref{figVG12} show examples of the predicted and me
 \subsection{Spatially resolved measurements with Sample Transport Accessory}
 We acquired spatially resolved measurements of sample VG09-12 with the Cary 5000 sample transport accessory\verb|\ref{link-to-STA-website}|.  This accessory translates the sample through the measurement beam and takes a transmission spectrum at each position.  The 2 mm step size is comparable to the monochromator's slit size.  We sampled 50 mm across the mesh pattern and into the off-mesh pattern.  The large number of consecutive measurements prevented the requisite near-contemporaneous baseline measurements for normalization.  We fit a line to before-and-after baseline measurements to infer the mean-level drift, which we divided out of each spectrum.  We reduced the measured wavelength range to $1250-1775\;$nm.
 
-Figure \verb|\ref{photo-of-VG09-12}| shows an illustration of sample VG09-12, with the approximate center locations of measurements marked with black dots.  The colored dots match the color of the spectra in Figure \verb|\ref{fig-STA-obs}| The approximate size of the measurement beam is shown for scale.  The conspicuous mesh pattern has a lab measured depth of $49\pm6\;$nm, and fill factor of 50\%.  The prediction band for a transmision spectrum with those properties, and zero extra gap is shown as the green apple colored swath.  If the mesh pattern were perfectly bonded, we would expect all the spectra to fall inside the color swath in Figure \verb|\ref{fig-STA-obs}|.  Instead we see that some spectra are inside the swath, and others show a deficit of flux, indicating an extra gap as in the mixture model in Equation \verb|\ref{mixture-model-equation}|.
+%Figure \verb|\ref{photo-of-VG09-12}| shows an illustration of sample VG09-12, with the approximate center locations of measurements marked with colored dots.  The colored dots match the color of the spectra in Figure \verb|\ref{fig-STA-obs}| The approximate size of the measurement beam is shown for scale.  The conspicuous mesh pattern has a lab measured depth of $49\pm6\;$nm, and fill factor of 50\%.  The prediction band for a transmision spectrum with those properties, and zero extra gap is shown as the green apple colored swath.  If the mesh pattern were perfectly bonded, we would expect all the spectra to fall inside the color swath in Figure \verb|\ref{fig-STA-obs}|.  Instead we see that some spectra are inside the swath, and others show a deficit of flux, indicating an extra gap as in the mixture model in Equation \verb|\ref{mixture-model-equation}|.
+
+Sample VG09-12 has a single coarse mesh.  The mesh is composed of boxes plasma-etched to a depth of $49\pm6\;$nm.   The boxes have an edge length of 1.5 mm.  The edges of adjacent boxes are spaced 0.62 mm apart, to yield an overall fill factor of 50\%.  The Cary5000 measurement beam size is $\sim$1 mm $\times$ 10 mm.  Since the beam size is comparable to the mesh size, the fill factor at the position of the measurement will will differ from 50\%. The slit measurement was aligned with the mesh grid.  The highest fill factor acheivable is about 75\%, assuming the slit fit perfectly within a column of boxes.  The slit is larger than 0.62 mm, so the measurement cannot exhibit a 0\% fill factor of voids.  The precise value of the minimum fill factor depends on the details of the slit width, which is not known precisely.  We assume that a minimum fill factor of 30\%, but caution that this boundary is fuzzy.  Figure \verb|\ref{VG09-12 coarse mesh STA}| shows
 
 
 \begin{figure}[htbp]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG12_twoGaps_corner.pdf}
-              \caption{Fitted gap sizes $d_M$ and $\epsilon$ for VG09-12}
-		\label{figVG12_corner}
+              \includegraphics[width=\textwidth]{figs/VG09_12_STA_illustration.pdf}
+              \caption{Illustration of VG09-12 sample transport accessory measurement positions}
+		\label{figVG12_STA_corner}
         \end{subfigure}
 
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG12_twoGaps.pdf}
-                \caption{Measured spectrum and fit of VG09-12}
+                \includegraphics[width=\textwidth]{figs/VG0912_STA_scan_coarse.pdf}
+                \caption{Measured gap transmission spectra of VG09-12 on- and off- mesh}
                 \label{figVG12_f50}
         \end{subfigure}
-\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12, which has an imbedded gap of axial extent $d=49\pm6\;$nm with fill factor $f=0.5$.  The measured spectrum in this region shows a clear deficit of transmission from the gapless counterparts.  The measured spectrum also shows a deficit of transmission compared to the predicted transmission of a 49 $\pm6\;$nm gap with 50\% fill factor (green apple shaded color band).  The discord between prediction and measurement could be due to several factors including an underestimate of the intrinsic gap size, an underestimate of the intrinsic fill factor, or an additional gap in excess of the prediction.  We favor the latter interpretation, since undesired gaps are common in these direct-bonded Si samples that have not undergone high-temperature thermal annealing.
+\caption{Predictions and measurements of the coarse mesh region in sample VG09-12.
 \label{figVG12}}
 \end{figure}
 
