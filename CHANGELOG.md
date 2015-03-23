@@ -8,10 +8,12 @@ This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 - Makefile now compares to commit `be05613`, the most recent version seen by DTJ
 - Remove subsection headings in the introduction
 - Change "etalon" to gap in most cases
+- Rearrange discussion-- IR imaging first, then our spectral technique
+- Remove extraneous entries in the Cary5000 table.
 
 ### Added
 
 
 ### Fixed
-
+- Copious bug fixes from DTJ.
 
