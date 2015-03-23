@@ -209,7 +209,7 @@ We set our prior probability distribution functions \cite{2013sdmm.book.....I}, 
 	\ln{p(d,f,a,s|\lambda, T_{obs}, \sigma_i)} \propto \ln{p(d,f,a,s)} -\frac{1}{2}\;\boldsymbol{r^\intercal}\boldsymbol{C^{-1}}\boldsymbol{r} -\frac{1}{2}\;\ln{\det{\boldsymbol{C}}} \label{eqnPosterior}
 \end{equation}
 
-where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{\url{https://github.com/dfm/emcee}}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the spectra.  Figures \ref{figVG03full}, \ref{figVG03part}, and \ref{figVG12_corner} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.
+where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model $T_{mix}$.  We produce posterior samples with Markov Chain Monte Carlo (MCMC).  Specifically, we implemented \texttt{emcee}\footnote{\url{https://github.com/dfm/emcee}}\cite{emcee}, with 32 walkers, hundreds of burn-in samples, and 600-1000 iterations.  We initialized the walkers in the vicinity of our best guess for parameters based on visual inspection of the spectra.  Figures \ref{figVG03full}, \ref{figVG03part}, and \ref{figVG12} show examples of posterior samples including corner plots of the interesting physical parameters $d$ and $f$.
 
 \subsection{Spectra of direct bonded Si with known gap sizes}
 \label{secKnownGaps}
@@ -277,26 +277,26 @@ Figure \ref{figV09G12_STA_illus}) shows an illustration of sample VG09-12, with 
 A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.
 
 \subsection{What is the smallest gap this technique can detect?}
-We devised two experiments to approach the question, ``What is the smallest gap this technique can detect?''.  We applied our MCMC model fitting formalism to an unbonded DSP wafer.  The measured transmission spectrum was normalized by a transmission spectrum of the same sample taken only a few minutes earlier.  Any difference of this normalized transmission from unity is attributable entirely to measurement uncertainty, and represents the smallest possible signal one could extract.  We also measured bonded sample VG09-12 in a region away from the intentionally implanted gap.  This spectrum was processed in the same way as the spectra of the VG09-12 mesh area, exhibiting a mean value of 0.9998 and a standard deviation $\sigma=0.0008$.  This spectrum is consistent with no gap.  We applied our MCMC formalism to further constrain the range of gap sizes consistent with the spectrum.  Table \ref{tbl_DerivedGapSizes} summarizes the sizes of gaps.  The well-calibrated DSP noise spectrum rules out (at $>3\sigma$) gap sizes larger than about 9.0 nm over $>80$\% of the measurement area.  Similarly, the VG09-12 off-mesh spectrum rules out gaps greater than 14 nm over $>80$\% of the measurement area.  Figure \ref{} shows the corner plots and spectra for the
+We devised two experiments to approach the question, ``What is the smallest gap this technique can detect?''.  We applied our MCMC model fitting formalism to an unbonded DSP wafer.  The measured transmission spectrum was normalized by a transmission spectrum of the same sample taken only a few minutes earlier.  Any difference of this normalized transmission from unity is attributable entirely to measurement uncertainty, and represents the smallest possible signal one could extract.  We also measured bonded sample VG09-12 in a region away from the intentionally implanted gap.  This spectrum was processed in the same way as the spectra of the VG09-12 mesh area, exhibiting a mean value of 0.9998 and a standard deviation $\sigma=0.0008$.  This spectrum is consistent with no gap.  We applied our MCMC formalism to further constrain the range of gap sizes consistent with the spectrum.  Table \ref{tbl_DerivedGapSizes} summarizes the sizes of gaps.  The well-calibrated DSP noise spectrum rules out (at $>3\sigma$) gap sizes larger than about 9.0 nm over $>80$\% of the measurement area.  Similarly, the VG09-12 off-mesh spectrum rules out gaps greater than 14 nm over $>80$\% of the measurement area.  Figure \ref{figVG12} shows the corner plots and spectra for the off-mesh region in VG09-12.
 
 \begin{figure}[htbp]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG02p3_corner.pdf}
+              \includegraphics[width=\textwidth]{figs/VG0912_0gap_corner.pdf}
               \caption{Fitted gap size $d$ and fill factor $f$ for VG09-12 off-mesh}
-		\label{fig_VG02p3_corner}
+		\label{VG0912_0gap_corner}
         \end{subfigure}
 
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG02_noGap.pdf}
-                \caption{Measured spectrum and fit of VG02}
-                \label{figVG02_noGap}
+                \includegraphics[width=\textwidth]{figs/VG0912_0gap.pdf}
+                \caption{Measured spectrum of VG09-12}
+                \label{VG0912_0gap}
         \end{subfigure}
-\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG02, which has no intentionally imbedded gap.  The measured spectrum in this region shows no appreciable deficit of transmission from the gapless counterparts.
+\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12 in the off-mesh region.  The measured spectrum in this region shows no appreciable deficit of transmission from a DSP reference sample.
 \label{figVG12}}
 \end{figure}
 
-Figure \ref{fig_VG02p3_corner} shows the degeneracy between the axial extent of a gap and its fractional fill factor over the measurement beam.  Simply put, a larger gap can be hidden if it doesn't cover much area.  The red dashed line shows the normalized transmission spectrum of an 18 nm gap over 30\% of the measurement area.  Gaps larger than 60 nm would have to cover less than 10\% of the measurement area in order to be consistent with the measurement.  On this zoomed-in vertical scale, the individual draws from the Gaussian process model show morphologies consistent with the correlated measurement error (Figure \ref{figVG02_noGap}).
+Figure \ref{fig_VG02p3_corner} shows the degeneracy between the axial extent of a gap and its fractional fill factor over the measurement beam.  Simply put, a larger gap can be hidden if it doesn't cover much area.  The red dashed line shows the normalized transmission spectrum of a 14 nm gap over 100\% of the measurement area.  Gaps larger than 60 nm would have to cover less than 10\% of the measurement area in order to be consistent with the measurement.
 
 
 \section{Discussion}
