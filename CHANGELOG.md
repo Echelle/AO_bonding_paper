@@ -12,7 +12,7 @@ This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 - Remove extraneous entries in the Cary5000 table.
 
 ### Added
-
+- Some text about nuisance parameters
 
 ### Fixed
 - Copious bug fixes from DTJ.
