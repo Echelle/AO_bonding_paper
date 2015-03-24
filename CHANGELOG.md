@@ -10,6 +10,7 @@ This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 - Change "etalon" to gap in most cases
 - Rearrange discussion-- IR imaging first, then our spectral technique
 - Remove extraneous entries in the Cary5000 table.
+- Include all DTJ comments
 
 ### Added
 - Some text about nuisance parameters

@@ -250,46 +250,44 @@ Figure \ref{figVG03full} shows a parameter determination for the measurement of 
 \subsection{Spatially resolved measurements with Sample Transport Accessory}
 We acquired spatially resolved measurements of the pair of bonded parts VG09-12, (Tables \ref{tbl_experiments} and \ref{tbl_meshPatterns}) with the Cary 5000 sample transport accessory \footnote{\url{http://www.chem.agilent.com/en-US/products-services/instruments-systems/molecular-spectroscopy/sample-transport-accessory/}}.  This accessory translates the sample through the measurement beam and takes a transmission spectrum at each position.  We chose a 2 mm step size, which is slightly larger than the $\sim1$ mm beam width.  We sampled 50 mm across the mesh pattern and into the off-mesh pattern (Figure \ref{figVG0912_STA_illus}).  The large number of consecutive measurements prevented the requisite near-contemporaneous baseline measurements for normalization.  We fit a line to before-and-after baseline measurements to infer the mean-level drift, which we divided out of each spectrum.  We measured over a wavelength range from 1250 to 1775 nm.
 
-Figure \ref{figV09G12_STA_illus} shows an illustration of sample VG09-12, with the approximate center locations of measurements marked with colored dots.  The colored dots match the color of the spectra in Figure \ref{figVG0912} The approximate size of the measurement beam is shown for scale.  The conspicuous mesh pattern has a lab measured depth of $49\pm6\;$nm, and global fill factor of 50\%.  However, since the beam size is comparable to mesh grid size, the achieved fill factor can vary from about 30\% to 75\%.  The gray band in Figure \ref{figVG0912} represents the allowable range of predictions, taking into account both the uncertainty in the mesh depth and fill factor.  If the mesh pattern were perfectly bonded, we would expect all the spectra to fall inside the color swath in Figure \ref{figVG0912}.  We see excellent consistency between prediction and measurement, though we cannot rule out the presence of extra gaps in the mesh area.  Outside the mesh area, the bonding is excellent, as demonstrated by the off-mesh transmission close to unity transmission.
+The colored dots in the position marked in Figure \ref{figVG0912_STA_illus} match the color of the spectra in Figure \ref{figVG0912}.  The approximate size of the measurement beam is shown for scale.  The conspicuous mesh pattern has a depth of $49\pm6\;$nm, as measured with an optical profiler, and global fill factor of 50\%.  However, since the beam size is comparable to mesh grid size, the fill factor for any given measurement can vary from about 30\% to 75\%.  The gray band in Figure \ref{figVG0912} represents the allowable range of predictions, taking into account both the uncertainty in the mesh depth and fill factor.  If the mesh pattern were perfectly bonded, we would expect all the spectra to fall inside the color swath in Figure \ref{figVG0912}.  We see excellent consistency between prediction and measurement, with one measured spectrum hinting at a small gap ($\lesssim15$) in one measurement position.  Outside the mesh area, the bonding is excellent, as demonstrated by the off-mesh transmission with transmission consistent with 100\% to within the measurement uncertainty of 0.2\%.
 
 
 \begin{figure}[htbp]
-        \centering
-        \begin{subfigure}[b]{0.35\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG09_12_STA_illustration.pdf}
-              \caption{Illustration of VG09-12 sample transport accessory measurement positions \label{figVG0912_STA_illus}}
-        \end{subfigure}
-        \begin{subfigure}[b]{0.65\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG0912_STA_scan_coarse.pdf}
-                \caption{Measured gap transmission spectra of VG09-12 on- and off- mesh \label{figVG0912}}
-        \end{subfigure}
-\caption{Predictions and measurements of the coarse mesh region in sample VG09-12.  We took 50 measurements across the face of VG09-12, including both on- and off- mesh regions.  The measurements are consistent with the predicted transmission, shown as the gray band.  The off-mesh regions demonstrate near-perfect bonding.
-\label{figVG12}}
+    \centering
+    \begin{subfigure}[b]{0.35\textwidth}
+        \includegraphics[width=\textwidth]{figs/VG09_12_STA_illustration.pdf}
+        \caption{Illustration of VG09-12 sample transport accessory measurement positions. \label{figVG0912_STA_illus} }
+    \end{subfigure}
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth]{figs/VG0912_STA_scan_coarse.pdf}
+        \caption{Measured gap transmission spectra of VG09-12 on- and off- mesh \label{figVG0912}}
+    \end{subfigure}
+\caption{Predictions and measurements of the coarse mesh region in sample VG09-12.  We took 50 measurements across the face of VG09-12, including both on- and off- mesh regions.  The measurements are consistent with the predicted transmission, shown as the gray band.  The off-mesh regions demonstrate near-perfect bonding.\label{figVG12}}
 \end{figure}
 
-A key result of this work is to show that gaps of known dimensions are recovered in our spectroscopy.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.
+A key result of these test measurements is to demonstrate that gaps of known dimensions are recovered in our spectroscopy, both for large and small gaps.  Table \ref{tbl_DerivedGapSizes} summarizes the outcome of some measurements in the areas with known gaps and fill factors.  The table lists the median sample and 68\% confidence intervals.  The results from the scans shown in Figure \ref{figVG12} further support our conclusion.
 
 \subsection{What is the smallest gap this technique can detect?}
 We devised two experiments to approach the question, ``What is the smallest gap this technique can detect?''.  We applied our MCMC model fitting formalism to an unbonded DSP wafer.  The measured transmission spectrum was normalized by a transmission spectrum of the same sample taken only a few minutes earlier.  Any difference of this normalized transmission from unity is attributable entirely to measurement uncertainty, and represents the smallest possible signal one could extract.  We also measured bonded sample VG09-12 in a region away from the intentionally implanted gap.  This spectrum was processed in the same way as the spectra of the VG09-12 mesh area, exhibiting a mean value of 0.9998 and a standard deviation $\sigma=0.0008$.  This spectrum is consistent with no gap.  We applied our MCMC formalism to further constrain the range of gap sizes consistent with the spectrum.  Table \ref{tbl_DerivedGapSizes} summarizes the sizes of gaps.  The well-calibrated DSP noise spectrum rules out (at $>3\sigma$) gap sizes larger than about 9.0 nm over $>80$\% of the measurement area.  Similarly, the VG09-12 off-mesh spectrum rules out gaps greater than 14 nm over $>80$\% of the measurement area.  Figure \ref{figVG12} shows the corner plots and spectra for the off-mesh region in VG09-12.
 
 \begin{figure}[htbp]
-        \centering
-        \begin{subfigure}[b]{0.5\textwidth}
-              \includegraphics[width=\textwidth]{figs/VG0912_0gap_corner.pdf}
-              \caption{Fitted gap size $d$ and fill factor $f$ for VG09-12 off-mesh}
-		\label{VG0912_0gap_corner}
-        \end{subfigure}
-
-        \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{figs/VG0912_0gap.pdf}
-                \caption{Measured spectrum of VG09-12}
-                \label{VG0912_0gap}
-        \end{subfigure}
-\caption{ Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12 in the off-mesh region.  The measured spectrum in this region shows no appreciable deficit of transmission from a DSP reference sample.
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figs/VG0912_0gap_corner.pdf}
+        \caption{Fitted gap size $d$ and fill factor $f$ for VG09-12 off-mesh}
+	\label{VG0912_0gap_corner}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figs/VG0912_0gap.pdf}
+        \caption{Measured spectrum of VG09-12}
+        \label{VG0912_0gap}
+    \end{subfigure}
+\caption{Similar to Figure \ref{figVG03full} and \ref{figVG03part}, but for sample VG09-12 in the off-mesh region.  The measured spectrum in this region shows no appreciable deficit of transmission from a DSP reference sample.
 \label{figVG12}}
 \end{figure}
 
-Figure \ref{fig_VG02p3_corner} shows the degeneracy between the axial extent of a gap and its fractional fill factor over the measurement beam.  Simply put, a larger gap can be hidden if it doesn't cover much area.  The red dashed line shows the normalized transmission spectrum of a 14 nm gap over 100\% of the measurement area.  Gaps larger than 60 nm would have to cover less than 10\% of the measurement area in order to be consistent with the measurement.
+Figure \ref{VG0912_0gap_corner} shows that there is a degeneracy between the axial extent of a gap and its fractional fill factor over the measurement beam; a larger gap can be hidden if it covers only a small fraction of the measured area.  The red dashed line shows the normalized transmission spectrum of a 14 nm gap over 100\% of the measurement area.  Gaps larger than 60 nm would have to cover less than 10\% of the measurement area in order to be consistent with the measurement.
 
 
 \section{Discussion}
@@ -298,7 +296,7 @@ Figure \ref{fig_VG02p3_corner} shows the degeneracy between the axial extent of 
 
 \emph{More complex underlying gap size distributions-} One key assumption of our model is that the distribution of gap sizes over our measurement area is bimodal.  Specifically, Equation \ref{eqnMix} assumes that there is either a gap of size $d$, or else it is 100\% bonded.  If there is a gradient across the bond, the emergent transmission spectrum will be an admixture of many gaps with various areal coverage fractions.  The full solution becomes an areal integral of Equation \ref{eqFP} normalized by the total measurement area.  Solving for the relative distributions of gaps is highly degenerate, in the same way as we saw in the 2-parameter corner plots of gap depth and fill factor.  We experimented with by-eye fitting parametric distributions of gap sizes, characterized by a maximum and minimum gap size, and a monotonic slope of the distribution.  We found that measurements of very large ($>10\lambda$) gaps with a large gradient offered surprisingly strong constraints on the maximum gap size, because of the conspicuous high frequency Fabry-P\`erot fringes.  For sub-wavelength gaps, the gap size distibution is too degenerate to derive much useful insight on the slope of the distribution.  Specifically, for $d_{max}<\lambda/4$, our simple mixture model will converge on the spectrum of the average gap size, even if the \emph{True} distribution is more complex.  Reducing the measurement area could break some of these degeneracies, if more precision is desired.
 
-\emph{Origin and properties of correlated noise- } Another key assumption of the model is that correlated errors dominate the measurement uncertainty.  We have assumed that the Gaussian Process can capture the effect of the observed correlated errors.  We tested the need for Gaussian process regression by generating synthetic data spectra with known gap size and fill factor, and known covariance structure.  We applied ordinary least squares regression to the synthetic spectra and derived values for $d$ and $f$ that were biased by up to $20\sigma$ or more.  Applying Gaussian process regression recovered the input values to within $1\sigma$.
+\emph{Origin and properties of correlated noise- } Another key assumption of our analysis is that correlated errors dominate the measurement uncertainty.  We have assumed that the Gaussian process can capture the effect of the observed correlated errors.  We tested the need for Gaussian process regression by generating synthetic data spectra with known gap size and fill factor, and known covariance structure.  We applied ordinary least squares regression to the synthetic spectra and derived values for $d$ and $f$ that were biased by up to $20\sigma$ or more.  Applying Gaussian process regression recovered the input values to within $1\sigma$.
 
 \emph{Normal incidence- } We have assumed that the transmission measurement is performed at normal incidence.  If the measurement beam forms a non-zero angle with the entrance face, bond interface, or exit face, several things happen to make this technique invalid.  Notably, the polarization effects, Fresnel reflection losses, and the incoherent multiple reflections change the emergent transmission spectrum in non-trivial ways.
 
@@ -320,7 +318,7 @@ The technique and formalism we describe here can detect and measure the axial ex
 \section{Incoherent Multiple Reflections Transfer Matrix Method}
 \label{sec:Append-IMRTMM}
 
-The wave transfer matrix method is described in detail in Chapter 7 by Saleh and Teich in ``Fundamentals of Photonics'' \cite{2007fuph.book.....S}.  Briefly, their technique is to assemble a 2$\times$2 scattering matrix $\boldsymbol{S}$ which has the elements:
+Saleh and Teich (see Chapter 7 ``Fundamentals of Photonics'' \cite{2007fuph.book.....S}) describe the wave transfer matrix method.  Their technique is to assemble a 2$\times$2 scattering matrix $\boldsymbol{S}$ which has the elements:
 \begin{eqnarray}
 \boldsymbol{S} = \left(
 \begin{array}{cc}
@@ -329,7 +327,7 @@ The wave transfer matrix method is described in detail in Chapter 7 by Saleh and
 \end{array}
 \right)
 \end{eqnarray}
-Where $t$ and $r$ stand for transmission and reflection respectively.  The order of subscripts is the order of origin and destination of the wave in regards to the interface, so we know something about the direction of the wave and how it got there.  The $\boldsymbol{S}$ matrix encapsulates all the information we need to know about how light waves interact with the interface.  The real power of the matrix technique comes from a cousin of the scattering matrix, the so-called wave transfer matrix, $\boldsymbol{M}$.  The matrix $\boldsymbol{M}$ has the convenient property that its output can be used as the input for another matrix.  In other words, the input vector to $\boldsymbol{M}$ is made of the left and right moving components directly before the interface; the outputs are the left and right moving components directly after the interface:
+Where $t$ and $r$ stand for transmission and reflection respectively.  The order of subscripts is the order of origin and destination of the wave with respect to the interface, so we know the origin and direction of the wave.  The $\boldsymbol{S}$ matrix encapsulates all information about how light waves interact with the interface.  The power of the technique comes from the wave transfer matrix, $\boldsymbol{M}$.  The matrix $\boldsymbol{M}$ has the convenient property that its output can be used as the input for another matrix.  In other words, the input vector to $\boldsymbol{M}$ is made of the left and right moving components directly before the interface; the outputs are the left and right moving components directly after the interface:
 \begin{eqnarray}
 \left(
 \begin{array}{c}
@@ -357,7 +355,7 @@ Where $t$ and $r$ stand for transmission and reflection respectively.  The order
 
 The elements of $\boldsymbol{S}$ and $\boldsymbol{M}$ are related to each other by geometric transformations\cite{2007fuph.book.....S}.  In thin films, the wavelength is comparable to the size of the dielectric layer and the vector components $U_{i}$ represent the complex amplitudes of the electromagnetic waves.  The polarization state can be encapsulated in scattering matrix components\cite{2007fuph.book.....S}.  The intensities of the emergent spectrum can be computed from the absolute square of the complex amplitudes.  For thick films, the vector components are the intensities of the emergent spectrum, since waves are incoherent.  \cite{2002ApOpt..41.3978K} work out the general transfer-matrix method for optical multilayer systems with incoherent interference.  The key idea for the incoherent transfer matrix method approach is to populate a scattering matrix with elements equal to the (wavelength dependent) transmitted $T_i$ and reflected $R_i$ intensities of an interface or set of interfaces that act together.  Then, use the geometric transformations to construct the $\boldsymbol{M}$ matrix.
 
-The matrix for the silicon air gap is calculated in the following way.  The first key idea is to treat the entire air gap as an abstraction, a Fabry-P\`erot etalon.  We do not need to bother to consider the microscopic coherent interactions with the etalon transmission, all of that information is encapsulated in these equations for a Fabry-P\`erot etalon model for the gap:
+The matrix for the silicon air gap is calculated in the following way.  We treat the air gap as a Fabry-P\`erot etalon.  We do not need to consider the microscopic coherent interactions with the etalon transmission, all of that information is encapsulated in these equations for a Fabry-P\`erot etalon model for the gap:
 
 \begin{eqnarray}
  \delta = \frac{2\pi}{\lambda}2d \label{eq:phase} \\
