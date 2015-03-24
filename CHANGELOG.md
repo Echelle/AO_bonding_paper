@@ -14,6 +14,7 @@ This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Some text about nuisance parameters
+- A section in discussion about how to improve IR imaging
 
 ### Fixed
 - Copious bug fixes from DTJ.
