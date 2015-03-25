@@ -19,4 +19,5 @@ This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Copious bug fixes from DTJ.
 - Run spellcheck
+- Deprecate all the unused figures that were laying around
 
