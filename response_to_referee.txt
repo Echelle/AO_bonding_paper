@@ -16,6 +16,9 @@ I corrected these grammatical errors:
 
 I removed the sentence "Our ultimate goal is to bond optics with thicknesses as large as 30 mm.", which we agree is too specific to our application.
 
+I reduced the abstract length by about 40% to make it more concise.
+
+
 
 
 
