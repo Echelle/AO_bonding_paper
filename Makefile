@@ -11,7 +11,7 @@ all: AO_bondedSi.pdf
 	mv AO_bondedSi.pdf final/
 	mv AO_bondedSi.tex final/
 	rm -rf *Notes.bib
-	rm -rf *.bbl
+	#rm -rf *.bbl
 	rm -rf *.log
 	rm -rf *.blg
 	rm -rf *.dvi
@@ -22,7 +22,7 @@ all: AO_bondedSi.pdf
 	pdflatex AO_bondedSi
 	pdflatex AO_bondedSi
 	rm -rf *Notes.bib
-	rm -rf *.bbl
+	#rm -rf *.bbl
 	rm -rf *.aux
 	rm -rf *.log
 	rm -rf *.blg

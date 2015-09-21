@@ -15,3 +15,10 @@ revtex4-1/
 Makefile
 deprecated/
 *.pkl
+notebooks/*.pdf
+notebooks/*.jpg
+notebooks/anim
+notebooks/fill_anim
+MGS_AO_SiGaps.tar
+MGS_AO_archive
+*.bbl
