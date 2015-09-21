@@ -8,6 +8,14 @@ Dear anonymous referee and editor,
 Thank you for your referee report and detailed reading of our manuscript, "Optical characterization of gaps in directly bonded Si compound optics using infrared spectroscopy".  Below I respond to the referee's feedback.
 
 
+I corrected the accent mark in Fabry-Pérot for all instances of the name.
+
+I corrected these grammatical errors:
+- p5. Since silicon is opaque in the optical (range?), the...
+- p6. are too small to (be) resolve(d) spatially
+
+I removed the sentence "Our ultimate goal is to bond optics with thicknesses as large as 30 mm.", which we agree is too specific to our application.
+
 
 
 
