@@ -18,6 +18,14 @@ I removed the sentence "Our ultimate goal is to bond optics with thicknesses as 
 
 I reduced the abstract length by about 40% to make it more concise.
 
+I corrected the title of Section 3.
+
+I entirely removed the paragraph in Section 4, "The Cary 5000 has four operation modes..."
+
+I entirely removed the paragraph in Section 4, "The spectral sampling ranged from..."  (This uncontroversial information is in the nearby table.)
+
+I added a discussion of least squares regression versus Gaussian process regression.
+
 
 
 
