@@ -13,9 +13,11 @@ Few remarks:
 - the same remark can be made for the other parts of the articles. (more concise)
 
 In part 4:
-This part should be either more concise (double mode ...) or more informative. The correlation the author are talking about should be more clearly or rigorously defined (e.g. first I thought the author were talking about a some spatial correlation existing between spectra from on place to one other...)
+This part should be either more concise (double mode ...) or more informative. 
+
+The correlation the author are talking about should be more clearly or rigorously defined (e.g. first I thought the author were talking about a some spatial correlation existing between spectra from on place to one other...)
 in part 5.
-For me Tdsp is missing in eq 5. ( Tmix= f Tg&#43;(1-f)Tdsp )
+
 I regret that the main optical assumptions of the method are not given here
 
 5.B: the term "Sample Transport Accessory" is really not adapted for a title as it is only meaningful for owners of a carry 5000 or very similar equipment. The technical description should be more general. Do we need a carry 5000 to reproduce the experiments?
