@@ -26,7 +26,8 @@ I entirely removed the paragraph in Section 4, "The spectral sampling ranged fro
 
 I added a discussion of least squares regression versus Gaussian process regression.
 
-In regards to the comment, "For me Tdsp is missing in eq 5. ( Tmix= f Tg&#43;(1-f)Tdsp )", the referee is correct that the last term in eq. 5 represents the contribution of DSP wafer, but the Tdsp has been divided out as described in eq 4.  So the last term could be thought of as (1-f)*Tdsp/Tdsp = (1-f)*1.  The reviewers comment did, however, cause me to revise my description of equation 4 to clarify this point.  
+In regards to the comment, "For me Tdsp is missing in eq 5. ( Tmix= f Tg&#43;(1-f)Tdsp )", the referee is correct that the last term in eq. 5 represents the contribution of DSP wafer, however the Tdsp factor has been divided out as described in eq 4.  So the last term could be thought of as (1-f)*Tdsp/Tdsp = (1-f)*1.  The reviewers comment did, however, cause me to revise my description of equation 4 to clarify this point.  
 
+In regards to the comment, '5.B: the term "Sample Transport Accessory" is really not adapted...', I have removed the mention of the sample transport accessory, and instead simply described the process of stepping across the sample.
 
-
+I have now defined temperature, T, before its first use, and have eliminated the Figure 1, which was a plot of the temperature dependence of the refractive index.
