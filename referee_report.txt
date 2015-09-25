@@ -8,11 +8,3 @@ The purpose of the paper is to present an approach able to determine the (here f
 The method is tested on engineered gaps where the parallelism of the silicon interfaces is conserved. In the proposed experiments the gap distribution is only bi-modal (constant gap or no gap). 
 
 My general feeling is that there is enough data and information to warrant a publication in applied optics but the experimental description lack concision and the interest of the Monte Carlo Markov Chain (MCMC) analysis lacks motivation. Actually I did'nt get the interest of MCMC method as I did'nt understood why a more standard least-square method couldn't be applied. I think a sound introduction the MCMC interest in the present context should be given, while again more concision is required in the different parts of the paper. If MCMC is interesting due to the fact that the observed error spectrum exhibit correlations it should be stated clearly and explain in more details. 
-
-Few remarks:
-- the same remark can be made for the other parts of the articles. (more concise)
-
-The correlation the author are talking about should be more clearly or rigorously defined (e.g. first I thought the author were talking about a some spatial correlation existing between spectra from on place to one other...)
-in part 5.
-
-I regret that the main optical assumptions of the method are not given here

@@ -1,12 +1,9 @@
-Dr. Michael Gully-Santiago
-Monday, September 21, 2015
-
-Response to referee report: 
-
-Dear anonymous referee and editor,
+From: Dr. Michael Gully-Santiago, on behalf of all coauthors
+To: Anonymous referee and topical editor, Applied Optics
+Date: Monday, September 21 - Friday September 25, 2015
+Re: Response to referee report
 
 Thank you for your referee report and detailed reading of our manuscript, "Optical characterization of gaps in directly bonded Si compound optics using infrared spectroscopy".  Below I respond to the referee's feedback.
-
 
 I corrected the accent mark in Fabry-Pérot for all instances of the name.
 
@@ -31,3 +28,10 @@ In regards to the comment, "For me Tdsp is missing in eq 5. ( Tmix= f Tg&#43;(1-
 In regards to the comment, '5.B: the term "Sample Transport Accessory" is really not adapted...', I have removed the mention of the sample transport accessory, and instead simply described the process of stepping across the sample.
 
 I have now defined temperature, T, before its first use, and have eliminated the Figure 1, which was a plot of the temperature dependence of the refractive index.
+
+In response to the referee's comments on concision, I have cut many lines of text, and in some cases entire paragraphs that I agreed were immaterial to the main idea of the paper.  The manuscript lost at least 2 pages out of the raw 32.  I have motivated more clearly the interest in the MCMC formalism over a conventional least squares technique, now located in section 4- "comparing models to data."  Indeed, I agree that a least squares technique can be applied, but I also note the advantages of the Gaussian process regression technique.  I have posted several references to help the reader reproduce the Gaussian Process regression technique if desired.
+
+Upon inspecting this final submission, it is clear that the manuscript has been much improved from the reviewer's comments, particularly with a clearer 'flow' to the paper.
+
+Best regards,
+Dr. Gully-Santiago
