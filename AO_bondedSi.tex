@@ -123,7 +123,7 @@ We also define a mixture model in which the observed normalized gap spectrum $T_
 
 where $f$ is the areal fill factor of the region exhibiting a finite gap size, and $1-f$ is therefore the areal fill factor of the perfectly bonded area.  $T_g$ is defined in Equation \ref{eqFP}.  The only free parameters in Equation \ref{eqnMix} are $d$ and $f$.  Both of these parameters are fixed in our direct bonded Si wafers with synthetic gaps, and are listed in Table \ref{tbl_meshPatterns}.  Synthetic embedded gaps therefore offer an excellent test of our ability to recover the gap axial extent $d$ and areal fill factor $f$ (Section \ref{secResults}).
 
-\section{Fabricating and embedded gaps of known axial and lateral extent}
+\section{Embedded gaps of known axial and lateral extent}
 
 We evaluated our metrology method experimentally by embedding gaps of known sizes in the interface between two bonded Si substrates and measuring the effects of these gaps on IR transmission.  The substrate thicknesses ranged from 0.5 to 3.3 mm.
 
@@ -156,18 +156,18 @@ IR image of part VS20-21. Three rectangular mesh areas are apparent (Table \ref{
 \end{figure}
 
 
-\section{Measurement technique and correlated measurement errors}
-\label{sec_aboutErrors}
+\section{Data}
 
 We measured transmission spectra through the bonded Si samples with an Agilent Cary 5000 UV-Vis-NIR spectrophotometer.  Table \ref{tabCary5000pars} lists the typical measurement settings and tool performance.
-
-Measurement uncertainty can be characterized by both its \emph{bias} and \emph{variance} \cite{2013sdmm.book.....I}.  The bias is equivalent to a mean-level drift, which may be attributable to monochromator lamp luminosity drift.  The variance is the random sample-to-sample measurement residual remaining once the bias term is removed.  In our experiments, the bias term has an amplitude of 0.2\%, whereas the variance has an amplitude of 0.02\%.  Our measurement uncertainty is dominated by bias, not variance.
-
-\section{Comparing the Fabry-P\'{e}rot model to data}
-
-At this stage, \emph{any} regression technique can be employed to compare the Fabry-P model to data.  Least squares regression and other popular methods can be applied easily.  However, since least squares regression assumes zero bias, we elected to apply a Gaussian process regression technique that can handle biased measurements \cite{2013sdmm.book.....I,DFMgp,rasmussen2006gaussian}.  Given the relatively small bias amplitude (0.2\%), least squares regression and Gaussian process regression might yield similar solutions for the gap size, but least squares regression would drastically underestimate the \emph{uncertainty} value associated with the derived value of gap size\cite{DFMgp}.
-
 \input{tbls/tbl_cary5000Pars.tex}
+
+\subsection{Comparing the Fabry-P\'{e}rot model to data}
+
+At this stage, \emph{any} regression technique can be employed to compare the Fabry-P\'{e}rot to data.  Least squares regression and other popular methods can be applied easily.  
+
+Our measurement uncertainty is dominated by \emph{bias}, not \emph{variance} \cite{2013sdmm.book.....I}.  The bias is similar to a mean-level drift, which may be attributable to monochromator lamp luminosity drift.  The variance is the random sample-to-sample measurement residual remaining once the bias term is removed.  In our experiments, the bias term has an amplitude of 0.2\%, whereas the variance has an amplitude of 0.02\%.
+
+Since least squares regression assumes zero bias, we instead elected to apply a Gaussian process regression technique that can handle biased data \cite{2013sdmm.book.....I,DFMgp,rasmussen2006gaussian}.  Given the relatively small bias amplitude (0.2\%), least squares regression and Gaussian process regression might yield similar solutions for the gap size, but least squares regression would drastically underestimate the \emph{uncertainty} value associated with the derived value of gap size\cite{DFMgp}.
 
 \subsection{MCMC Gaussian process regression}
 
