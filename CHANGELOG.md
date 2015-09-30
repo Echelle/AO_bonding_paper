@@ -2,8 +2,20 @@
 All notable changes to this project will be documented in this file.
 This project does not yet adhere to [Semantic Versioning](http://semver.org/).
 
+## [v1.0] 2015-09-30
+### Changed
+Includes revisions based on anonymous referee comments
 
-## [unreleased][unreleased]
+### Added
+Referee report and response
+
+### Fixed
+- All referee comments
+- Comments from DTJ
+- Minor grammatical errors
+
+
+## [draft] spring 2015
 ### Changed
 - Makefile now compares to commit `be05613`, the most recent version seen by DTJ
 - Remove subsection headings in the introduction

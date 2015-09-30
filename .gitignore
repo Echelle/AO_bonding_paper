@@ -1,5 +1,7 @@
 MGS_AO_SiGaps_revised.tar.gz
 figs/ppts
+*.doc
+*.docx
 *.pyc
 .ipynb_checkpoints
 *.pptx
