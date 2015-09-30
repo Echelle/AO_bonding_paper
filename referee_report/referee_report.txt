@@ -1,0 +1,30 @@
+I have read with a real interest the paper titled &quot;Optical characterization of gaps in directly bounded Si compound optics using infrared spectroscopy&quot;. 
+The title and the abstract faithfully describe the content of the paper which is dedicated to the IR measurement of relatively small gaps existing between two bounded Silicon optics. The topic is well introduced with a number of interesting references.
+The gap is described as a Fabry-Pérot (note that the accent orientation is not correct in the paper) and is taken into account in the proposed transmission model via an areal filling factor, due to the spatial limitation of the technique.
+The purpose of the paper is to present an approach able to determine the (here fixed) gap depth with a statistical analysis of the IR spectra recorded over large spatial zones, typically much larger than the lateral gap size.
+The method is tested on engineered gaps where the parallelism of the silicon interfaces is conserved. In the proposed experiments the gap distribution is only bi-modal (constant gap or no gap). 
+
+My general feeling is that there is enough data and information to warrant a publication in applied optics but the experimental description lack concision and the interest of the Monte Carlo Markov Chain (MCMC) analysis lacks motivation. Actually I did'nt get the interest of MCMC method as I did'nt understood why a more standard least-square method couldn't be applied. I think a sound introduction the MCMC interest in the present context should be given, while again more concision is required in the different parts of the paper. If MCMC is interesting due to the fact that the observed error spectrum exhibit correlations it should be stated clearly and explain in more details. 
+Few remarks:
+-Abstract should be more concise 
+- the same remark can be made for the other parts of the articles. 
+The subtitle 3. is a bit odd:
+- Laboratory demonstration: Embedding gaps of known sizes
+By default we expect the experimental demonstration to be a laboratory demonstration. The rest of paper is also experimental.
+- Our ultimate goal is to bond optics with thicknesses as large as 30 mm.
+ I am not sure this sentence is useful in the context of this paper, I would expect something more general.
+In part 4:
+This part should be whether more concise (double mode ...) or more informative. The correlation the author are talking about should be more clearly or rigorously defined (e.g. first I thought the author were talking about a some spatial correlation existing between spectra from on place to one other...)
+in part 5.
+For me Tdsp is missing in eq 5. ( Tmix= f Tg&#43;(1-f)Tdsp )
+I regret that the main optical assumptions of the method are not given here
+
+5.B: the term &quot;Sample Transport Accessory&quot; is really not adapted for a title as it is only meaningful for owners of a carry 5000 or very similar equipment. The technical description should be more general. Do we need a carry 5000 to reproduce the experiments?
+
+- Notations:
+ Although it can be regarded as obvious, the temperature T, is not defined when first introduced, in page 6.
+The temperature dependence is not exploited and should be removed or motivated to my opinion. 
+I am not a native English speaker, but I think the following sentences may have grammatically incorrect features:
+- p5. Since silicon is opaque in the optical (range?), the...
+- p6. are too small to resolve spatially
+&quot;are too small to be resolved spatially&quot;,
