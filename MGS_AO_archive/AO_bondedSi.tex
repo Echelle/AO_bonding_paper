@@ -89,8 +89,8 @@ F \equiv \frac{4R}{(1-R)^2} \label{Eq:coeffF}
 
 We define the coefficient of finesse\cite{2007fuph.book.....S}, $F$ (Equation \ref{Eq:coeffF}), in the customary way to encapsulate the Fabry-P\'{e}rot etalon's dependence on reflectivity.  $F$ has a value of 2.5$-$2.6, depending on wavelength.  We assume room temperature for all calculations of refractive index.  In this work, we assume transmission is at normal incidence and the refractive index of the gap is 1.0.  Si absorbs negligibly longward of $\lambda$ = 1250 nm, which we verified experimentally by comparing the transmission of Si reference samples of different thicknesses (Figure \ref{figSiAbsorbfig}).
 
-\begin{figure}[htbp]
-\includegraphics[width=0.40\columnwidth]{fpAbsorbfig_alt}
+\begin{figure}[ht!]
+\includegraphics[width=0.95\columnwidth]{fpAbsorbfig_alt}
 \caption{Ratio of transmission of a 0.5 mm thick Si wafer to that of a 3.0 mm thick Si puck.  \label{figSiAbsorbfig} We detect Si absorption shortward of $\lambda$ = 1250 nm.  The individual measurements have correlated uncertainties attributable to lamp drift at the level of 0.2\%.  The random uncertainties are typically about 0.02\% per sample, though some wavelength regions (e.g. 1700-1900 nm) demonstrate much greater per sample uncertainties.  Absorption longward of 1250 nm (vertical dashed line) is negligible.}
 \end{figure}
 
@@ -102,8 +102,8 @@ T_{DSP} = \frac{2n}{1+n^2} \label{eqnAbsDSPtrans}
 
 which has an average value of about 53\%.  The top line in the upper panel of Figure \ref{figAbsoluteTrans} plots the value of $T_{DSP}$ from 1200 to 2500 nm.
 
-\begin{figure}[!htbp]
-\includegraphics[width=0.40\columnwidth]{etalon_trans.pdf}
+\begin{figure}[ht!]
+\includegraphics[width=0.85\columnwidth]{etalon_trans.pdf}
 \caption{\label{figAbsoluteTrans}The family of normal-incidence curves for transmission as a function of vacuum wavelength for various gap sizes in bonded Si optics.  \emph{Top panel}: Absolute transmission through a Si substrate with no gap (top denim-blue solid curve), and small gaps of axial extent 20 nm (green dashed curve), 35 nm (red dash-dotted curve), and 60 nm (purple dotted curve).  The absolute transmission through Si depends on wavelength since the refractive index depends minutely on wavelength.  The curves assume that multiple reflections within the Si substrates add incoherently as discussed in detail in Appendix \ref{sec:Append-IMRTMM}.  \emph{Middle panel}: The ``Gap Transmission'', $T_g$. The gap sizes and colors are the same as in the top panel.  \emph{Bottom panel}: ``Gap Transmission'' for larger gaps, spanning 0$-$3500 nm.  The 3500 nm sized gap (cyan solid line), demonstrates characteristic Fabry-P\'{e}rot etalon fringes.}
 \end{figure}
 
@@ -131,14 +131,14 @@ The three important characteristics of gaps are their axial extent, their latera
 
 The fill factor is the pattern area covered by gaps relative to the total pattern area.  We achieved gap sizes of $49-4000\;$nm on four substrates with three meshes with coarse, medium, and fine boxes, each with 50\% fill factors.  We did not verify the delivered fill factor, but since high precision lithography is very reliable, we assign no uncertainty to the difference between the delivered fill factor and the designed fill factor.  For measurements taken with the Veeco NT9100 Optical Profiler, uncertainties were constructed by inspecting the histogram of topology, as shown in Figure \ref{figVS20pattern}.  The stylus profilometry measured values were assigned an uncertainty of 5\%, based on our experience with other etched parts.  Table \ref{tbl_experiments} lists descriptions for our bonded substrates.
 
-\begin{figure}[htbp]
-\includegraphics[width=1.0\columnwidth]{VS20fineGapCrop.pdf}
+\begin{figure*}[ht!]
+\includegraphics[width=0.75\textwidth]{VS20fineGapCrop.pdf}
 \caption{
 \label{figVS20pattern}
 Veeco optical profiler surface plot and histogram for part VS20-21 in the fine pattern section.  The 100 mm diameter VS20-21 is comprised of two thick silicon wafers.  We patterned three meshes with coarse, medium, and fine boxes, each with 50\% fill factors.  The depth was $95 \pm 5\;$nm as indicated by the well-separated peaks in the Veeco profilometry histogram.  The fill factor for this and all mesh patterns was 50\%.  The purpose for these patterns was to have gaps of known axial extent against which we could test the optical metrology technique we describe in this article.}
-\end{figure}
+\end{figure*}
 
-\begin{table}[h!]
+\begin{table*}[ht!]
 \caption{UTexas Si bonding experiments \label{tbl_experiments}}
 \begin{center}
     \begin{tabular}{ c c c c c}
@@ -153,10 +153,10 @@ Veeco optical profiler surface plot and histogram for part VS20-21 in the fine p
     \hline
     \end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
 
-\begin{table}[h!]
+\begin{table*}[ht]
 \caption{Patterned gap properties \label{tbl_meshPatterns}}
 \begin{center}
     \begin{tabular}{ c c c c }
@@ -172,7 +172,7 @@ Veeco optical profiler surface plot and histogram for part VS20-21 in the fine p
         \hline
     \end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
 
 To minimize the interfacial particle density, we cleaned the surfaces before bonding with standard cleaning procedures of solvents in a megasonic.  The surface roughness was typically about 2 nm, as measured with a Veeco NT9100 Optical Profiler.  We also measured the large-scale surface flatness of the pucks with an interferometer.  We found a typical peak to valley surface flatness of 2 waves ($\lambda=632.8\;$nm) over the central 50 mm diameter.  After cleaning, we applied MHz frequency oxygen plasma ashing.  We soaked the wafers in DI water then dried with N$_2$.  The patterned Si substrate is bonded to a blank (unpatterned) Si substrate.  We pressed the Si substrates together from the center to the outside.
@@ -181,19 +181,19 @@ We first looked for large gaps in our bonded substrate pairs detectable as ``IR 
 
 We also used IR imaging to inspect VG09-12 and VG15-13.  We detected IR bubbles in all bonded Si samples.  The observable bubble areal density varied from about 4 per 100 mm diameter bonded wafer pair to over 20 per bonded wafer pair.  The individual IR bubble areas were as small as a few square millimeters up to $400\;\mathrm{mm}^2$.  The structure within some of the images of IR bubbles showed Newton's rings, revealing the presence of gaps larger than about $\lambda/2$ up to $\sim 15 \lambda$.  As expected, the unbonded DSP wafers show no such IR bubbles.  No attempt at quantitative measurement was made on the IR images due to evidence for a non-linear detector response.  When IR imaging was available, it was used to target IR spectroscopy toward locations displaying the presence or absence of IR bubbles, as desired.  In other cases when IR imaging was not available, spectra were taken at random positions on the wafer.
 
-\begin{figure}[htbp]
-\includegraphics[width=0.4\columnwidth]{VS2021_IR_image.pdf}
+\begin{figure*}[ht]
+\includegraphics[width=0.5\textwidth]{VS2021_IR_image.pdf}
 \caption{
 \label{figVS2021_IR_image}
 IR image of part VS20-21. Three rectangular mesh areas are apparent (Table \ref{tbl_meshPatterns}).  The coarsest mesh, C, shows substructure, while the medium and fine meshes are indistinguishable at the low resolution of the image.  The three dark spots are bubbles at the interface of the direct bonded Si samples.}
-\end{figure}
+\end{figure*}
 
 
 \section{Data}
 
 We measured transmission spectra through the bonded Si samples with an Agilent Cary 5000 UV-Vis-NIR spectrophotometer.  Table \ref{tabCary5000pars} lists the typical measurement settings and tool performance.
 
-\begin{table}[h!]
+\begin{table}[ht]
 \caption{Summary of Cary 5000 measurement parameters \label{tabCary5000pars}}
 \begin{center}
 \begin{tabular}{ c c }
@@ -242,7 +242,7 @@ where the residual vector $\boldsymbol{r}$ is the data $T_{obs}$ minus the model
 
 Figure \ref{figVG03full} shows a parameter determination for the measurement of a bond over a deep ($4000 \pm 200\;$nm) 100\% fill factor gap in part VG03.  The analysis yields a best-fit consistent with 100\% fill factor, and a depth of $3960 \pm 2\;$nm, well within the uncertainty of the physical measurement (Table \ref{tbl_experiments}).  The spectrum in this region shows characteristic Fabry-P\'{e}rot interference fringes.  The only tunable parameters of the model are the gap axial extent, $d$ and fill factor $f$.  No scaling has been applied to the curves in Figure \ref{figVG03full}.  Figure \ref{figVG03part} shows a fit for a region of the same bonded pair where a nominally $4000\;$nm deep, 2 mm wide trench crosses the field (about 1 mm $\times$ 10 mm) scanned by the Cary 5000.  Analysis of this transmission curve gave a best fit depth of $4094 \pm 4\;$nm and a pattern fill factor of $4.6 \pm 0.1\;\%$, both consistent with the part geometry.  These two results show that the formalism performs as expected on resonant gaps several wavelengths deep.
 
-\begin{table}[h!]
+\begin{table*}[ht]
 \caption{Inferred gap sizes and fill factors \label{tbl_DerivedGapSizes}}
 \begin{center}
     \begin{tabular}{ c c c c c }
@@ -257,9 +257,9 @@ Figure \ref{figVG03full} shows a parameter determination for the measurement of 
     \hline
     \end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
               \includegraphics[width=\textwidth]{VG03_corner.pdf}
@@ -276,7 +276,7 @@ Figure \ref{figVG03full} shows a parameter determination for the measurement of 
 \end{figure}
 
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
               \includegraphics[width=\textwidth]{VG03p2_corner.pdf}
@@ -299,13 +299,13 @@ We acquired spatially resolved measurements of the pair of bonded parts VG09-12,
 The colored dots in the position marked in Figure \ref{figVG0912_STA_illus} match the colors of the spectra in Figure \ref{figVG0912}.  The approximate size of the measurement beam is shown for scale.  The conspicuous mesh pattern has a depth of $49\pm6\;$nm, as measured with an optical profiler, and global fill factor of 50\%.  However, since the beam size is comparable to the mesh grid size, the fill factor for any given measurement can vary from about 30\% to 75\%.  The gray band in Figure \ref{figVG0912} represents the allowable range of predictions, taking into account both the uncertainty in the mesh depth and fill factor.  If the mesh pattern were perfectly bonded, we would expect all the spectra to fall inside the color swath in Figure \ref{figVG0912}.  We see excellent consistency between prediction and measurement, with one measured spectrum hinting at a small gap ($\lesssim15$ nm) in one measurement position.  Outside the mesh area, the bonding is excellent, as demonstrated by the off-mesh transmission with transmission consistent with 100\% to within the measurement uncertainty of 0.2\%.
 
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{VG09_12_STA_illustration.pdf}
         \caption{Illustration of VG09-12 sample transport accessory measurement positions. \label{figVG0912_STA_illus} }
     \end{subfigure}
-    \begin{subfigure}[b]{0.65\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{VG0912_STA_scan_coarse.pdf}
         \caption{Measured gap transmission spectra of VG09-12 on- and off- mesh \label{figVG0912}}
     \end{subfigure}
@@ -317,7 +317,7 @@ A key result of these test measurements is to demonstrate that gaps of known dim
 \subsection{What is the smallest gap this technique can detect?}
 We devised two experiments to approach the question, ``What is the smallest gap this technique can detect?''.  We applied our MCMC model fitting formalism to an unbonded DSP wafer.  The measured transmission spectrum was normalized by a transmission spectrum of the same sample taken only a few minutes earlier.  Any difference of this normalized transmission from unity is attributable entirely to measurement uncertainty, and represents the smallest possible signal one could extract.  We also measured bonded sample VG09-12 in a region away from the intentionally implanted gap.  This spectrum was processed in the same way as the spectra of the VG09-12 mesh area, exhibiting a mean value of 0.9998 and a standard deviation $\sigma=0.0008$.  This spectrum is consistent with no gap.  We applied our MCMC formalism to both the unbonded DSP wafer and the VG09-12 off-mesh region.  Table \ref{tbl_DerivedGapSizes} summarizes the formal derivation of gap sizes and fill factors for both the double-side polished puck and the off-mesh region of the VG09-12 bonded pair.  The well-calibrated DSP noise spectrum rules out (at $>3\sigma$) gap sizes larger than about 9.0 nm over $>80$\% of the measurement area.  Similarly, the VG09-12 off-mesh spectrum rules out gaps greater than 14 nm over $>80$\% of the measurement area.  Figure \ref{figVG12} shows the corner plots and spectra for the off-mesh region in VG09-12.
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth]{VG0912_0gap_corner.pdf}
@@ -353,12 +353,12 @@ The experiments and measurements in Section \ref{secResults} demonstrate that we
 
 \emph{Can this technique be applied to imaging?}  The analysis performed in this article informs smart strategies for using IR imaging for gap detection in bonded Si optics.  In IR images (Figure \ref{figVS2021_IR_image}), interfacial gaps appear as dark patches.  These dark patches are darker at shorter wavelengths as we see from Equation \ref{eqFP}, which shows that observations at short wavelengths have the most sensitivity to small gaps.  Therefore, an IR imaging approach should use the shortest possible wavelength without getting too close to the Si absorption cutoff.  This work recommends a 1250$-$1300 nm filter.  Table \ref{tbl_FB1250} lists the predicted integrated transmission through a commercially available narrow bandpass filter, for example the FB1250-10 from Thorlabs, which has center wavelength 1250 nm and full width at half maximum 10 nm.  We calculated the integrated flux by integrating the product of the etalon transmission (Equation \ref{eqn:Tetalon}) with the FB1250-10 filter curve downloaded from the Thorlabs website\footnote{\url{www.thorlabs.com}}.  The filter curve and example gap spectra are shown in Figure \ref{figFB1250-10}.
 
-\begin{figure}[htbp]
-\includegraphics[width=0.8\columnwidth]{F1250_10_filter.pdf}
+\begin{figure}[ht]
+\includegraphics[width=0.95\columnwidth]{F1250_10_filter.pdf}
 \caption{\label{figFB1250-10} Filter curve and gap spectra.  The Thorlabs FB1250-10 filter transmission curve is shown as the gray shaded region.  We integrate the gap spectra with this filter curve to relate the deficit of flux in IR imaging with the axial extent of interfacial gaps.}
 \end{figure}
 
-\begin{table}[h!]
+\begin{table}[ht]
 \caption{FB1250-10 integrated gap transmission \label{tbl_FB1250}}
 \begin{center}
     \begin{tabular}{ r r}
@@ -380,8 +380,8 @@ The experiments and measurements in Section \ref{secResults} demonstrate that we
 
 Figure \ref{figFB1250-10_integ} shows the integrated transmission through the FB1250-10 filter for small gaps ($0 < d(\mathrm{nm}) < 50$).  Table \ref{tbl_FB1250} and Figure \ref{figFB1250-10_integ} can be used as a look-up table for converting between the dark patches observed in IR imaging and the axial extent of the interface gap, if the FB1250-10 filter is used during IR imaging.  IR images must be normalized to the transmission through a DSP sample under identical, nearly collimated lighting conditions.  Any deficits in transmission through a bonded sample can be converted to a gap size $d$, using Table \ref{tbl_FB1250}, if the FB1250-10 filter is used.  IR imaging will lack the spectral information available in the spectra shown in this article.  The curvature of the spectra provides assurance of the physical origin of the dark patches seen in IR imaging.  IR imaging will require exceptional quality of flat-fielding or dithering of the images to reach the precision achieved here with relative ease.  
 
-\begin{figure}[htbp]
-\includegraphics[width=0.8\columnwidth]{FB1250-10_integ_trans.pdf}
+\begin{figure}[ht]
+\includegraphics[width=0.95\columnwidth]{FB1250-10_integ_trans.pdf}
 \caption{\label{figFB1250-10_integ} Integrated transmission through the FB1250-10 filter as a function of interface gap size.  The 99.8\% accuracy achieved in this article is shown as the horizontal dashed line.  Imagers that can achieve 5\% photometric accuracy can detect 40 nm gaps.  This figure assumes uncoated Si substrates.}
 \end{figure}
 
