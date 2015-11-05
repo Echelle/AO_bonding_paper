@@ -20,4 +20,5 @@ Most of the Figures were made in IPython Notebooks.  Look for them in the `noteb
 
 ### License
 
-Copyright 2013, 2014, 2015 by the authors.  **All rights reserved.**
+New! Changed to MIT because of this tweet:
+https://twitter.com/exoplaneteer/status/662092521179222016
